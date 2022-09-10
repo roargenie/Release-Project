@@ -9,21 +9,85 @@
 /* Begin PBXBuildFile section */
 		F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */; };
 		F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */; };
-		F6C1F3DD28CC971B00B5FD0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3DC28CC971B00B5FD0E /* ViewController.swift */; };
 		F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */; };
 		F6C1F3E228CC971E00B5FD0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */; };
 		F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */; };
+		F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */; };
+		F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */; };
+		F6C1F40228CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */; };
+		F6C1F40428CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */; };
+		F6C1F40628CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */; };
+		F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40728CC9A2200B5FD0E /* HomeView.swift */; };
+		F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */; };
+		F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */; };
+		F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */; };
+		F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */; };
+		F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */; };
+		F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */; };
+		F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */; };
+		F6C1F41928CC9AB500B5FD0E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F41828CC9AB500B5FD0E /* SnapKit */; };
+		F6C1F41C28CC9ADD00B5FD0E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F41B28CC9ADD00B5FD0E /* Realm */; };
+		F6C1F41E28CC9ADD00B5FD0E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F41D28CC9ADD00B5FD0E /* RealmSwift */; };
+		F6C1F42128CC9AF400B5FD0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F42028CC9AF400B5FD0E /* Alamofire */; };
+		F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */; };
+		F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */; };
+		F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */; };
+		F6C1F42F28CC9BE800B5FD0E /* StyleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */; };
+		F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */; };
+		F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43228CC9C0900B5FD0E /* APIManager.swift */; };
+		F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */; };
+		F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */; };
+		F6C1F43B28CCA4DE00B5FD0E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F43A28CCA4DE00B5FD0E /* Kingfisher */; };
+		F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */; };
+		F6C1F44028CCC4DB00B5FD0E /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F43F28CCC4DB00B5FD0E /* Floaty */; };
+		F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */; };
+		F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */; };
+		F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */; };
+		F6C1F44C28CCE2A000B5FD0E /* AddStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44B28CCE2A000B5FD0E /* AddStyleView.swift */; };
+		F6C1F44E28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44D28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift */; };
+		F6C1F45028CCE4B400B5FD0E /* AddStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */; };
+		F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45228CCE89400B5FD0E /* DiaryView.swift */; };
+		F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6C1F3D528CC971B00B5FD0E /* Release Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Release Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6C1F3DC28CC971B00B5FD0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F6C1F3DF28CC971B00B5FD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6C1F3E428CC971E00B5FD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6C1F3E628CC971E00B5FD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F40728CC9A2200B5FD0E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailView.swift; sourceTree = "<group>"; };
+		F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailView.swift; sourceTree = "<group>"; };
+		F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailView.swift; sourceTree = "<group>"; };
+		F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extension.swift"; sourceTree = "<group>"; };
+		F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
+		F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRepository.swift; sourceTree = "<group>"; };
+		F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		F6C1F43228CC9C0900B5FD0E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCollectionReusableView.swift; sourceTree = "<group>"; };
+		F6C1F44B28CCE2A000B5FD0E /* AddStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleView.swift; sourceTree = "<group>"; };
+		F6C1F44D28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleViewController.swift; sourceTree = "<group>"; };
+		F6C1F45228CCE89400B5FD0E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C1F41E28CC9ADD00B5FD0E /* RealmSwift in Frameworks */,
+				F6C1F44028CCC4DB00B5FD0E /* Floaty in Frameworks */,
+				F6C1F42128CC9AF400B5FD0E /* Alamofire in Frameworks */,
+				F6C1F41C28CC9ADD00B5FD0E /* Realm in Frameworks */,
+				F6C1F41928CC9AB500B5FD0E /* SnapKit in Frameworks */,
+				F6C1F43B28CCA4DE00B5FD0E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +126,188 @@
 		F6C1F3D728CC971B00B5FD0E /* Release Project */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F3EC28CC975800B5FD0E /* Model */,
+				F6C1F3ED28CC977B00B5FD0E /* View */,
+				F6C1F3EE28CC978000B5FD0E /* Controller */,
+				F6C1F3F028CC97A100B5FD0E /* Manager */,
+				F6C1F3EF28CC979B00B5FD0E /* Extension */,
+				F6C1F3F128CC97B200B5FD0E /* Utility */,
 				F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */,
 				F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */,
-				F6C1F3DC28CC971B00B5FD0E /* ViewController.swift */,
 				F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */,
 				F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */,
 				F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */,
 				F6C1F3E628CC971E00B5FD0E /* Info.plist */,
 			);
 			path = "Release Project";
+			sourceTree = "<group>";
+		};
+		F6C1F3EC28CC975800B5FD0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */,
+				F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F6C1F3ED28CC977B00B5FD0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F3FE28CC996000B5FD0E /* Home */,
+				F6C1F42528CC9B5B00B5FD0E /* AddItem */,
+				F6C1F42628CC9B6100B5FD0E /* AddStyle */,
+				F6C1F42728CC9B6800B5FD0E /* Diary */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F6C1F3EE28CC978000B5FD0E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F3FF28CC997000B5FD0E /* Home */,
+				F6C1F42228CC9B0100B5FD0E /* AddItem */,
+				F6C1F42328CC9B1E00B5FD0E /* AddStyle */,
+				F6C1F42428CC9B2600B5FD0E /* Diary */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F6C1F3EF28CC979B00B5FD0E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */,
+				F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F6C1F3F028CC97A100B5FD0E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */,
+				F6C1F43228CC9C0900B5FD0E /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F6C1F3F128CC97B200B5FD0E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */,
+				F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */,
+				F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */,
+				F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F6C1F3FE28CC996000B5FD0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F43428CC9E5F00B5FD0E /* Cell */,
+				F6C1F40728CC9A2200B5FD0E /* HomeView.swift */,
+				F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */,
+				F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */,
+				F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F6C1F3FF28CC997000B5FD0E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */,
+				F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */,
+				F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */,
+				F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F6C1F42228CC9B0100B5FD0E /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */,
+			);
+			path = AddItem;
+			sourceTree = "<group>";
+		};
+		F6C1F42328CC9B1E00B5FD0E /* AddStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */,
+			);
+			path = AddStyle;
+			sourceTree = "<group>";
+		};
+		F6C1F42428CC9B2600B5FD0E /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		F6C1F42528CC9B5B00B5FD0E /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44128CCC59100B5FD0E /* Cell */,
+				F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */,
+			);
+			path = AddItem;
+			sourceTree = "<group>";
+		};
+		F6C1F42628CC9B6100B5FD0E /* AddStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44A28CCE09100B5FD0E /* Cell */,
+				F6C1F44B28CCE2A000B5FD0E /* AddStyleView.swift */,
+			);
+			path = AddStyle;
+			sourceTree = "<group>";
+		};
+		F6C1F42728CC9B6800B5FD0E /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F45128CCE88500B5FD0E /* Cell */,
+				F6C1F45228CCE89400B5FD0E /* DiaryView.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		F6C1F43428CC9E5F00B5FD0E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */,
+				F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */,
+				F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6C1F44128CCC59100B5FD0E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */,
+				F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6C1F44A28CCE09100B5FD0E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F44D28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6C1F45128CCE88500B5FD0E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +326,14 @@
 			dependencies = (
 			);
 			name = "Release Project";
+			packageProductDependencies = (
+				F6C1F41828CC9AB500B5FD0E /* SnapKit */,
+				F6C1F41B28CC9ADD00B5FD0E /* Realm */,
+				F6C1F41D28CC9ADD00B5FD0E /* RealmSwift */,
+				F6C1F42028CC9AF400B5FD0E /* Alamofire */,
+				F6C1F43A28CCA4DE00B5FD0E /* Kingfisher */,
+				F6C1F43F28CCC4DB00B5FD0E /* Floaty */,
+			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +362,13 @@
 				Base,
 			);
 			mainGroup = F6C1F3CC28CC971B00B5FD0E;
+			packageReferences = (
+				F6C1F41728CC9AB500B5FD0E /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F6C1F41A28CC9ADD00B5FD0E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				F6C1F41F28CC9AF400B5FD0E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F6C1F43928CCA4DD00B5FD0E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F6C1F43E28CCC4DB00B5FD0E /* XCRemoteSwiftPackageReference "Floaty" */,
+			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +396,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6C1F3DD28CC971B00B5FD0E /* ViewController.swift in Sources */,
+				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
+				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView.swift in Sources */,
+				F6C1F44C28CCE2A000B5FD0E /* AddStyleView.swift in Sources */,
+				F6C1F40628CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift in Sources */,
+				F6C1F40428CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
+				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
+				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
+				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
+				F6C1F44E28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift in Sources */,
+				F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */,
+				F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */,
+				F6C1F42F28CC9BE800B5FD0E /* StyleRepository.swift in Sources */,
+				F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */,
+				F6C1F40228CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift in Sources */,
+				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
+				F6C1F45028CCE4B400B5FD0E /* AddStyleViewController.swift in Sources */,
+				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
+				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
+				F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */,
+				F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */,
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
+				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
+				F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController.swift in Sources */,
 				F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */,
+				F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */,
+				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
+				F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */,
+				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
+				F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */,
+				F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */,
+				F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */,
+				F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,8 +580,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +593,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +610,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +623,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +649,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6C1F41728CC9AB500B5FD0E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F6C1F41A28CC9ADD00B5FD0E /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		F6C1F41F28CC9AF400B5FD0E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F6C1F43928CCA4DD00B5FD0E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		F6C1F43E28CCC4DB00B5FD0E /* XCRemoteSwiftPackageReference "Floaty" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kciter/Floaty.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6C1F41828CC9AB500B5FD0E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F41728CC9AB500B5FD0E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		F6C1F41B28CC9ADD00B5FD0E /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F41A28CC9ADD00B5FD0E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F6C1F41D28CC9ADD00B5FD0E /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F41A28CC9ADD00B5FD0E /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		F6C1F42028CC9AF400B5FD0E /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F41F28CC9AF400B5FD0E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F6C1F43A28CCA4DE00B5FD0E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F43928CCA4DD00B5FD0E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		F6C1F43F28CCC4DB00B5FD0E /* Floaty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F43E28CCC4DB00B5FD0E /* XCRemoteSwiftPackageReference "Floaty" */;
+			productName = Floaty;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6C1F3CD28CC971B00B5FD0E /* Project object */;
 }
