@@ -20,11 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let mainVC = HomeViewController()
+        //let nav1 = UINavigationController(rootViewController: mainVC)
         let addItemVC = AddItemViewController()
-        let addStyleVC = AddStyleViewController()
+        let nav2 = UINavigationController(rootViewController: addItemVC)
+        let diaryVC = DiaryViewController()
+        let nav3 = UINavigationController(rootViewController: diaryVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([mainVC, addItemVC, addStyleVC], animated: true)
+        tabBarController.setViewControllers([mainVC, nav2, nav3], animated: true)
         
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
@@ -35,13 +38,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[1].image = UIImage(systemName: "archivebox")
             items[1].title = "내 서랍장"
             
-            items[2].selectedImage = UIImage(systemName: "person.fill")
-            items[2].image = UIImage(systemName: "person")
-            items[2].title = "나의 코디"
+            items[2].selectedImage = UIImage(systemName: "calendar.circle.fill")
+            items[2].image = UIImage(systemName: "calendar.circle")
+            items[2].title = "다이어리"
             
-            items[3].selectedImage = UIImage(systemName: "calendar.circle.fill")
-            items[3].image = UIImage(systemName: "calendar.circle")
-            items[3].title = "일기장"
+//            items[3].selectedImage = UIImage(systemName: "calendar.circle.fill")
+//            items[3].image = UIImage(systemName: "calendar.circle")
+//            items[3].title = "일기장"
         }
         
         window?.rootViewController = tabBarController

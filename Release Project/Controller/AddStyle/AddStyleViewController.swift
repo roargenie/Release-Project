@@ -27,6 +27,22 @@ final class AddStyleViewController: BaseViewController {
         
     }
     
+    override func setNavigationBar() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addButtonTapped))
+        let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
+        navigationItem.leftBarButtonItems = [listButton]
+        navigationItem.rightBarButtonItems = [addButton]
+    }
+    
+    @objc func addButtonTapped() {
+        let vc = AddStyleDetailViewController()
+        transition(vc, transitionStyle: .push)
+    }
+    
+    @objc func listButtonTapped() {
+        
+    }
+    
 }
 
 extension AddStyleViewController: UICollectionViewDelegate, UICollectionViewDataSource {

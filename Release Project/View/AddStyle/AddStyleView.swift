@@ -13,13 +13,13 @@ final class AddStyleView: BaseView {
         return view
     }()
     
-    let addItemButton: Floaty = {
-        let view = Floaty()
-        view.addItem(title: "스타일 추가하기")
-        
-        view.openAnimationType = .pop
-        return view
-    }()
+//    let addItemButton: Floaty = {
+//        let view = Floaty()
+//        view.addItem(title: "스타일 추가하기")
+//
+//        view.openAnimationType = .pop
+//        return view
+//    }()
     
     
     override init(frame: CGRect) {
@@ -31,17 +31,17 @@ final class AddStyleView: BaseView {
     }
     
     override func configureUI() {
-        [collectionView, addItemButton].forEach { self.addSubview($0) }
+        [collectionView,].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        addItemButton.snp.makeConstraints { make in
-            make.bottom.trailing.equalTo(self.safeAreaLayoutGuide).offset(-30)
-            make.width.height.equalTo(30)
-        }
+//        addItemButton.snp.makeConstraints { make in
+//            make.bottom.trailing.equalTo(self.safeAreaLayoutGuide).offset(-30)
+//            make.width.height.equalTo(30)
+//        }
     }
     
     static func collectionViewLayout() -> UICollectionViewFlowLayout {

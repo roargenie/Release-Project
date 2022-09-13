@@ -14,15 +14,31 @@ final class AddItemViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
     }
     
-    override func configureUI() {
+    override func setConstraints() {
         
     }
     
-    override func setConstraints() {
+    override func setNavigationBar() {
+        let addButton = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addButtonTapped))
+        let listButton = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(listButtonTapped))
+        navigationItem.leftBarButtonItems = [listButton]
+        navigationItem.rightBarButtonItems = [addButton]
+    }
+    
+    @objc func addButtonTapped() {
+        let vc = AddItemDetailViewController()
+        transition(vc, transitionStyle: .presentFull)
+    }
+    
+    @objc func listButtonTapped() {
         
     }
     

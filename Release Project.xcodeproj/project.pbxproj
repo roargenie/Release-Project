@@ -14,15 +14,12 @@
 		F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */; };
 		F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */; };
 		F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */; };
-		F6C1F40228CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */; };
-		F6C1F40428CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */; };
-		F6C1F40628CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */; };
 		F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40728CC9A2200B5FD0E /* HomeView.swift */; };
-		F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */; };
+		F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView-1.swift */; };
 		F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */; };
 		F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */; };
 		F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */; };
-		F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */; };
+		F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift */; };
 		F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */; };
 		F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */; };
 		F6C1F41928CC9AB500B5FD0E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F41828CC9AB500B5FD0E /* SnapKit */; };
@@ -48,6 +45,34 @@
 		F6C1F45028CCE4B400B5FD0E /* AddStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */; };
 		F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45228CCE89400B5FD0E /* DiaryView.swift */; };
 		F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */; };
+		F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */; };
+		F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */; };
+		F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */; };
+		F6C1F45D28CE0B9300B5FD0E /* AddItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */; };
+		F6C1F45F28CE0D0400B5FD0E /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */; };
+		F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */; };
+		F6C1F46428CE2D5500B5FD0E /* AddStyleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46328CE2D5500B5FD0E /* AddStyleDetailViewController.swift */; };
+		F6C1F46628CE2D8E00B5FD0E /* AddStyleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46528CE2D8E00B5FD0E /* AddStyleDetailView.swift */; };
+		F6C1F46828CE2DF200B5FD0E /* AddStyleDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46728CE2DF200B5FD0E /* AddStyleDetailCollectionViewCell.swift */; };
+		F6C1F46B28CF7D8400B5FD0E /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F46A28CF7D8400B5FD0E /* Tabman */; };
+		F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */; };
+		F6C1F47028D077AC00B5FD0E /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F6C1F46F28D077AC00B5FD0E /* FSCalendar */; };
+		F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */; };
+		F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */; };
+		F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */; };
+		F6DB7FC528D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */; };
+		F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */; };
+		F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC828D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift */; };
+		F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FCA28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift */; };
+		F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FCC28D0C4FF004AF264 /* ReusableHeaderView.swift */; };
+		F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FCE28D0CC84004AF264 /* FirstHomeDetailView-2.swift */; };
+		F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FD028D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift */; };
+		F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FD228D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift */; };
+		F6DB7FD528D0D122004AF264 /* CustomUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FD428D0D122004AF264 /* CustomUIView.swift */; };
+		F6DB7FD828D0F501004AF264 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = F6DB7FD728D0F501004AF264 /* YPImagePicker */; };
+		F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FD928D107F6004AF264 /* DiaryDetailViewController.swift */; };
+		F6DB7FDC28D1104C004AF264 /* DetailCustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FDB28D1104C004AF264 /* DetailCustomHeaderView.swift */; };
+		F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,15 +85,12 @@
 		F6C1F3E628CC971E00B5FD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
-		F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
-		F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6C1F40728CC9A2200B5FD0E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailView.swift; sourceTree = "<group>"; };
+		F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstHomeDetailView-1.swift"; sourceTree = "<group>"; };
 		F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailView.swift; sourceTree = "<group>"; };
 		F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailView.swift; sourceTree = "<group>"; };
 		F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstHomeDetailViewController-1.swift"; sourceTree = "<group>"; };
 		F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailViewController.swift; sourceTree = "<group>"; };
 		F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailViewController.swift; sourceTree = "<group>"; };
 		F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
@@ -88,6 +110,31 @@
 		F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleViewController.swift; sourceTree = "<group>"; };
 		F6C1F45228CCE89400B5FD0E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailView.swift; sourceTree = "<group>"; };
+		F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
+		F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F46328CE2D5500B5FD0E /* AddStyleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleDetailViewController.swift; sourceTree = "<group>"; };
+		F6C1F46528CE2D8E00B5FD0E /* AddStyleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleDetailView.swift; sourceTree = "<group>"; };
+		F6C1F46728CE2DF200B5FD0E /* AddStyleDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStyleDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDiaryDetailView.swift; sourceTree = "<group>"; };
+		F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFirstTableViewCell.swift; sourceTree = "<group>"; };
+		F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSecondTableViewCell.swift; sourceTree = "<group>"; };
+		F6DB7FC828D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdTableViewCell.swift; sourceTree = "<group>"; };
+		F6DB7FCA28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFourthTableViewCell.swift; sourceTree = "<group>"; };
+		F6DB7FCC28D0C4FF004AF264 /* ReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableHeaderView.swift; sourceTree = "<group>"; };
+		F6DB7FCE28D0CC84004AF264 /* FirstHomeDetailView-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstHomeDetailView-2.swift"; sourceTree = "<group>"; };
+		F6DB7FD028D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstHomeDetailViewController-2.swift"; sourceTree = "<group>"; };
+		F6DB7FD228D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCollectionReusableView.swift; sourceTree = "<group>"; };
+		F6DB7FD428D0D122004AF264 /* CustomUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIView.swift; sourceTree = "<group>"; };
+		F6DB7FD928D107F6004AF264 /* DiaryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryDetailViewController.swift; sourceTree = "<group>"; };
+		F6DB7FDB28D1104C004AF264 /* DetailCustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCustomHeaderView.swift; sourceTree = "<group>"; };
+		F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +144,12 @@
 			files = (
 				F6C1F41E28CC9ADD00B5FD0E /* RealmSwift in Frameworks */,
 				F6C1F44028CCC4DB00B5FD0E /* Floaty in Frameworks */,
+				F6C1F46B28CF7D8400B5FD0E /* Tabman in Frameworks */,
 				F6C1F42128CC9AF400B5FD0E /* Alamofire in Frameworks */,
 				F6C1F41C28CC9ADD00B5FD0E /* Realm in Frameworks */,
+				F6C1F47028D077AC00B5FD0E /* FSCalendar in Frameworks */,
 				F6C1F41928CC9AB500B5FD0E /* SnapKit in Frameworks */,
+				F6DB7FD828D0F501004AF264 /* YPImagePicker in Frameworks */,
 				F6C1F43B28CCA4DE00B5FD0E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +244,7 @@
 		F6C1F3F128CC97B200B5FD0E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F46028CE0D0800B5FD0E /* CustomView */,
 				F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */,
 				F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */,
 				F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */,
@@ -207,7 +258,8 @@
 			children = (
 				F6C1F43428CC9E5F00B5FD0E /* Cell */,
 				F6C1F40728CC9A2200B5FD0E /* HomeView.swift */,
-				F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView.swift */,
+				F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView-1.swift */,
+				F6DB7FCE28D0CC84004AF264 /* FirstHomeDetailView-2.swift */,
 				F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */,
 				F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */,
 			);
@@ -218,7 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */,
-				F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController.swift */,
+				F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift */,
+				F6DB7FD028D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift */,
 				F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */,
 				F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */,
 			);
@@ -229,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */,
+				F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */,
 			);
 			path = AddItem;
 			sourceTree = "<group>";
@@ -237,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F44F28CCE4B400B5FD0E /* AddStyleViewController.swift */,
+				F6C1F46328CE2D5500B5FD0E /* AddStyleDetailViewController.swift */,
 			);
 			path = AddStyle;
 			sourceTree = "<group>";
@@ -245,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */,
+				F6DB7FD928D107F6004AF264 /* DiaryDetailViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -254,6 +310,7 @@
 			children = (
 				F6C1F44128CCC59100B5FD0E /* Cell */,
 				F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */,
+				F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */,
 			);
 			path = AddItem;
 			sourceTree = "<group>";
@@ -263,6 +320,7 @@
 			children = (
 				F6C1F44A28CCE09100B5FD0E /* Cell */,
 				F6C1F44B28CCE2A000B5FD0E /* AddStyleView.swift */,
+				F6C1F46528CE2D8E00B5FD0E /* AddStyleDetailView.swift */,
 			);
 			path = AddStyle;
 			sourceTree = "<group>";
@@ -272,6 +330,7 @@
 			children = (
 				F6C1F45128CCE88500B5FD0E /* Cell */,
 				F6C1F45228CCE89400B5FD0E /* DiaryView.swift */,
+				F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -279,9 +338,15 @@
 		F6C1F43428CC9E5F00B5FD0E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F40128CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift */,
-				F6C1F40328CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */,
-				F6C1F40528CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift */,
+				F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */,
+				F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */,
+				F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */,
+				F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */,
+				F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */,
+				F6DB7FC828D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift */,
+				F6DB7FCA28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift */,
+				F6DB7FCC28D0C4FF004AF264 /* ReusableHeaderView.swift */,
+				F6DB7FD228D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -299,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F44D28CCE2C200B5FD0E /* AddStyleCollectionViewCell.swift */,
+				F6C1F46728CE2DF200B5FD0E /* AddStyleDetailCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -306,8 +372,22 @@
 		F6C1F45128CCE88500B5FD0E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */,
+				F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */,
+				F6DB7FDB28D1104C004AF264 /* DetailCustomHeaderView.swift */,
+				F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F6C1F46028CE0D0800B5FD0E /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */,
+				F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */,
+				F6DB7FD428D0D122004AF264 /* CustomUIView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +413,9 @@
 				F6C1F42028CC9AF400B5FD0E /* Alamofire */,
 				F6C1F43A28CCA4DE00B5FD0E /* Kingfisher */,
 				F6C1F43F28CCC4DB00B5FD0E /* Floaty */,
+				F6C1F46A28CF7D8400B5FD0E /* Tabman */,
+				F6C1F46F28D077AC00B5FD0E /* FSCalendar */,
+				F6DB7FD728D0F501004AF264 /* YPImagePicker */,
 			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
@@ -368,6 +451,9 @@
 				F6C1F41F28CC9AF400B5FD0E /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F6C1F43928CCA4DD00B5FD0E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F6C1F43E28CCC4DB00B5FD0E /* XCRemoteSwiftPackageReference "Floaty" */,
+				F6C1F46928CF7D8400B5FD0E /* XCRemoteSwiftPackageReference "Tabman" */,
+				F6C1F46E28D077AC00B5FD0E /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				F6DB7FD628D0F501004AF264 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
@@ -396,11 +482,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */,
+				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
+				F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */,
+				F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
+				F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */,
+				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
+				F6C1F45F28CE0D0400B5FD0E /* TagButton.swift in Sources */,
 				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
-				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView.swift in Sources */,
+				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */,
 				F6C1F44C28CCE2A000B5FD0E /* AddStyleView.swift in Sources */,
-				F6C1F40628CC9A0800B5FD0E /* ThirdHomeDetailCollectionViewCell.swift in Sources */,
-				F6C1F40428CC99FA00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
+				F6C1F46628CE2D8E00B5FD0E /* AddStyleDetailView.swift in Sources */,
+				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
 				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
@@ -408,25 +501,40 @@
 				F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */,
 				F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */,
 				F6C1F42F28CC9BE800B5FD0E /* StyleRepository.swift in Sources */,
+				F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */,
+				F6C1F45D28CE0B9300B5FD0E /* AddItemDetailView.swift in Sources */,
 				F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */,
-				F6C1F40228CC99E300B5FD0E /* FirstHomeDetailTableViewCell.swift in Sources */,
+				F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */,
 				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
 				F6C1F45028CCE4B400B5FD0E /* AddStyleViewController.swift in Sources */,
 				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
 				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
+				F6DB7FDC28D1104C004AF264 /* DetailCustomHeaderView.swift in Sources */,
+				F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */,
+				F6C1F46828CE2DF200B5FD0E /* AddStyleDetailCollectionViewCell.swift in Sources */,
 				F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */,
+				F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */,
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
-				F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController.swift in Sources */,
+				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
+				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
+				F6C1F46428CE2D5500B5FD0E /* AddStyleDetailViewController.swift in Sources */,
+				F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */,
+				F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */,
+				F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift in Sources */,
+				F6DB7FC528D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift in Sources */,
 				F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */,
 				F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */,
+				F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */,
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
 				F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */,
 				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
 				F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */,
+				F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */,
 				F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */,
 				F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */,
+				F6DB7FD528D0D122004AF264 /* CustomUIView.swift in Sources */,
 				F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,6 +799,30 @@
 				kind = branch;
 			};
 		};
+		F6C1F46928CF7D8400B5FD0E /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		F6C1F46E28D077AC00B5FD0E /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F6DB7FD628D0F501004AF264 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -723,6 +855,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6C1F43E28CCC4DB00B5FD0E /* XCRemoteSwiftPackageReference "Floaty" */;
 			productName = Floaty;
+		};
+		F6C1F46A28CF7D8400B5FD0E /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F46928CF7D8400B5FD0E /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+		F6C1F46F28D077AC00B5FD0E /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6C1F46E28D077AC00B5FD0E /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		F6DB7FD728D0F501004AF264 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6DB7FD628D0F501004AF264 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
