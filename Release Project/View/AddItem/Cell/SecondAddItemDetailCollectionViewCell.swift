@@ -28,6 +28,8 @@ final class SecondAddItemDetailCollectionViewCell: BaseCollectionViewCell {
     
     override func configureUI() {
         self.addSubview(categoryTagLabel)
+        self.layer.cornerRadius = 20
+        self.layer.borderWidth = 2
     }
     
     override func setConstraints() {

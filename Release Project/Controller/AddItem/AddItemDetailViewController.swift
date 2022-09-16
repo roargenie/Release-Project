@@ -7,6 +7,12 @@ import RealmSwift
 
 final class AddItemDetailViewController: BaseViewController {
     
+    // MARK: - 열거형 사용해보기
+    enum TagSection: Int {
+        case category = 0, season
+
+    }
+    
     var mainView = AddItemDetailView()
     
     fileprivate let repository = StyleRepository()
@@ -14,7 +20,6 @@ final class AddItemDetailViewController: BaseViewController {
     var categoryTasks: Results<Category>! {
         didSet {
             mainView.collectionView.reloadData()
-            
         }
     }
     
@@ -31,17 +36,24 @@ final class AddItemDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRealm()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        //repository.initCategoryTag(item: Category.init())
+        repository.initCategoryTagIsSelected(item: categoryTasks)
+        repository.initSeasonTagIsSelected(item: seasonTasks)
+        fetchRealm()
     }
     
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        
     }
     
     override func setConstraints() {
@@ -54,13 +66,18 @@ final class AddItemDetailViewController: BaseViewController {
     }
     
     @objc func saveButtonTapped() {
+        let selectedCategoryTag = repository.isSelectedTrueArr(Category.self)
+        let selectedSeasonTag = repository.isSelectedTrueArr(Season.self)
+        let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: selectedCategoryTag, season: selectedSeasonTag)
+        repository.addItem(item: [savedItem])
+        
         
         self.navigationController?.popViewController(animated: true)
     }
     
     func fetchRealm() {
-        categoryTasks = repository.filterTag(Category.self).sorted(byKeyPath: "objectId", ascending: true)
-        seasonTasks = repository.filterTag(Season.self).sorted(byKeyPath: "objectId", ascending: false)
+        categoryTasks = repository.fetch(Category.self)
+        seasonTasks = repository.fetch(Season.self)
     }
     
 }
@@ -74,9 +91,9 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return repository.filterTag(Category.self).count
+            return categoryTasks.count
         } else {
-            return repository.filterTag(Season.self).count
+            return seasonTasks.count
         }
     }
     
@@ -85,7 +102,7 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
         if indexPath.section == 0 {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondAddItemDetailCollectionViewCell.reuseIdentifier, for: indexPath) as? SecondAddItemDetailCollectionViewCell else { return UICollectionViewCell() }
             
-            let task = repository.filterTag(Category.self)[indexPath.item]
+            let task = categoryTasks[indexPath.item]
             
             let backGroundColor = task.isSelected ? UIColor.black : UIColor.white
             let titleColor = task.isSelected ? UIColor.white : UIColor.darkGray
@@ -94,16 +111,14 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
             cell.categoryTagLabel.text = task.title
             cell.categoryTagLabel.textColor = titleColor
             cell.backgroundColor = backGroundColor
-            cell.layer.borderWidth = 2
             cell.layer.borderColor = borderColor
-            cell.layer.cornerRadius = 20
             
             return cell
             
         } else {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ThirdAddItemDetailCollectionViewCell.reuseIdentifier, for: indexPath) as? ThirdAddItemDetailCollectionViewCell else { return UICollectionViewCell() }
             
-            let task = repository.filterTag(Season.self)[indexPath.item]
+            let task = seasonTasks[indexPath.item]
             
             let backGroundColor = task.isSelected ? UIColor.black : UIColor.white
             let titleColor = task.isSelected ? UIColor.white : UIColor.darkGray
@@ -111,12 +126,11 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
             
             cell.seasonTagLabel.text = task.title
             cell.seasonTagLabel.textColor = titleColor
-            cell.backgroundColor = backGroundColor
-            cell.layer.borderWidth = 2
             cell.layer.borderColor = borderColor
-            cell.layer.cornerRadius = 20
+            cell.backgroundColor = backGroundColor
             
             return cell
+            
         }
         
     }
@@ -124,15 +138,18 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            let cell = collectionView.cellForItem(at: indexPath)
-            cell?.tag = indexPath.item
-            let task = repository.filterTag(Category.self)[indexPath.item]
+//            let cell = collectionView.cellForItem(at: indexPath)
+//            cell?.tag = indexPath.item
+            let task = categoryTasks[indexPath.item]
             repository.categoryTagIsSelected(item: task)
+            fetchRealm()
+            print(task)
             print(#function, indexPath.item)
             print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
         } else {
-            let task = repository.filterTag(Season.self)[indexPath.item]
+            let task = seasonTasks[indexPath.item]
             repository.seasonTagIsSelected(item: task)
+            fetchRealm()
             print(#function, indexPath.item)
         }
     }
@@ -140,12 +157,14 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            let task = repository.filterTag(Category.self)[indexPath.item]
+            let task = categoryTasks[indexPath.item]
             repository.categoryTagIsSelected(item: task)
-            mainView.collectionView.reloadData()
+            fetchRealm()
+            
         } else {
-            let task = repository.filterTag(Season.self)[indexPath.item]
+            let task = seasonTasks[indexPath.item]
             repository.seasonTagIsSelected(item: task)
+            fetchRealm()
             print(#function, indexPath.item)
         }
     }

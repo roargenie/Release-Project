@@ -13,7 +13,7 @@ final class StyleRepository {
     let localRealm = try! Realm()
     
     func fetch<T: Object>(_ table: T.Type) -> Results<T> {
-        return localRealm.objects(table.self)
+        return localRealm.objects(table.self).sorted(byKeyPath: "objectId", ascending: true)
     }
     
 //    func filterTag<T: Object>(title: String) -> Results<T> {
@@ -24,6 +24,17 @@ final class StyleRepository {
         return localRealm.objects(table.self)
     }
     
+//    func categoryTagisSelectedTrueArr() -> Results<Category> {
+//        return localRealm.objects(Category.self).filter("isSelected == true")
+//    }
+//
+//    func seasonTagisSelectedTrueArr() -> Results<Season> {
+//        return localRealm.objects(Season.self).filter("isSelected == true")
+//    }
+    
+    func isSelectedTrueArr<T: Object>(_ table: T.Type) -> Results<T> {
+        return localRealm.objects(table.self).filter("isSelected == true")
+    }
     
     func addItem<T: Object>(item: [T]) {
         do {
@@ -55,10 +66,33 @@ final class StyleRepository {
         }
     }
     
-    func initCategoryTag(item: Category) {
+//    func initCategoryTagIsSelected(item: Category) {
+//        do {
+//            try localRealm.write {
+//                item.setValue(false, forKey: "isSelected")
+//            }
+//        } catch {
+//            print("error")
+//        }
+//    }
+    func initCategoryTagIsSelected(item: Results<Category>) {
         do {
             try localRealm.write {
-                item.isSelected = false
+                for i in item {
+                    i.isSelected = false
+                }
+            }
+        } catch {
+            print("error")
+        }
+    }
+    
+    func initSeasonTagIsSelected(item: Results<Season>) {
+        do {
+            try localRealm.write {
+                for i in item {
+                    i.isSelected = false
+                }
             }
         } catch {
             print("error")

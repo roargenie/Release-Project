@@ -22,6 +22,8 @@ final class ThirdAddItemDetailCollectionViewCell: BaseCollectionViewCell {
     
     override func configureUI() {
         self.addSubview(seasonTagLabel)
+        self.layer.cornerRadius = 20
+        self.layer.borderWidth = 2
     }
     
     override func setConstraints() {
