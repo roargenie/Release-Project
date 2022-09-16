@@ -1,6 +1,7 @@
 
 
 import UIKit
+import YPImagePicker
 
 
 final class DiaryDetailViewController: BaseViewController {
@@ -19,7 +20,9 @@ final class DiaryDetailViewController: BaseViewController {
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        
+        mainView.doneButton.addTarget(self, action: #selector(doneButtonTapped), for: .touchUpInside)
+        mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        mainView.addImageButton.addTarget(self, action: #selector(addImageButtonTapped), for: .touchUpInside)
     }
     
     override func setConstraints() {
@@ -28,6 +31,31 @@ final class DiaryDetailViewController: BaseViewController {
     
     override func setNavigationBar() {
         
+    }
+    
+    @objc func doneButtonTapped() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc func cancelButtonTapped() {
+        self.dismiss(animated: true)
+    }
+    
+    @objc func addImageButtonTapped() {
+        let picker = YPImagePicker()
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+//                print(photo.fromCamera) // Image source (camera or library)
+//                print(photo.image) // Final image selected by the user
+//                print(photo.originalImage) // original image selected by the user, unfiltered
+//                print(photo.modifiedImage) // Transformed image, can be nil
+//                print(photo.exifMeta) // Print exif meta data of original image.
+//
+                self.mainView.imageView.image = photo.image
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
     }
     
 }
@@ -46,18 +74,7 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: DetailCustomHeaderView.identifier, for: indexPath) as! DetailCustomHeaderView
-            return headerView
-        default:
-            #if DEBUG
-            assert(false)
-            #else
-            return UICollectionReusableView()
-            #endif
-        }
-    }
+
+    
     
 }

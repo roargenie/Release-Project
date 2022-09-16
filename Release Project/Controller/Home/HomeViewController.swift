@@ -11,6 +11,13 @@ final class HomeViewController: BaseViewController {
     
     var mainView = HomeView()
     
+    let repository = StyleRepository()
+    
+    var tasks: Results<ClothItem>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     override func loadView() {
         self.view = mainView
@@ -18,10 +25,12 @@ final class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkFirstRun()
     }
     
-    
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
     override func configureUI() {
         mainView.tableView.delegate = self
@@ -34,12 +43,14 @@ final class HomeViewController: BaseViewController {
     
     @objc func weatherStyleButtonTapped() {
         let vc = FirstHomeDetailViewController1()
-        transition(vc, transitionStyle: .presentFull)
+        self.tabBarController?.tabBar.isHidden = true
+        transition(vc, transitionStyle: .push)
     }
     
     @objc func weatherItemButtonTapped() {
         let vc = FirstHomeDetailViewController2()
-        transition(vc, transitionStyle: .presentFull)
+        self.tabBarController?.tabBar.isHidden = true
+        transition(vc, transitionStyle: .push)
     }
     
     @objc func favoriteItemButtonTapped() {
@@ -47,6 +58,32 @@ final class HomeViewController: BaseViewController {
     }
     
     @objc func notOftenItemButtonTapped() {
+        
+    }
+    
+    func fetchRealm() {
+        
+    }
+    
+    func checkFirstRun() {
+        if UserDefaults.standard.bool(forKey: "FirstRun") == false {
+            
+            let outer = Category(title: "아우터")
+            let top = Category(title: "상의")
+            let bottom = Category(title: "하의")
+            let shoes = Category(title: "신발")
+            let acc = Category(title: "악세")
+            let other = Category(title: "기타")
+            
+            let spring = Season(title: "봄")
+            let summer = Season(title: "여름")
+            let autumn = Season(title: "가을")
+            let winter = Season(title: "겨울")
+            repository.addItem(item: [outer, top, bottom, shoes, acc, other, spring, summer, autumn, winter])
+            
+            print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
+            UserDefaults.standard.set(true, forKey: "FirstRun")
+        }
         
     }
     

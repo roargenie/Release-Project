@@ -16,13 +16,15 @@ final class FirstHomeDetailViewController1: BaseViewController {
         super.viewDidLoad()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        //self.tabBarController?.tabBar.isHidden = true
+    }
     
     
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        
     }
     
     override func setConstraints() {
@@ -33,9 +35,6 @@ final class FirstHomeDetailViewController1: BaseViewController {
          
     }
     
-    @objc func cancelButtonTapped() {
-        self.dismiss(animated: true)
-    }
     
 }
 
@@ -55,7 +54,7 @@ extension FirstHomeDetailViewController1: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ThirdHomeDetailViewController()
         
-        transition(vc, transitionStyle: .presentFull)
+        transition(vc, transitionStyle: .push)
         print(#function, "\(indexPath.item)")
     }
     

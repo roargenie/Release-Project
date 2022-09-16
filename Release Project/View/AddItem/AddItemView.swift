@@ -1,7 +1,7 @@
 
 
 import UIKit
-import Floaty
+
 
 
 final class AddItemView: BaseView {
@@ -13,14 +13,6 @@ final class AddItemView: BaseView {
         view.backgroundColor = .systemBlue
         return view
     }()
-    
-//    let addItemButton: Floaty = {
-//        let view = Floaty()
-//        view.addItem("앨범에서 추가하기", icon: UIImage(systemName: "photo"))
-//
-//        view.openAnimationType = .pop
-//        return view
-//    }()
     
     
     override init(frame: CGRect) {
@@ -39,19 +31,16 @@ final class AddItemView: BaseView {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-//        addItemButton.snp.makeConstraints { make in
-//            make.bottom.trailing.equalTo(self.safeAreaLayoutGuide).offset(-30)
-//            make.width.height.equalTo(30)
-//        }
     }
     
     static func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth: CGFloat = UIScreen.main.bounds.width
-        let itemSize: CGFloat = (deviceWidth - 10) / 2
-        layout.minimumLineSpacing = 10
+        let itemSize: CGFloat = (deviceWidth - 42) / 2
+        layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         layout.headerReferenceSize = CGSize(width: deviceWidth, height: 250)
         layout.scrollDirection = .vertical
         return layout

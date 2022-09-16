@@ -14,11 +14,11 @@ final class FirstHomeDetailView1: BaseView {
         return view
     }()
     
-    let cancelButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
-        return view
-    }()
+//    let cancelButton: UIButton = {
+//        let view = UIButton()
+//        view.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+//        return view
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,20 +29,15 @@ final class FirstHomeDetailView1: BaseView {
     }
     
     override func configureUI() {
-        [collectionView, cancelButton].forEach { self.addSubview($0) }
+        [collectionView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(cancelButton.snp.bottom).offset(16)
-            make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+            make.edges.equalTo(self.safeAreaLayoutGuide)
         }
         
-        cancelButton.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
-            make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
-            make.height.width.equalTo(20)
-        }
+        
     }
     
     static func collectionViewLayout() -> UICollectionViewFlowLayout {

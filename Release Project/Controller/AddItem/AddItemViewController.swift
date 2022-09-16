@@ -1,7 +1,7 @@
 
 
 import UIKit
-import Floaty
+
 
 final class AddItemViewController: BaseViewController {
     
@@ -35,7 +35,7 @@ final class AddItemViewController: BaseViewController {
     
     @objc func addButtonTapped() {
         let vc = AddItemDetailViewController()
-        transition(vc, transitionStyle: .presentFull)
+        transition(vc, transitionStyle: .push)
     }
     
     @objc func listButtonTapped() {

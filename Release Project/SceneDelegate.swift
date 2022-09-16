@@ -20,14 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: scene)
         let mainVC = HomeViewController()
-        //let nav1 = UINavigationController(rootViewController: mainVC)
+        let nav1 = UINavigationController(rootViewController: mainVC)
         let addItemVC = AddItemViewController()
         let nav2 = UINavigationController(rootViewController: addItemVC)
         let diaryVC = DiaryViewController()
         let nav3 = UINavigationController(rootViewController: diaryVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([mainVC, nav2, nav3], animated: true)
+        tabBarController.setViewControllers([nav1, nav2, nav3], animated: true)
         
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
@@ -42,9 +42,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[2].image = UIImage(systemName: "calendar.circle")
             items[2].title = "다이어리"
             
-//            items[3].selectedImage = UIImage(systemName: "calendar.circle.fill")
-//            items[3].image = UIImage(systemName: "calendar.circle")
-//            items[3].title = "일기장"
         }
         
         window?.rootViewController = tabBarController
