@@ -3,7 +3,8 @@
 import UIKit
 
 
-final class ThirdAddItemDetailCollectionViewCell: BaseCollectionViewCell {
+
+final class DetailSeasonCollectionViewCell: BaseCollectionViewCell {
     
     let seasonTagLabel: UILabel = {
         let view = UILabel()

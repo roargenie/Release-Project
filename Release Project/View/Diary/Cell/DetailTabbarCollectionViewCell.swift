@@ -3,9 +3,10 @@
 import UIKit
 
 
-final class ThirdAddItemDetailCollectionViewCell: BaseCollectionViewCell {
+
+final class DetailTabbarCollectionViewCell: BaseCollectionViewCell {
     
-    let seasonTagLabel: UILabel = {
+    let categoryTagLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 18, weight: .bold)
         view.textAlignment = .center
@@ -21,16 +22,16 @@ final class ThirdAddItemDetailCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureUI() {
-        self.addSubview(seasonTagLabel)
-        self.layer.cornerRadius = 20
-        self.layer.borderWidth = 2
+        self.addSubview(categoryTagLabel)
+//        self.layer.cornerRadius = 20
+//        self.layer.borderWidth = 2
     }
     
     override func setConstraints() {
-        seasonTagLabel.snp.makeConstraints { make in
+        categoryTagLabel.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide).inset(4)
         }
     }
-     
+    
     
 }

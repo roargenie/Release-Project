@@ -1,12 +1,19 @@
 
 
 import UIKit
-
+import RealmSwift
 
 final class AddItemViewController: BaseViewController {
     
     var mainView = AddItemView()
     
+    fileprivate let repository = StyleRepository()
+    
+    var clothItemTasks: Results<ClothItem>! {
+        didSet {
+            mainView.collectionView.reloadData()
+        }
+    }
     
     override func loadView() {
         self.view = mainView
@@ -15,6 +22,11 @@ final class AddItemViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        fetchRealm()
     }
     
     override func configureUI() {
@@ -35,6 +47,7 @@ final class AddItemViewController: BaseViewController {
     
     @objc func addButtonTapped() {
         let vc = AddItemDetailViewController()
+        self.tabBarController?.tabBar.isHidden = true
         transition(vc, transitionStyle: .push)
     }
     
@@ -42,20 +55,32 @@ final class AddItemViewController: BaseViewController {
         
     }
     
+    fileprivate func fetchRealm() {
+        clothItemTasks = repository.fetch(ClothItem.self)
+    }
+    
 }
 
 extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return clothItemTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddItemCollectionViewCell.reuseIdentifier, for: indexPath) as? AddItemCollectionViewCell else { return UICollectionViewCell()}
+        let task = clothItemTasks[indexPath.item]
+        
         cell.imageView.backgroundColor = .systemGray3
-        cell.itemLabel.text = "아이템 이름"
+        cell.itemLabel.text = task.itemName
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = SecondHomeDetailViewController()
+        self.tabBarController?.tabBar.isHidden = true
+        transition(vc, transitionStyle: .push)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

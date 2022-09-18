@@ -38,20 +38,22 @@ final class ClothItem: Object {
     @Persisted var itemName: String?
     @Persisted var wornCount: Int = 0
     @Persisted var regDate = Date()
+    @Persisted var isSelected: Bool
     @Persisted var favorite: Bool
     
-    @Persisted var category: Category?
+    @Persisted var category: List<Category>
     @Persisted var season: List<Season>
     
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(itemName: String?, regDate: Date, category: Category, season: List<Season>) {
+    convenience init(itemName: String?, regDate: Date, category: List<Category>, season: List<Season>) {
         self.init()
         self.itemName = itemName
         self.wornCount = 0
         self.regDate = regDate
         self.category = category
         self.season = season
+        self.isSelected = false
         self.favorite = false
     }
     

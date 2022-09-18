@@ -42,6 +42,8 @@ final class AddItemDetailViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRealm()
+        repository.initCategoryTagIsSelected(item: categoryTasks)
+        repository.initSeasonTagIsSelected(item: seasonTasks)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -66,11 +68,11 @@ final class AddItemDetailViewController: BaseViewController {
     }
     
     @objc func saveButtonTapped() {
-        let selectedCategoryTag = repository.isSelectedTrueArr(Category.self)
-        let selectedSeasonTag = repository.isSelectedTrueArr(Season.self)
-        let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: selectedCategoryTag, season: selectedSeasonTag)
+        let categoryTagData = repository.addCategoryToClothItem(item: repository.isSelectedTrueArr(Category.self))
+        let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
+        let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: categoryTagData, season: seasonTagData)
         repository.addItem(item: [savedItem])
-        
+        print(categoryTagData)
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -138,32 +140,18 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-//            let cell = collectionView.cellForItem(at: indexPath)
-//            cell?.tag = indexPath.item
             let task = categoryTasks[indexPath.item]
-            repository.categoryTagIsSelected(item: task)
+            
+            repository.initCategoryTagIsSelected(item: categoryTasks)
+            repository.categoryTagisSelected(item: task)
             fetchRealm()
-            print(task)
+            
             print(#function, indexPath.item)
             print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
         } else {
             let task = seasonTasks[indexPath.item]
-            repository.seasonTagIsSelected(item: task)
-            fetchRealm()
-            print(#function, indexPath.item)
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        if indexPath.section == 0 {
-            let task = categoryTasks[indexPath.item]
-            repository.categoryTagIsSelected(item: task)
-            fetchRealm()
             
-        } else {
-            let task = seasonTasks[indexPath.item]
-            repository.seasonTagIsSelected(item: task)
+            repository.seasonTagisSelected(item: task)
             fetchRealm()
             print(#function, indexPath.item)
         }

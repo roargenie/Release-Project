@@ -28,7 +28,7 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     
     let categoryContentLabel: UILabel = {
         let view = UILabel()
-        view.text = "아우터"
+        //view.text = "아우터"
         view.textAlignment = .center
         return view
     }()
@@ -48,7 +48,7 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     
     let seasonContentLabel: UILabel = {
         let view = UILabel()
-        view.text = "봄, 여름"
+        //view.text = "봄, 여름"
         view.textAlignment = .center
         return view
     }()
@@ -68,7 +68,7 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     
     let wornCountContentLabel: UILabel = {
         let view = UILabel()
-        view.text = "5"
+        //view.text = "5"
         view.textAlignment = .center
         return view
     }()

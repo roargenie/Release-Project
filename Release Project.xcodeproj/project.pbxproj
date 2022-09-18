@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */; };
 		F68F00FA28D34E5400B7B349 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00F928D34E5400B7B349 /* Realm */; };
 		F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FB28D34E5400B7B349 /* RealmSwift */; };
 		F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FE28D34E6900B7B349 /* SnapKit */; };
@@ -55,6 +56,7 @@
 		F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */; };
 		F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */; };
 		F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */; };
+		F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */; };
 		F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */; };
 		F6DB7FC528D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */; };
 		F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */; };
@@ -72,6 +74,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAddItemDetailCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDiaryDetailView.swift; sourceTree = "<group>"; };
 		F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFirstTableViewCell.swift; sourceTree = "<group>"; };
 		F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */,
 				F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */,
 				F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */,
+				F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */,
+				F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */,
+				F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */,
 				F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
 				F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */,
@@ -495,6 +502,7 @@
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
 				F6DB7FE028D1EC18004AF264 /* DiarySecondDetailViewController.swift in Sources */,
 				F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */,
+				F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */,
 				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
 				F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */,
 				F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */,

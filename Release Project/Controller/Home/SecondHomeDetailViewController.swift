@@ -1,15 +1,30 @@
 
 
 import UIKit
-
+import RealmSwift
 
 
 final class SecondHomeDetailViewController: BaseViewController {
     
     var mainView = SecondHomeDetailView()
     
+    fileprivate let repository = StyleRepository()
+    
+    var clothItemTasks: Results<ClothItem>! {
+        didSet {
+            mainView.collectionView.reloadData()
+        }
+    }
+    
+    var datatask: ClothItem?
+    
     override func loadView() {
         self.view = mainView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchRealm()
     }
     
     override func viewDidLoad() {
@@ -29,18 +44,23 @@ final class SecondHomeDetailViewController: BaseViewController {
         
     }
     
+    func fetchRealm() {
+        clothItemTasks = repository.fetch(ClothItem.self)
+    }
+    
 }
 
 
 extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return clothItemTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondHomeDetailCollectionViewCell.reuseIdentifier, for: indexPath) as? SecondHomeDetailCollectionViewCell else { return UICollectionViewCell() }
         cell.backgroundColor = .systemMint
+        
         return cell
     }
     
@@ -48,6 +68,19 @@ extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollection
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeDetailCollectionReusableView.identifier, for: indexPath) as! HomeDetailCollectionReusableView
+            
+            if let task = datatask {
+                var seasonArr: [String] = []
+                for i in task.season {
+                    seasonArr.append(i.title)
+                }
+                let seasonStr = seasonArr.joined(separator: ", ")
+                
+                headerView.categoryContentLabel.text = task.category.first?.title
+                headerView.seasonContentLabel.text = seasonStr
+                headerView.wornCountContentLabel.text = String(task.wornCount)
+            }
+            
             return headerView
         default:
             #if DEBUG
