@@ -35,12 +35,6 @@ final class FirstDiaryDetailView: BaseView {
         return view
     }()
     
-    let addImageButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(systemName: "photo"), for: .normal)
-        return view
-    }()
-    
     let textView: UITextView = {
         let view = UITextView()
         view.layer.borderColor = UIColor.systemGray5.cgColor
@@ -67,7 +61,7 @@ final class FirstDiaryDetailView: BaseView {
     }
     
     override func configureUI() {
-        [collectionView, seasonCollectionView, categoryTabbarCollectionView, firstStackView, addImageButton].forEach { self.addSubview($0) }
+        [collectionView, seasonCollectionView, categoryTabbarCollectionView, firstStackView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -95,12 +89,6 @@ final class FirstDiaryDetailView: BaseView {
         imageView.snp.makeConstraints { make in
             make.width.equalTo(firstStackView.snp.width).multipliedBy(0.4)
         }
-        addImageButton.snp.makeConstraints { make in
-            make.width.height.equalTo(30)
-            make.bottom.equalTo(imageView.snp.bottom).offset(-8)
-            make.trailing.equalTo(imageView.snp.trailing).offset(-8)
-        }
-        
         
     }
     

@@ -55,10 +55,9 @@ final class DiaryViewController: BaseViewController {
     
     @objc func plusButtonTapped() {
         let vc = DiaryDetailViewController()
-//        vc.categoryFilterdData = 
+        vc.clothItemTasks = repository.fetch(ClothItem.self)
         self.tabBarController?.tabBar.isHidden = true
         transition(vc, transitionStyle: .push)
-
     }
     
 }
@@ -76,6 +75,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         let task = styleTasks[indexPath.row]
         
         cell.diaryLabel.text = task.contents
+        cell.styleImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
     }

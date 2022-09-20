@@ -10,6 +10,7 @@ final class DiaryTableViewCell: BaseTableViewCell {
         let view = UIImageView()
         view.backgroundColor = .systemGray
         view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.black.cgColor
         return view

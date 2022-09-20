@@ -16,7 +16,13 @@ final class SecondHomeDetailViewController: BaseViewController {
         }
     }
     
-    var datatask: ClothItem?
+    var styleTasks: Results<Style>! {
+        didSet {
+            mainView.collectionView.reloadData()
+        }
+    }
+    
+    var datatask = ClothItem()
     
     override func loadView() {
         self.view = mainView
@@ -46,6 +52,8 @@ final class SecondHomeDetailViewController: BaseViewController {
     
     func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
+        styleTasks = repository.styleContainsClothItemFilter(item: datatask)
+        
     }
     
 }
@@ -54,12 +62,15 @@ final class SecondHomeDetailViewController: BaseViewController {
 extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return clothItemTasks.count
+        return styleTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SecondHomeDetailCollectionViewCell.reuseIdentifier, for: indexPath) as? SecondHomeDetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .systemMint
+        
+        let task = styleTasks[indexPath.item]
+        
+        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
     }
@@ -69,25 +80,25 @@ extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollection
         case UICollectionView.elementKindSectionHeader:
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HomeDetailCollectionReusableView.identifier, for: indexPath) as! HomeDetailCollectionReusableView
             
-            if let task = datatask {
-                var seasonArr: [String] = []
-                for i in task.season {
-                    seasonArr.append(i.title)
-                }
-                let seasonStr = seasonArr.joined(separator: ", ")
-                
-                headerView.categoryContentLabel.text = task.category.first?.title
-                headerView.seasonContentLabel.text = seasonStr
-                headerView.wornCountContentLabel.text = String(task.wornCount)
+            let task = datatask
+            var seasonArr: [String] = []
+            for i in task.season {
+                seasonArr.append(i.title)
             }
+            let seasonStr = seasonArr.joined(separator: ", ")
+            
+            headerView.categoryContentLabel.text = task.category.first?.title
+            headerView.seasonContentLabel.text = seasonStr
+            headerView.wornCountContentLabel.text = String(task.wornCount)
+            headerView.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(datatask.objectId).jpg")
             
             return headerView
         default:
-            #if DEBUG
+        #if DEBUG
             assert(false)
-            #else
+        #else
             return UICollectionReusableView()
-            #endif
+        #endif
         }
     }
 }

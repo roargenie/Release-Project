@@ -46,6 +46,7 @@ final class DiaryDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +71,6 @@ final class DiaryDetailViewController: BaseViewController {
         mainView.seasonCollectionView.dataSource = self
         mainView.categoryTabbarCollectionView.delegate = self
         mainView.categoryTabbarCollectionView.dataSource = self
-        mainView.addImageButton.addTarget(self, action: #selector(addImageButtonTapped), for: .touchUpInside)
     }
     
     override func setConstraints() {
@@ -79,17 +79,18 @@ final class DiaryDetailViewController: BaseViewController {
     
     override func setNavigationBar() {
         let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
-        self.navigationItem.rightBarButtonItems = [saveButton]
+        let cameraButton = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(cameraButtonTapped))
+        self.navigationItem.rightBarButtonItems = [saveButton, cameraButton]
     }
     
     func fetchRealm() {
-        clothItemTasks = repository.fetch(ClothItem.self)
+        //clothItemTasks = repository.testFetch(ClothItem.self) // 아이템 선택시도 페치되고 있음. 이걸 어떻게 처리할건데??????????????? 페치를 안하면 되지않나???????????
         styleTasks = repository.fetch(Style.self)
         seasonTasks = repository.fetch(Season.self)
         categoryTasks = repository.fetch(Category.self)
     }
     
-    @objc func addImageButtonTapped() {
+    @objc func cameraButtonTapped() {
         let picker = YPImagePicker()
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
@@ -108,12 +109,21 @@ final class DiaryDetailViewController: BaseViewController {
     
     @objc func saveButtonTapped() {
         guard let text = mainView.textView.text else { return print("값이 없음") }
+        // 텍스트 없을때 예외처리 해줘야됨
+        
         let clothItemData = repository.addClothItemToStyle(item: repository.isSelectedTrueArr(ClothItem.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
         
         let savedItem = Style(contents: text, regDate: Date(), clothItem: clothItemData, season: seasonTagData)
         
-        repository.addItem(item: [savedItem])
+        // MARK: - 코드 확인 받아보기
+        
+        repository.isSelectedTrueArr(ClothItem.self).forEach {
+            repository.testAdd(style: savedItem, clothItem: $0)
+        }
+        if let image = mainView.imageView.image {
+            FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+        }
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -147,6 +157,7 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
             
             cell.layer.borderWidth = borderWidth
             cell.layer.borderColor = borderColor
+            cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
             
             return cell
         } else if collectionView == mainView.seasonCollectionView {
@@ -159,6 +170,7 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
             let borderColor = task.isSelected ? UIColor.white.cgColor : UIColor.darkGray.cgColor
             
             cell.seasonTagLabel.text = task.title
+            
             cell.seasonTagLabel.textColor = titleColor
             cell.layer.borderColor = borderColor
             cell.backgroundColor = backGroundColor
@@ -193,30 +205,28 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
             switch indexPath.item {
             case 0:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "아우터")
-                print("0")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             case 1:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "상의")
-                print("1")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             case 2:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "하의")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             case 3:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "신발")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             case 4:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "악세")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             case 5:
                 clothItemTasks = repository.clothItemCategoryFilter(query: "기타")
-                print(clothItemTasks)
-                fetchRealm()
+                mainView.collectionView.reloadData()
+                return
             default:
                 break
             }
@@ -246,8 +256,6 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
         }
         
     }
-    
-
     
     
 }

@@ -73,12 +73,15 @@ extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         cell.imageView.backgroundColor = .systemGray3
         cell.itemLabel.text = task.itemName
+        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = SecondHomeDetailViewController()
+        // 데이터 넘겨줘야함.
+        
         self.tabBarController?.tabBar.isHidden = true
         transition(vc, transitionStyle: .push)
     }

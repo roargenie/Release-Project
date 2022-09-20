@@ -2,7 +2,7 @@
 
 import UIKit
 import RealmSwift
-
+import YPImagePicker
 
 
 final class AddItemDetailViewController: BaseViewController {
@@ -64,7 +64,8 @@ final class AddItemDetailViewController: BaseViewController {
     
     override func setNavigationBar() {
         let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
-        self.navigationItem.rightBarButtonItems = [saveButton]
+        let cameraButton = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(cameraButtonTapped))
+        self.navigationItem.rightBarButtonItems = [saveButton, cameraButton]
     }
     
     @objc func saveButtonTapped() {
@@ -72,9 +73,28 @@ final class AddItemDetailViewController: BaseViewController {
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
         let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: categoryTagData, season: seasonTagData)
         repository.addItem(item: [savedItem])
-        print(categoryTagData)
         
+        if let image = mainView.imageView.image {
+            FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+        }
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func cameraButtonTapped() {
+        let picker = YPImagePicker()
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+//                print(photo.fromCamera) // Image source (camera or library)
+//                print(photo.image) // Final image selected by the user
+//                print(photo.originalImage) // original image selected by the user, unfiltered
+//                print(photo.modifiedImage) // Transformed image, can be nil
+//                print(photo.exifMeta) // Print exif meta data of original image.
+//
+                self.mainView.imageView.image = photo.image
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
     }
     
     func fetchRealm() {

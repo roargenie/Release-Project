@@ -15,6 +15,8 @@ final class FirstHomeDetailViewController1: BaseViewController {
         }
     }
     
+    var clothItemTasks: Results<ClothItem>!
+    
     override func loadView() {
         self.view = mainView
     }
@@ -61,7 +63,7 @@ extension FirstHomeDetailViewController1: UICollectionViewDelegate, UICollection
         
         let task = styleTasks[indexPath.item]
         
-        cell.imageView.backgroundColor = .green
+        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         cell.itemLabel.text = task.contents
         return cell
     }
@@ -69,6 +71,7 @@ extension FirstHomeDetailViewController1: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ThirdHomeDetailViewController()
         vc.dataTasks = styleTasks[indexPath.item]
+        
         transition(vc, transitionStyle: .push)
         print(#function, "\(indexPath.item)")
     }

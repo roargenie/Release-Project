@@ -10,6 +10,7 @@ final class DetailTabbarCollectionViewCell: BaseCollectionViewCell {
         let view = UILabel()
         view.font = .systemFont(ofSize: 18, weight: .bold)
         view.textAlignment = .center
+        view.text = "전체"
         return view
     }()
     

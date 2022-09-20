@@ -57,6 +57,7 @@
 		F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */; };
 		F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */; };
 		F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */; };
+		F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8212228DA167F00763183 /* FileManagerHelper.swift */; };
 		F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */; };
 		F6DB7FC528D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */; };
 		F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */; };
@@ -119,6 +120,7 @@
 		F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
 		F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6D8212228DA167F00763183 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 		F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDiaryDetailView.swift; sourceTree = "<group>"; };
 		F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewFirstTableViewCell.swift; sourceTree = "<group>"; };
 		F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewSecondTableViewCell.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */,
 				F6C1F43228CC9C0900B5FD0E /* APIManager.swift */,
+				F6D8212228DA167F00763183 /* FileManagerHelper.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
 				F6C1F45F28CE0D0400B5FD0E /* TagButton.swift in Sources */,
 				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
+				F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */,
 				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */,
 				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,

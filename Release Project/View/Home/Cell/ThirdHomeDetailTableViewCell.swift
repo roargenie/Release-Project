@@ -7,7 +7,9 @@ final class ThirdHomeDetailTableViewCell: BaseTableViewCell {
     
     let clothImageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "shirts.jpeg"))
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
         return view
     }()
     

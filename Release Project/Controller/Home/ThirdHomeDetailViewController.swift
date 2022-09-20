@@ -53,7 +53,7 @@ final class ThirdHomeDetailViewController: BaseViewController {
     
     func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
-        styleTasks = repository.fetch(Style.self)
+        //styleTasks = repository.fetch(Style.self)
     }
     
 }
@@ -70,15 +70,18 @@ extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSou
         
         let task = dataTasks
         var seasonArr: [String] = []
-        
-        for i in task.season {
+        for i in task.clothItem[indexPath.item].season {
             seasonArr.append(i.title)
         }
         let seasonStr = seasonArr.joined(separator: ", ")
         
-        cell.categoryLabel.text = task.clothItem[indexPath.row].category.first?.title
-        cell.seasonLabel.text = seasonStr
-        cell.wornCountLabel.text = String(task.clothItem[indexPath.row].wornCount)
+        
+        // Style 이미지 받아와야함.
+        
+        cell.clothImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.clothItem[indexPath.row].objectId).jpg")
+        cell.categoryLabel.text = "카테고리 : \(task.clothItem[indexPath.row].category.first?.title ?? "선택안함")"
+        cell.seasonLabel.text = "계절 : \(seasonStr)"
+        cell.wornCountLabel.text = "착용횟수 : \(String(task.clothItem[indexPath.row].wornCount))"
         
         return cell
     }

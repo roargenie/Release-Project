@@ -16,8 +16,6 @@ final class StyleRepository {
         return localRealm.objects(table.self).sorted(byKeyPath: "objectId", ascending: true)
     }
     
-    
-    
 //    func filterTag<T: Object>(title: String) -> Results<T> {
 //        return localRealm.objects(T.self).filter("title CONTAINS[c] '\(title)'")
 //    }
@@ -47,10 +45,24 @@ final class StyleRepository {
         let filterdData = task.where {
             $0.category.title == "\(query)"
         }
-//        let data = filterdData.where {
-//            $0.objectId
-//        }
         
+        return filterdData
+    }
+    
+    func clothItemOfStyleSeasonFilter() -> Results<Style> {
+        let task = localRealm.objects(Style.self)
+        let filterData = task.where {
+            $0.clothItem.season.isSelected == true
+        }
+        return filterData
+    }
+    
+    func styleContainsClothItemFilter(item: ClothItem) -> Results<Style> {
+        let task = localRealm.objects(Style.self)
+        
+        let filterdData = task.where {
+            $0.clothItem.objectId == item.objectId
+        }
         return filterdData
     }
     
@@ -58,6 +70,30 @@ final class StyleRepository {
         do {
             try localRealm.write {
                 localRealm.add(item)
+            }
+        } catch {
+            print("error")
+        }
+    }
+    
+    func isSelectedTrue() -> Results<ClothItem> {
+        let task = localRealm.objects(ClothItem.self)
+        
+        let filtered = task.where {
+            $0.isSelected == true
+        }
+        return filtered
+    }
+    
+    func testAdd(style: Style, clothItem: ClothItem) {
+//        let task = ClothItem()
+        
+        do {
+            try localRealm.write {
+                localRealm.add(style)
+                if clothItem.isSelected == true {
+                    clothItem.wornCount += 1
+                }
             }
         } catch {
             print("error")

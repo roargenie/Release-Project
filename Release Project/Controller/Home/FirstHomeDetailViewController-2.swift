@@ -61,7 +61,7 @@ extension FirstHomeDetailViewController2: UICollectionViewDelegate, UICollection
         
         let task = clothItemTasks[indexPath.item]
         
-        cell.imageView.backgroundColor = .systemMint
+        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         cell.itemLabel.text = task.itemName
         
         return cell

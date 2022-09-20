@@ -9,7 +9,7 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "shirts.jpeg"))
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
         return view
     }()
     
