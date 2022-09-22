@@ -9,6 +9,7 @@ final class SecondHomeDetailView: BaseView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SecondHomeDetailCollectionViewCell.self, forCellWithReuseIdentifier: SecondHomeDetailCollectionViewCell.reuseIdentifier)
         view.register(HomeDetailCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeDetailCollectionReusableView.identifier)
+        view.backgroundColor = .white
         return view
     }()
     
@@ -34,10 +35,11 @@ final class SecondHomeDetailView: BaseView {
     static func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth: CGFloat = UIScreen.main.bounds.width
-        let itemSize: CGFloat = (deviceWidth - 10) / 2
+        let itemSize: CGFloat = (deviceWidth - 42) / 2
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.headerReferenceSize = CGSize(width: deviceWidth, height: 400)
         layout.scrollDirection = .vertical
         return layout

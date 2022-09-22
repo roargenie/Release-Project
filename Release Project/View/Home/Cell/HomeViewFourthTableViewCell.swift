@@ -7,7 +7,7 @@ final class HomeViewFourthTableViewCell: BaseTableViewCell {
     
     let outerImageView: CustomImageView = {
         let view = CustomImageView(image: UIImage(named: "Outer.png"))
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
         return view
     }()
     
@@ -28,7 +28,7 @@ final class HomeViewFourthTableViewCell: BaseTableViewCell {
     
     let topImageView: CustomImageView = {
         let view = CustomImageView(image: UIImage(named: "Top.png"))
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
         return view
     }()
     

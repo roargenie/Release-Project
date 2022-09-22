@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */; };
+		F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96928DAF82400B74898 /* WeatherModel.swift */; };
+		F60AC96E28DB05B000B74898 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F60AC96D28DB05B000B74898 /* .gitignore */; };
+		F60AC97228DB063500B74898 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC97128DB063500B74898 /* APIKey.swift */; };
+		F60AC97528DB0CFD00B74898 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F60AC97428DB0CFD00B74898 /* SwiftyJSON */; };
+		F60AC98128DB642900B74898 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = F60AC98028DB642900B74898 /* PanModal */; };
+		F60AC98328DB722F00B74898 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98228DB722F00B74898 /* UIViewController+Extension.swift */; };
+		F60AC98528DB765300B74898 /* AddItemPanModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98428DB765300B74898 /* AddItemPanModalVC.swift */; };
+		F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98628DB769300B74898 /* AddItemPanModalView.swift */; };
+		F60AC98928DB76A600B74898 /* AddItemPanModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */; };
+		F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98D28DC5DA100B74898 /* Extension.swift */; };
+		F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */; };
 		F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */; };
 		F68F00FA28D34E5400B7B349 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00F928D34E5400B7B349 /* Realm */; };
 		F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FB28D34E5400B7B349 /* RealmSwift */; };
@@ -14,7 +26,6 @@
 		F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010128D34E7800B7B349 /* YPImagePicker */; };
 		F68F010528D34E8800B7B349 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010428D34E8800B7B349 /* Alamofire */; };
 		F68F010828D34E9600B7B349 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010728D34E9600B7B349 /* FSCalendar */; };
-		F68F010B28D34EA800B7B349 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010A28D34EA800B7B349 /* Tabman */; };
 		F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */; };
 		F68F011128D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */; };
 		F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */; };
@@ -75,6 +86,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		F60AC96928DAF82400B74898 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		F60AC96D28DB05B000B74898 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F60AC97128DB063500B74898 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		F60AC98228DB722F00B74898 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		F60AC98428DB765300B74898 /* AddItemPanModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalVC.swift; sourceTree = "<group>"; };
+		F60AC98628DB769300B74898 /* AddItemPanModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalView.swift; sourceTree = "<group>"; };
+		F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalTableViewCell.swift; sourceTree = "<group>"; };
+		F60AC98D28DC5DA100B74898 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -144,8 +165,9 @@
 			files = (
 				F68F010528D34E8800B7B349 /* Alamofire in Frameworks */,
 				F68F010828D34E9600B7B349 /* FSCalendar in Frameworks */,
-				F68F010B28D34EA800B7B349 /* Tabman in Frameworks */,
+				F60AC97528DB0CFD00B74898 /* SwiftyJSON in Frameworks */,
 				F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */,
+				F60AC98128DB642900B74898 /* PanModal in Frameworks */,
 				F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */,
 				F68F00FA28D34E5400B7B349 /* Realm in Frameworks */,
 				F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */,
@@ -155,6 +177,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F60AC97028DB062800B74898 /* Key */ = {
+			isa = PBXGroup;
+			children = (
+				F60AC97128DB063500B74898 /* APIKey.swift */,
+			);
+			path = Key;
+			sourceTree = "<group>";
+		};
 		F68F011428D3988F00B7B349 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +195,7 @@
 		F6C1F3CC28CC971B00B5FD0E = {
 			isa = PBXGroup;
 			children = (
+				F60AC96D28DB05B000B74898 /* .gitignore */,
 				F6C1F3D728CC971B00B5FD0E /* Release Project */,
 				F6C1F3D628CC971B00B5FD0E /* Products */,
 			);
@@ -181,12 +212,13 @@
 		F6C1F3D728CC971B00B5FD0E /* Release Project */ = {
 			isa = PBXGroup;
 			children = (
+				F60AC97028DB062800B74898 /* Key */,
 				F6C1F3EC28CC975800B5FD0E /* Model */,
-				F6C1F3ED28CC977B00B5FD0E /* View */,
-				F6C1F3EE28CC978000B5FD0E /* Controller */,
 				F6C1F3F028CC97A100B5FD0E /* Manager */,
 				F6C1F3EF28CC979B00B5FD0E /* Extension */,
 				F6C1F3F128CC97B200B5FD0E /* Utility */,
+				F6C1F3ED28CC977B00B5FD0E /* View */,
+				F6C1F3EE28CC978000B5FD0E /* Controller */,
 				F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */,
 				F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */,
 				F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */,
@@ -200,6 +232,7 @@
 		F6C1F3EC28CC975800B5FD0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F60AC96928DAF82400B74898 /* WeatherModel.swift */,
 				F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */,
 				F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */,
 			);
@@ -229,8 +262,10 @@
 		F6C1F3EF28CC979B00B5FD0E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F60AC98D28DC5DA100B74898 /* Extension.swift */,
 				F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */,
 				F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */,
+				F60AC98228DB722F00B74898 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,9 +273,9 @@
 		F6C1F3F028CC97A100B5FD0E /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */,
 				F6C1F43228CC9C0900B5FD0E /* APIManager.swift */,
 				F6D8212228DA167F00763183 /* FileManagerHelper.swift */,
+				F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -287,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */,
+				F60AC98428DB765300B74898 /* AddItemPanModalVC.swift */,
 				F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */,
 			);
 			path = AddItem;
@@ -307,6 +343,7 @@
 			children = (
 				F6C1F44128CCC59100B5FD0E /* Cell */,
 				F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */,
+				F60AC98628DB769300B74898 /* AddItemPanModalView.swift */,
 				F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */,
 			);
 			path = AddItem;
@@ -329,9 +366,11 @@
 				F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */,
 				F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */,
 				F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */,
+				F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */,
 				F6DB7FC428D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift */,
 				F6DB7FC628D0AA74004AF264 /* HomeViewSecondTableViewCell.swift */,
 				F6DB7FC828D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift */,
+				F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */,
 				F6DB7FCA28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift */,
 				F6DB7FCC28D0C4FF004AF264 /* ReusableHeaderView.swift */,
 				F6DB7FD228D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift */,
@@ -343,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */,
+				F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */,
 				F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */,
 				F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */,
 				F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */,
@@ -396,7 +436,8 @@
 				F68F010128D34E7800B7B349 /* YPImagePicker */,
 				F68F010428D34E8800B7B349 /* Alamofire */,
 				F68F010728D34E9600B7B349 /* FSCalendar */,
-				F68F010A28D34EA800B7B349 /* Tabman */,
+				F60AC97428DB0CFD00B74898 /* SwiftyJSON */,
+				F60AC98028DB642900B74898 /* PanModal */,
 			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
@@ -432,7 +473,8 @@
 				F68F010028D34E7800B7B349 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				F68F010328D34E8700B7B349 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F68F010628D34E9600B7B349 /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				F68F010928D34EA800B7B349 /* XCRemoteSwiftPackageReference "Tabman" */,
+				F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
@@ -448,6 +490,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60AC96E28DB05B000B74898 /* .gitignore in Resources */,
 				F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */,
 				F6C1F3E228CC971E00B5FD0E /* Assets.xcassets in Resources */,
 				F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */,
@@ -461,11 +504,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F60AC98328DB722F00B74898 /* UIViewController+Extension.swift in Sources */,
 				F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */,
 				F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */,
 				F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
 				F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */,
+				F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */,
 				F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */,
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
@@ -476,6 +521,7 @@
 				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
+				F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */,
 				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
 				F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */,
 				F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */,
@@ -494,6 +540,7 @@
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
+				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
 				F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */,
 				F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */,
@@ -502,20 +549,25 @@
 				F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */,
 				F6DB7FE228D1EC26004AF264 /* SecondDiaryDetailView.swift in Sources */,
 				F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */,
+				F60AC98928DB76A600B74898 /* AddItemPanModalTableViewCell.swift in Sources */,
 				F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */,
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
 				F6DB7FE028D1EC18004AF264 /* DiarySecondDetailViewController.swift in Sources */,
 				F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */,
 				F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */,
 				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
+				F60AC97228DB063500B74898 /* APIKey.swift in Sources */,
 				F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */,
+				F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */,
 				F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */,
 				F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */,
 				F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */,
 				F6DB7FD528D0D122004AF264 /* CustomUIView.swift in Sources */,
 				F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */,
+				F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */,
 				F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */,
 				F68F011128D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift in Sources */,
+				F60AC98528DB765300B74898 /* AddItemPanModalVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +801,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F68F00F828D34E5400B7B349 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -789,17 +857,19 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		F68F010928D34EA800B7B349 /* XCRemoteSwiftPackageReference "Tabman" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uias/Tabman.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F60AC97428DB0CFD00B74898 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F60AC98028DB642900B74898 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
 		F68F00F928D34E5400B7B349 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F68F00F828D34E5400B7B349 /* XCRemoteSwiftPackageReference "realm-swift" */;
@@ -829,11 +899,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F68F010628D34E9600B7B349 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
-		};
-		F68F010A28D34EA800B7B349 /* Tabman */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F68F010928D34EA800B7B349 /* XCRemoteSwiftPackageReference "Tabman" */;
-			productName = Tabman;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

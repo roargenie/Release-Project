@@ -6,9 +6,9 @@ import RealmSwift
 
 final class SecondHomeDetailViewController: BaseViewController {
     
-    var mainView = SecondHomeDetailView()
+    private var mainView = SecondHomeDetailView()
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var clothItemTasks: Results<ClothItem>! {
         didSet {
@@ -50,10 +50,9 @@ final class SecondHomeDetailViewController: BaseViewController {
         
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
         styleTasks = repository.styleContainsClothItemFilter(item: datatask)
-        
     }
     
 }

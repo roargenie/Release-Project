@@ -3,15 +3,15 @@
 import UIKit
 import RealmSwift
 import YPImagePicker
-
+import FSCalendar
 
 final class DiaryViewController: BaseViewController {
     
-    var mainView = DiaryView()
+    private var mainView = DiaryView()
     
-    var pickedImage: UIImage?
+    private var pickedImage: UIImage?
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var styleTasks: Results<Style>! {
         didSet {
@@ -44,7 +44,7 @@ final class DiaryViewController: BaseViewController {
         
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         styleTasks = repository.fetch(Style.self)
     }
     
@@ -53,7 +53,7 @@ final class DiaryViewController: BaseViewController {
         self.navigationItem.rightBarButtonItems = [plusButton]
     }
     
-    @objc func plusButtonTapped() {
+    @objc private func plusButtonTapped() {
         let vc = DiaryDetailViewController()
         vc.clothItemTasks = repository.fetch(ClothItem.self)
         self.tabBarController?.tabBar.isHidden = true
@@ -75,6 +75,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         let task = styleTasks[indexPath.row]
         
         cell.diaryLabel.text = task.contents
+        
         cell.styleImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
@@ -88,11 +89,21 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderView.identifier) as? CustomHeaderView else { return UIView() }
-        
-        
+        headerView.calendar.delegate = self
+        headerView.calendar.dataSource = self
         return headerView
     }
     
-    
 }
 
+extension DiaryViewController: FSCalendarDelegate, FSCalendarDataSource {
+    
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return repository.fetchDateFilter(date: date).count
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        styleTasks = repository.fetchDateFilter(date: date)
+    }
+    
+}

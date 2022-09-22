@@ -10,12 +10,12 @@ final class DetailTabbarCollectionViewCell: BaseCollectionViewCell {
         let view = UILabel()
         view.font = .systemFont(ofSize: 18, weight: .bold)
         view.textAlignment = .center
-        view.text = "전체"
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
     }
     
     required init?(coder: NSCoder) {
@@ -24,8 +24,8 @@ final class DetailTabbarCollectionViewCell: BaseCollectionViewCell {
     
     override func configureUI() {
         self.addSubview(categoryTagLabel)
-//        self.layer.cornerRadius = 20
-//        self.layer.borderWidth = 2
+        self.layer.cornerRadius = 15
+        self.clipsToBounds = true
     }
     
     override func setConstraints() {

@@ -8,18 +8,19 @@ final class DiaryTableViewCell: BaseTableViewCell {
     
     let styleImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .systemGray
-        view.layer.cornerRadius = 20
+        view.backgroundColor = .clear
+        view.layer.cornerRadius = 15
         view.clipsToBounds = true
-        view.layer.borderWidth = 2
-        view.layer.borderColor = UIColor.black.cgColor
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.darkGray.cgColor
         return view
     }()
     
     let diaryLabel: UILabel = {
         let view = UILabel()
         view.numberOfLines = 0
-        view.text = "dsdfsdfsdfsdfsdf"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         return view
     }()
     

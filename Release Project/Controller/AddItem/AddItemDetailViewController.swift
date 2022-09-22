@@ -8,14 +8,13 @@ import YPImagePicker
 final class AddItemDetailViewController: BaseViewController {
     
     // MARK: - 열거형 사용해보기
-    enum TagSection: Int {
+    private enum TagSection: Int {
         case category = 0, season
-
     }
     
-    var mainView = AddItemDetailView()
+    private var mainView = AddItemDetailView()
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var categoryTasks: Results<Category>! {
         didSet {
@@ -28,6 +27,8 @@ final class AddItemDetailViewController: BaseViewController {
             mainView.collectionView.reloadData()
         }
     }
+    
+    var dataSendClosure: ((Results<ClothItem>) -> Void)?
     
     
     override func loadView() {
@@ -50,6 +51,7 @@ final class AddItemDetailViewController: BaseViewController {
         super.viewDidDisappear(animated)
         repository.initCategoryTagIsSelected(item: categoryTasks)
         repository.initSeasonTagIsSelected(item: seasonTasks)
+        _ = dataSendClosure?(repository.fetch(ClothItem.self))
         fetchRealm()
     }
     
@@ -68,19 +70,18 @@ final class AddItemDetailViewController: BaseViewController {
         self.navigationItem.rightBarButtonItems = [saveButton, cameraButton]
     }
     
-    @objc func saveButtonTapped() {
+    @objc private func saveButtonTapped() {
         let categoryTagData = repository.addCategoryToClothItem(item: repository.isSelectedTrueArr(Category.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
         let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: categoryTagData, season: seasonTagData)
         repository.addItem(item: [savedItem])
-        
         if let image = mainView.imageView.image {
             FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
         }
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func cameraButtonTapped() {
+    @objc private func cameraButtonTapped() {
         let picker = YPImagePicker()
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
@@ -97,7 +98,7 @@ final class AddItemDetailViewController: BaseViewController {
         present(picker, animated: true, completion: nil)
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         categoryTasks = repository.fetch(Category.self)
         seasonTasks = repository.fetch(Season.self)
     }
@@ -152,9 +153,7 @@ extension AddItemDetailViewController: UICollectionViewDelegate, UICollectionVie
             cell.backgroundColor = backGroundColor
             
             return cell
-            
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -8,6 +8,8 @@ final class SecondHomeDetailCollectionViewCell: BaseCollectionViewCell {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         return view
     }()
     

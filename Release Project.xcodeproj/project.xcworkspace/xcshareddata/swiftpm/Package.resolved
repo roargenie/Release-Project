@@ -19,12 +19,12 @@
       }
     },
     {
-      "identity" : "pageboy",
+      "identity" : "panmodal",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uias/Pageboy",
+      "location" : "https://github.com/slackhq/PanModal.git",
       "state" : {
-        "revision" : "af8fa81788b893205e1ff42ddd88c5b0b315d7c5",
-        "version" : "3.7.0"
+        "revision" : "b012aecb6b67a8e46369227f893c12544846613f",
+        "version" : "1.2.7"
       }
     },
     {
@@ -73,12 +73,12 @@
       }
     },
     {
-      "identity" : "tabman",
+      "identity" : "swiftyjson",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uias/Tabman.git",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
       "state" : {
-        "revision" : "4a4f7c755b875ffd4f9ef10d67a67883669d2465",
-        "version" : "2.13.0"
+        "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+        "version" : "5.0.1"
       }
     },
     {

@@ -9,11 +9,9 @@ final class AddItemView: BaseView {
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(AddItemCollectionViewCell.self, forCellWithReuseIdentifier: AddItemCollectionViewCell.reuseIdentifier)
-        view.register(AddItemCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: AddItemCollectionReusableView.identifier)
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
         return view
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,11 +35,11 @@ final class AddItemView: BaseView {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth: CGFloat = UIScreen.main.bounds.width
         let itemSize: CGFloat = (deviceWidth - 42) / 2
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 10
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        layout.headerReferenceSize = CGSize(width: deviceWidth, height: 250)
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        //layout.headerReferenceSize = CGSize(width: deviceWidth, height: 250)
         layout.scrollDirection = .vertical
         return layout
     }

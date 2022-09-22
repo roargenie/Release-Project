@@ -16,36 +16,31 @@ final class StyleRepository {
         return localRealm.objects(table.self).sorted(byKeyPath: "objectId", ascending: true)
     }
     
-//    func filterTag<T: Object>(title: String) -> Results<T> {
-//        return localRealm.objects(T.self).filter("title CONTAINS[c] '\(title)'")
-//    }
-    
     func filterTag<T: Object>(_ table: T.Type) -> Results<T> {
         return localRealm.objects(table.self)
     }
     
-//    func categoryTagisSelectedTrueArr() -> Results<Category> {
-//        return localRealm.objects(Category.self).filter("isSelected == true")
-//    }
-//
-//    func seasonTagisSelectedTrueArr() -> Results<Season> {
-//        return localRealm.objects(Season.self).filter("isSelected == true")
-//    }
+    func fetchDateFilter(date: Date) -> Results<Style> {
+        return localRealm.objects(Style.self).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 86400, since: date))
+    }
+    
+    func fetchDateBeforeWeekFilter(date: Date) -> Results<ClothItem> {
+        return localRealm.objects(ClothItem.self).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 604800, since: date))
+    }
+    
+    func fetchregDateFilter(itme: ClothItem) -> Results<ClothItem> {
+        return localRealm.objects(ClothItem.self)
+    }
     
     func isSelectedTrueArr<T: Object>(_ table: T.Type) -> Results<T> {
         return localRealm.objects(table.self).filter("isSelected == true")
     }
-    
-//    func clothItemCategoryFilter(indexPath: IndexPath, query: String) -> Results<Category> {
-//        return localRealm.objects(ClothItem.self)[indexPath.item].category.filter("title == \(query)")
-//    }
     
     func clothItemCategoryFilter(query: String) -> Results<ClothItem> {
         let task = localRealm.objects(ClothItem.self)
         let filterdData = task.where {
             $0.category.title == "\(query)"
         }
-        
         return filterdData
     }
     
@@ -62,6 +57,60 @@ final class StyleRepository {
         
         let filterdData = task.where {
             $0.clothItem.objectId == item.objectId
+        }
+        return filterdData
+    }
+    
+    func spingAndAutumnItemFilter() -> Results<ClothItem> {
+        let task = localRealm.objects(ClothItem.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "봄" || $0.season.title == "가을"
+        }
+        return filterdData
+    }
+    
+    func summerItemFilter() -> Results<ClothItem> {
+        let task = localRealm.objects(ClothItem.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "여름"
+        }
+        return filterdData
+    }
+    
+    func winterItemFilter() -> Results<ClothItem> {
+        let task = localRealm.objects(ClothItem.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "겨울"
+        }
+        return filterdData
+    }
+    
+    func springAndAutumnStyleFilter() -> Results<Style> {
+        let task = localRealm.objects(Style.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "봄" || $0.season.title == "가을"
+        }
+        return filterdData
+    }
+    
+    func summerStyleFilter() -> Results<Style> {
+        let task = localRealm.objects(Style.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "여름"
+        }
+        return filterdData
+    }
+    
+    func winterStyleFilter() -> Results<Style> {
+        let task = localRealm.objects(Style.self)
+        
+        let filterdData = task.where {
+            $0.season.title == "겨울"
         }
         return filterdData
     }
@@ -85,9 +134,7 @@ final class StyleRepository {
         return filtered
     }
     
-    func testAdd(style: Style, clothItem: ClothItem) {
-//        let task = ClothItem()
-        
+    func addItemAndplusCount(style: Style, clothItem: ClothItem) {
         do {
             try localRealm.write {
                 localRealm.add(style)
@@ -194,15 +241,15 @@ final class StyleRepository {
         return task.season
     }
     
-//    func initCategoryTagIsSelected(item: Category) {
-//        do {
-//            try localRealm.write {
-//                item.setValue(false, forKey: "isSelected")
-//            }
-//        } catch {
-//            print("error")
-//        }
-//    }
+    func deleteItem<T: Object>(item: T) {
+        do {
+            try localRealm.write {
+                localRealm.delete(item)
+            }
+        } catch let error {
+            print(error)
+        }
+    }
     
     func initCategoryTagIsSelected(item: Results<Category>) {
         do {

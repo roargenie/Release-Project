@@ -9,8 +9,7 @@ final class FirstDiaryDetailView: BaseView {
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: DetailCollectionViewCell.reuseIdentifier)
-        
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .white
         return view
     }()
     
@@ -18,27 +17,37 @@ final class FirstDiaryDetailView: BaseView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: seasonCollectionViewLayout())
         view.register(DetailSeasonCollectionViewCell.self, forCellWithReuseIdentifier: DetailSeasonCollectionViewCell.reuseIdentifier)
         view.register(FirstAddItemDetailCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FirstAddItemDetailCollectionReusableView.identifier)
+        view.backgroundColor = .white
         return view
     }()
     
     let categoryTabbarCollectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: categoryTabbarCollectionViewLayout())
         view.register(DetailTabbarCollectionViewCell.self, forCellWithReuseIdentifier: DetailTabbarCollectionViewCell.reuseIdentifier)
-        
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
     
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .clear
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
     
     let textView: UITextView = {
         let view = UITextView()
-        view.layer.borderColor = UIColor.systemGray5.cgColor
-        view.layer.borderWidth = 2
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.backgroundColor = .white
         return view
     }()
     
@@ -50,7 +59,6 @@ final class FirstDiaryDetailView: BaseView {
         view.distribution = .fill
         return view
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -79,7 +87,7 @@ final class FirstDiaryDetailView: BaseView {
             make.top.equalTo(seasonCollectionView.snp.bottom)
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
 //            make.bottom.equalTo(collectionView.snp.top)
-            make.height.equalTo(40)
+            make.height.equalTo(48)
         }
         
         firstStackView.snp.makeConstraints { make in
@@ -111,9 +119,9 @@ final class FirstDiaryDetailView: BaseView {
         let itemSize: CGFloat = (deviceWidth - 50) / 4
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        layout.itemSize = CGSize(width: itemSize, height: 50)
-        layout.headerReferenceSize = CGSize(width: deviceWidth, height: 75)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 16, bottom: 4, right: 16)
+        layout.itemSize = CGSize(width: itemSize, height: 42)
+        layout.headerReferenceSize = CGSize(width: deviceWidth, height: 65)
         layout.scrollDirection = .vertical
         return layout
     }
@@ -124,7 +132,7 @@ final class FirstDiaryDetailView: BaseView {
         let itemSize: CGFloat = (deviceWidth - 50) / 4
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4)
         layout.itemSize = CGSize(width: itemSize, height: 32)
         //layout.headerReferenceSize = CGSize(width: deviceWidth, height: 75)
         layout.scrollDirection = .horizontal

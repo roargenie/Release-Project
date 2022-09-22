@@ -2,12 +2,15 @@
 
 import UIKit
 import RealmSwift
+import PanModal
+
+
 
 final class AddItemViewController: BaseViewController {
     
     var mainView = AddItemView()
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var clothItemTasks: Results<ClothItem>! {
         didSet {
@@ -15,18 +18,23 @@ final class AddItemViewController: BaseViewController {
         }
     }
     
+    var categoryTasks: Results<Category>!
+    
+    
     override func loadView() {
         self.view = mainView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        fetchRealm()
+        print(#function)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        fetchRealm()
+        mainView.collectionView.reloadData()
+        print(#function)
     }
     
     override func configureUI() {
@@ -47,16 +55,26 @@ final class AddItemViewController: BaseViewController {
     
     @objc func addButtonTapped() {
         let vc = AddItemDetailViewController()
+        vc.dataSendClosure = { data in
+            self.clothItemTasks = data
+        }
         self.tabBarController?.tabBar.isHidden = true
         transition(vc, transitionStyle: .push)
     }
     
     @objc func listButtonTapped() {
-        
+        let vc = AddItemPanModalVC()
+        vc.categoryTasks = categoryTasks
+        vc.dataSendClosure = { data in
+            self.clothItemTasks = data
+        }
+        presentPanModal(vc)
     }
     
-    fileprivate func fetchRealm() {
+    private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
+        categoryTasks = repository.fetch(Category.self)
+        print(#function)
     }
     
 }
@@ -71,8 +89,6 @@ extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataS
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddItemCollectionViewCell.reuseIdentifier, for: indexPath) as? AddItemCollectionViewCell else { return UICollectionViewCell()}
         let task = clothItemTasks[indexPath.item]
         
-        cell.imageView.backgroundColor = .systemGray3
-        cell.itemLabel.text = task.itemName
         cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
@@ -84,20 +100,6 @@ extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataS
         
         self.tabBarController?.tabBar.isHidden = true
         transition(vc, transitionStyle: .push)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: AddItemCollectionReusableView.identifier, for: indexPath) as! AddItemCollectionReusableView
-            return headerView
-        default:
-            #if DEBUG
-            assert(false)
-            #else
-            return UICollectionReusableView()
-            #endif
-        }
     }
     
 }

@@ -6,8 +6,10 @@ import UIKit
 final class ThirdHomeDetailView: BaseView {
     
     let tableView: UITableView = {
-        let view = UITableView(frame: .zero, style: .plain)
+        let view = UITableView(frame: .zero, style: .grouped)
         view.register(ThirdHomeDetailTableViewCell.self, forCellReuseIdentifier: ThirdHomeDetailTableViewCell.reuseIdentifier)
+        view.register(ThirdHomeDetailCustomHeaderView.self, forHeaderFooterViewReuseIdentifier: ThirdHomeDetailCustomHeaderView.identifier)
+        view.backgroundColor = .white
         view.separatorInset = .zero
         return view
     }()

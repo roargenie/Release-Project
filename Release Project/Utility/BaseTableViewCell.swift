@@ -9,6 +9,7 @@ class BaseTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureUI()
         setConstraints()
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {

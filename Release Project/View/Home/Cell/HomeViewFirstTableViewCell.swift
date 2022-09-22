@@ -7,19 +7,25 @@ import UIKit
 final class HomeViewFirstTableViewCell: BaseTableViewCell {
     
     let weatherImageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "Rain.png"))
+        let view = UIImageView()
         view.contentMode = .scaleToFill
         //view.backgroundColor = .gray
+        return view
+    }()
+    
+    let tempLabel: UILabel = {
+        let view = UILabel()
+        view.textAlignment = .center
+        view.textColor = .black
+        view.font = .systemFont(ofSize: 40, weight: .heavy)
         return view
     }()
     
     let weatherLabel: UILabel = {
         let view = UILabel()
         view.textAlignment = .center
-        view.textColor = .black
-        view.numberOfLines = 0
-        view.font = .systemFont(ofSize: 14, weight: .bold)
-        view.text = "오늘의 날씨는 주륵주륵 비가내려요.\n최고 온도는 27도 최저 온도는 24도 입니다.\n우산을 꼭 챙기세요☔️"
+        view.textColor = .gray
+        view.font = .systemFont(ofSize: 13, weight: .bold)
         return view
     }()
     
@@ -33,7 +39,7 @@ final class HomeViewFirstTableViewCell: BaseTableViewCell {
     }
     
     override func configureUI() {
-        [weatherImageView, weatherLabel].forEach { self.contentView.addSubview($0) }
+        [weatherImageView, weatherLabel, tempLabel].forEach { self.contentView.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -42,11 +48,14 @@ final class HomeViewFirstTableViewCell: BaseTableViewCell {
             make.width.equalTo(self.snp.width).multipliedBy(0.6)
             make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-40)
         }
-        weatherLabel.snp.makeConstraints { make in
-            make.top.equalTo(weatherImageView.snp.centerY)
-            make.leading.equalTo(self.safeAreaLayoutGuide).offset(16)
-            make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-70)
+        tempLabel.snp.makeConstraints { make in
+            make.leading.equalTo(self.safeAreaLayoutGuide).offset(36)
             make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-16)
+            make.width.equalTo(80)
+        }
+        weatherLabel.snp.makeConstraints { make in
+            make.leading.equalTo(tempLabel.snp.trailing).offset(4)
+            make.bottom.equalTo(tempLabel.snp.bottom)
         }
     }
     

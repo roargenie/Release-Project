@@ -16,9 +16,9 @@ class CustomUIView: UIView {
     }
     
     func configureUI() {
-        backgroundColor = .systemGray4
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.black.cgColor
+        backgroundColor = .white
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.darkGray.cgColor
         layer.cornerRadius = 20
         clipsToBounds = true
     }

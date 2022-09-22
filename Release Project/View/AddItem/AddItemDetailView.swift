@@ -10,6 +10,7 @@ final class AddItemDetailView: BaseView {
         view.register(FirstAddItemDetailCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FirstAddItemDetailCollectionReusableView.identifier)
         view.register(SecondAddItemDetailCollectionViewCell.self, forCellWithReuseIdentifier: SecondAddItemDetailCollectionViewCell.reuseIdentifier)
         view.register(ThirdAddItemDetailCollectionViewCell.self, forCellWithReuseIdentifier: ThirdAddItemDetailCollectionViewCell.reuseIdentifier)
+        view.backgroundColor = .white
         
         return view
     }()
@@ -17,7 +18,11 @@ final class AddItemDetailView: BaseView {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
     

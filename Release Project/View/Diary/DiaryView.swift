@@ -10,6 +10,7 @@ final class DiaryView: BaseView {
         view.register(DiaryTableViewCell.self, forCellReuseIdentifier: DiaryTableViewCell.reuseIdentifier)
         view.register(CustomHeaderView.self, forHeaderFooterViewReuseIdentifier: CustomHeaderView.identifier)
         view.separatorInset = .zero
+        view.backgroundColor = .white
         return view
     }()
     

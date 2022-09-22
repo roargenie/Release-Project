@@ -5,15 +5,17 @@ import RealmSwift
 
 final class FirstHomeDetailViewController1: BaseViewController {
     
-    var mainView = FirstHomeDetailView1()
+    private var mainView = FirstHomeDetailView1()
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var styleTasks: Results<Style>! {
         didSet {
             mainView.collectionView.reloadData()
         }
     }
+    
+    var weatherData = WeatherModel()
     
     var clothItemTasks: Results<ClothItem>!
     
@@ -45,8 +47,8 @@ final class FirstHomeDetailViewController1: BaseViewController {
          
     }
     
-    func fetchRealm() {
-        styleTasks = repository.fetch(Style.self)
+    private func fetchRealm() {
+        styleTasks = weatherData.weatherStyle(temp: weatherData.temp)
     }
     
     
@@ -64,7 +66,7 @@ extension FirstHomeDetailViewController1: UICollectionViewDelegate, UICollection
         let task = styleTasks[indexPath.item]
         
         cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
-        cell.itemLabel.text = task.contents
+        //cell.itemLabel.text = task.contents
         return cell
     }
     

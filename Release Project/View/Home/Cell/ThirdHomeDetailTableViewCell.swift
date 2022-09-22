@@ -15,24 +15,29 @@ final class ThirdHomeDetailTableViewCell: BaseTableViewCell {
     
     let categoryLabel: UILabel = {
         let view = UILabel()
-        view.text = "카테고리 : 아우터"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         return view
     }()
     
     let seasonLabel: UILabel = {
         let view = UILabel()
-        view.text = "계절 : 가을, 겨울"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         return view
     }()
     
     let wornCountLabel: UILabel = {
         let view = UILabel()
-        view.text = "착용횟수 : 4"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         return view
     }()
     
     let regDateLabel: UILabel = {
         let view = UILabel()
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.text = "등록일 : 2022.07.09"
         return view
     }()

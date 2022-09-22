@@ -6,9 +6,9 @@ import RealmSwift
 
 final class ThirdHomeDetailViewController: BaseViewController {
     
-    var mainView = ThirdHomeDetailView()
+    private var mainView = ThirdHomeDetailView()
     
-    fileprivate let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     var dataTasks = Style()
     
@@ -41,6 +41,8 @@ final class ThirdHomeDetailViewController: BaseViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.rowHeight = 150
+        mainView.tableView.sectionHeaderHeight = 300
+        mainView.tableView.sectionFooterHeight = 0
     }
     
     override func setConstraints() {
@@ -51,7 +53,7 @@ final class ThirdHomeDetailViewController: BaseViewController {
         
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
         //styleTasks = repository.fetch(Style.self)
     }
@@ -66,6 +68,7 @@ extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ThirdHomeDetailTableViewCell.reuseIdentifier, for: indexPath) as? ThirdHomeDetailTableViewCell else { return UITableViewCell() }
         
         let task = dataTasks
@@ -75,15 +78,24 @@ extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSou
         }
         let seasonStr = seasonArr.joined(separator: ", ")
         
-        
-        // Style 이미지 받아와야함.
-        
         cell.clothImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.clothItem[indexPath.row].objectId).jpg")
         cell.categoryLabel.text = "카테고리 : \(task.clothItem[indexPath.row].category.first?.title ?? "선택안함")"
         cell.seasonLabel.text = "계절 : \(seasonStr)"
         cell.wornCountLabel.text = "착용횟수 : \(String(task.clothItem[indexPath.row].wornCount))"
+        cell.regDateLabel.text = "등록일 : \(task.regDate.formatted())"
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ThirdHomeDetailCustomHeaderView.identifier) as? ThirdHomeDetailCustomHeaderView else { return UIView() }
+        
+        let task = dataTasks
+        
+        headerView.styleImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
+        
+        return headerView
     }
     
 }

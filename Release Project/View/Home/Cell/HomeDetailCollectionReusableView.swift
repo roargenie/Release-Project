@@ -8,8 +8,10 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     static let identifier = "HomeDetailCollectionReusableView"
     
     let imageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "shirts.jpeg"))
+        let view = UIImageView()
         view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         return view
     }()
     
@@ -22,13 +24,16 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     let categoryTitleLable: UILabel = {
         let view = UILabel()
         view.text = "카테고리"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
     
     let categoryContentLabel: UILabel = {
         let view = UILabel()
-        //view.text = "아우터"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
@@ -42,13 +47,17 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     let seasonTitleLabel: UILabel = {
         let view = UILabel()
         view.text = "계절"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
     
     let seasonContentLabel: UILabel = {
         let view = UILabel()
-        //view.text = "봄, 여름"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.adjustsFontSizeToFitWidth = true
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
@@ -62,13 +71,16 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     let wornCountTitleLabel: UILabel = {
         let view = UILabel()
         view.text = "착용횟수"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
     
     let wornCountContentLabel: UILabel = {
         let view = UILabel()
-        //view.text = "5"
+        view.font = .systemFont(ofSize: 15, weight: .bold)
+        view.textColor = .darkGray
         view.textAlignment = .center
         return view
     }()
@@ -130,6 +142,7 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
         seasonContentLabel.snp.makeConstraints { make in
             make.centerY.equalTo(seasonView.snp.centerY).multipliedBy(1.4)
             make.centerX.equalTo(seasonView.snp.centerX)
+            make.width.equalTo(seasonView.snp.width).inset(4)
             make.height.equalTo(seasonView.snp.height).multipliedBy(0.4)
         }
         wornCountTitleLabel.snp.makeConstraints { make in

@@ -8,15 +8,16 @@ final class FirstHomeDetailCollectionViewCell: BaseCollectionViewCell {
     let imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
+        view.layer.cornerRadius = 20
+        view.clipsToBounds = true
         return view
     }()
     
-    let itemLabel: UILabel = {
-        let view = UILabel()
-        view.textAlignment = .center
-        return view
-    }()
-    
+//    let itemLabel: UILabel = {
+//        let view = UILabel()
+//        view.textAlignment = .center
+//        return view
+//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,18 +28,17 @@ final class FirstHomeDetailCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureUI() {
-        [imageView, itemLabel].forEach { self.addSubview($0) }
+        [imageView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         imageView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalTo(self.safeAreaLayoutGuide)
-            make.height.equalTo(self.snp.height).multipliedBy(0.8)
+            make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        itemLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom)
-            make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
-        }
+//        itemLabel.snp.makeConstraints { make in
+//            make.top.equalTo(imageView.snp.bottom)
+//            make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+//        }
     }
     
 }

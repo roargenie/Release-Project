@@ -7,7 +7,11 @@ final class DetailCollectionViewCell: BaseCollectionViewCell {
 
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .clear
+        view.layer.cornerRadius = 15
+        view.clipsToBounds = true
+        view.layer.borderColor = UIColor.lightGray.cgColor
+        view.layer.borderWidth = 1
         return view
     }()
 

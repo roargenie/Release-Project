@@ -4,7 +4,7 @@ import UIKit
 
 
 
-final class AddItemCollectionViewCell: BaseCollectionViewCell {
+final class HomeViewThirdCollectionViewCell: BaseCollectionViewCell {
     
     let imageView: UIImageView = {
         let view = UIImageView()
@@ -13,12 +13,6 @@ final class AddItemCollectionViewCell: BaseCollectionViewCell {
         view.clipsToBounds = true
         return view
     }()
-    
-//    let itemLabel: UILabel = {
-//        let view = UILabel()
-//        view.textAlignment = .center
-//        return view
-//    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,22 +23,15 @@ final class AddItemCollectionViewCell: BaseCollectionViewCell {
     }
     
     override func configureUI() {
-        [imageView].forEach { self.addSubview($0) }
+        self.addSubview(imageView)
     }
     
     override func setConstraints() {
         imageView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-//        itemLabel.snp.makeConstraints { make in
-//            make.top.equalTo(imageView.snp.bottom)
-//            make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
-//        }
     }
     
+    
+    
 }
-
-
-
-
-

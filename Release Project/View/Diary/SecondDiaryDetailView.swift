@@ -9,7 +9,7 @@ final class SecondDiaryDetailView: BaseView {
     let collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: DetailCollectionViewCell.reuseIdentifier)
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .white
         return view
     }()
     
@@ -30,6 +30,7 @@ final class SecondDiaryDetailView: BaseView {
         let view = UITextView()
         view.layer.borderColor = UIColor.systemGray5.cgColor
         view.layer.borderWidth = 2
+        view.backgroundColor = .white
         return view
     }()
     
