@@ -29,15 +29,18 @@ final class DiaryViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchRealm()
+        mainView.calendar.reloadData()
         self.tabBarController?.tabBar.isHidden = false
     }
     
     override func configureUI() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
-        mainView.tableView.rowHeight = 150
+        mainView.tableView.rowHeight = 180
         mainView.tableView.sectionHeaderHeight = 300
         mainView.tableView.sectionFooterHeight = 0
+        mainView.calendar.delegate = self
+        mainView.calendar.dataSource = self
     }
     
     override func setConstraints() {
@@ -45,7 +48,9 @@ final class DiaryViewController: BaseViewController {
     }
     
     private func fetchRealm() {
-        styleTasks = repository.fetch(Style.self)
+        guard let date = mainView.calendar.today else { return }
+        print(date)
+        styleTasks = repository.fetchDateFilter(date: date)
     }
     
     override func setNavigationBar() {
@@ -57,6 +62,7 @@ final class DiaryViewController: BaseViewController {
         let vc = DiaryDetailViewController()
         vc.clothItemTasks = repository.fetch(ClothItem.self)
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
     }
     
@@ -77,22 +83,28 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.diaryLabel.text = task.contents
         
         cell.styleImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
-        
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DiarySecondDetailViewController()
+        let vc = ThirdHomeDetailViewController()
+        vc.dataTasks = styleTasks[indexPath.item]
+        vc.viewStatus = .edit
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderView.identifier) as? CustomHeaderView else { return UIView() }
-        headerView.calendar.delegate = self
-        headerView.calendar.dataSource = self
-        return headerView
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderView.identifier) as? CustomHeaderView else { return UIView() }
+//        headerView.calendar.delegate = self
+//        headerView.calendar.dataSource = self
+//        headerView.calendar.reloadData()
+//        today = headerView.calendar.today
+//
+//        return headerView
+//    }
     
 }
 
@@ -105,5 +117,4 @@ extension DiaryViewController: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         styleTasks = repository.fetchDateFilter(date: date)
     }
-    
 }

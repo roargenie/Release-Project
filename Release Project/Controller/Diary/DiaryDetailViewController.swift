@@ -71,7 +71,7 @@ final class DiaryDetailViewController: BaseViewController {
         mainView.seasonCollectionView.dataSource = self
         mainView.categoryTabbarCollectionView.delegate = self
         mainView.categoryTabbarCollectionView.dataSource = self
-        //hideKeyboard()
+        mainView.textView.delegate = self
     }
     
     override func setConstraints() {
@@ -85,10 +85,13 @@ final class DiaryDetailViewController: BaseViewController {
     }
     
     private func fetchRealm() {
-        //clothItemTasks = repository.testFetch(ClothItem.self) // 아이템 선택시도 페치되고 있음. 이걸 어떻게 처리할건데??????????????? 페치를 안하면 되지않나???????????
         styleTasks = repository.fetch(Style.self)
         seasonTasks = repository.fetch(Season.self)
         categoryTasks = repository.fetch(Category.self)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @objc private func cameraButtonTapped() {
@@ -103,22 +106,22 @@ final class DiaryDetailViewController: BaseViewController {
     }
     
     @objc private func saveButtonTapped() {
-        guard let text = mainView.textView.text else { return print("값이 없음") }
-        // 텍스트 없을때 예외처리 해줘야됨
+        guard let text = mainView.textView.text else { return }
         
         let clothItemData = repository.addClothItemToStyle(item: repository.isSelectedTrueArr(ClothItem.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
-        
-        let savedItem = Style(contents: text, regDate: Date(), clothItem: clothItemData, season: seasonTagData)
-        
-        repository.isSelectedTrueArr(ClothItem.self).forEach {
-            repository.addItemAndplusCount(style: savedItem, clothItem: $0)
+        if !clothItemData.isEmpty && !seasonTagData.isEmpty {
+            let savedItem = Style(contents: text, regDate: Date(), clothItem: clothItemData, season: seasonTagData)
+            repository.isSelectedTrueArr(ClothItem.self).forEach {
+                repository.addItemAndplusCount(style: savedItem, clothItem: $0)
+            }
+            if let image = mainView.imageView.image {
+                FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+            }
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            showAlertMessageNoHandler(title: "태그와 아이템을 선택해주세요!", button: "확인")
         }
-        if let image = mainView.imageView.image {
-            FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
-        }
-        
-        self.navigationController?.popViewController(animated: true)
     }
     
 }
@@ -263,8 +266,19 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             return UICollectionReusableView()
         }
-        
+    }
+}
+
+extension DiaryDetailViewController: UITextViewDelegate {
+    
+    func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
     }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textView.resignFirstResponder()
+        
+    }
     
 }

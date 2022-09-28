@@ -59,6 +59,7 @@ final class AddItemViewController: BaseViewController {
             self.clothItemTasks = data
         }
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
     }
     
@@ -87,8 +88,12 @@ extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddItemCollectionViewCell.reuseIdentifier, for: indexPath) as? AddItemCollectionViewCell else { return UICollectionViewCell()}
-        let task = clothItemTasks[indexPath.item]
         
+        let task = clothItemTasks[indexPath.item]
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.cornerRadius = 20
+        cell.clipsToBounds = true
         cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
         
         return cell
@@ -97,8 +102,10 @@ extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataS
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = SecondHomeDetailViewController()
         // 데이터 넘겨줘야함.
-        
+        vc.datatask = clothItemTasks[indexPath.row]
+        vc.viewStatus = .edit
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
     }
     

@@ -104,10 +104,12 @@ extension AddItemPanModalVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AddItemPanModalTableViewCell.reuseIdentifier, for: indexPath) as? AddItemPanModalTableViewCell else { return UITableViewCell() }
         if indexPath.section == 0 {
             cell.sortTypeLabel.text = "전체"
+            cell.selectionStyle = .none
             return cell
         } else {
             let task = categoryTasks[indexPath.row]
             cell.sortTypeLabel.text = task.title
+            cell.selectionStyle = .none
             return cell
         }
     }

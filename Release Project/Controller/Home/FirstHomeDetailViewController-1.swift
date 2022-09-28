@@ -15,9 +15,9 @@ final class FirstHomeDetailViewController1: BaseViewController {
         }
     }
     
-    var weatherData = WeatherModel()
-    
     var clothItemTasks: Results<ClothItem>!
+    
+    var weatherData = WeatherModel()
     
     override func loadView() {
         self.view = mainView
@@ -36,7 +36,6 @@ final class FirstHomeDetailViewController1: BaseViewController {
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        
     }
     
     override func setConstraints() {
@@ -66,14 +65,15 @@ extension FirstHomeDetailViewController1: UICollectionViewDelegate, UICollection
         let task = styleTasks[indexPath.item]
         
         cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
-        //cell.itemLabel.text = task.contents
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = ThirdHomeDetailViewController()
         vc.dataTasks = styleTasks[indexPath.item]
-        
+        vc.viewStatus = .read
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
         print(#function, "\(indexPath.item)")
     }

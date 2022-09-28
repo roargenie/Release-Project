@@ -15,9 +15,8 @@ extension UIViewController {
         
         switch transitionStyle {
         case .presentFull:
-            let nav = UINavigationController(rootViewController: viewController)
-            viewController.modalPresentationStyle = .fullScreen
-            self.present(nav, animated: true)
+            viewController.modalPresentationStyle = .overCurrentContext
+            self.present(viewController, animated: true)
         case .present:
             self.present(viewController, animated: true)
         case .push:

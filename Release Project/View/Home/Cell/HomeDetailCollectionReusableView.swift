@@ -9,7 +9,9 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         return view
@@ -91,12 +93,6 @@ final class HomeDetailCollectionReusableView: UICollectionReusableView {
         view.spacing = 15
         view.alignment = .fill
         view.distribution = .fillEqually
-        return view
-    }()
-    
-    let cancelButton: UIButton = {
-        let view = UIButton()
-        view.setImage(UIImage(systemName: ""), for: .normal)
         return view
     }()
     

@@ -3,7 +3,9 @@
 import UIKit
 import RealmSwift
 
-
+/**
+- Home -> 아이템 추천 -> 아이템 선택하면 나오는 뷰
+ */
 final class ThirdHomeDetailViewController: BaseViewController {
     
     private var mainView = ThirdHomeDetailView()
@@ -24,13 +26,15 @@ final class ThirdHomeDetailViewController: BaseViewController {
         }
     }
     
+    var viewStatus: DiaryViewStatus = .read
+    
     override func loadView() {
         self.view = mainView
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        fetchRealm()
     }
     
     override func viewDidLoad() {
@@ -50,16 +54,32 @@ final class ThirdHomeDetailViewController: BaseViewController {
     }
     
     override func setNavigationBar() {
-        
+        if viewStatus == .edit {
+            let editButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(editButtonTapped))
+            let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteButtonTapped))
+            navigationItem.rightBarButtonItems = [deleteButton, editButton]
+        }
     }
     
     private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
-        //styleTasks = repository.fetch(Style.self)
+        styleTasks = repository.fetch(Style.self)
+    }
+    
+    @objc func editButtonTapped() {
+        let vc = DiarySecondDetailViewController()
+        vc.datatask = dataTasks
+        transition(vc, transitionStyle: .presentFull)
+    }
+    
+    @objc func deleteButtonTapped() {
+        showAlertMessage(title: "삭제하시겠습니까?", button: "네, 삭제할게요!") { _ in
+            self.repository.deleteStyleItem(item: self.dataTasks)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }
-
 
 extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -83,7 +103,7 @@ extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSou
         cell.seasonLabel.text = "계절 : \(seasonStr)"
         cell.wornCountLabel.text = "착용횟수 : \(String(task.clothItem[indexPath.row].wornCount))"
         cell.regDateLabel.text = "등록일 : \(task.regDate.formatted())"
-        
+        cell.selectionStyle = .none
         return cell
         
     }

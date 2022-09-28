@@ -73,24 +73,23 @@ final class AddItemDetailViewController: BaseViewController {
     @objc private func saveButtonTapped() {
         let categoryTagData = repository.addCategoryToClothItem(item: repository.isSelectedTrueArr(Category.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
-        let savedItem = ClothItem(itemName: "우와", regDate: Date(), category: categoryTagData, season: seasonTagData)
-        repository.addItem(item: [savedItem])
-        if let image = mainView.imageView.image {
-            FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+        if !categoryTagData.isEmpty && !seasonTagData.isEmpty {
+            let savedItem = ClothItem(itemName: "", regDate: Date(), category: categoryTagData, season: seasonTagData)
+            repository.addItem(item: [savedItem])
+            if let image = mainView.imageView.image {
+                FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+            }
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            showAlertMessageNoHandler(title: "태그를 선택해주세요!", button: "확인")
         }
-        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @objc private func cameraButtonTapped() {
         let picker = YPImagePicker()
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
-//                print(photo.fromCamera) // Image source (camera or library)
-//                print(photo.image) // Final image selected by the user
-//                print(photo.originalImage) // original image selected by the user, unfiltered
-//                print(photo.modifiedImage) // Transformed image, can be nil
-//                print(photo.exifMeta) // Print exif meta data of original image.
-//
                 self.mainView.imageView.image = photo.image
             }
             picker.dismiss(animated: true, completion: nil)

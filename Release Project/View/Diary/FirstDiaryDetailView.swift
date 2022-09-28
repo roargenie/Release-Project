@@ -25,6 +25,7 @@ final class FirstDiaryDetailView: BaseView {
         let view = UICollectionView(frame: .zero, collectionViewLayout: categoryTabbarCollectionViewLayout())
         view.register(DetailTabbarCollectionViewCell.self, forCellWithReuseIdentifier: DetailTabbarCollectionViewCell.reuseIdentifier)
         view.backgroundColor = .white
+        view.keyboardDismissMode = .onDrag
         view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.borderWidth = 1
         return view
@@ -32,7 +33,7 @@ final class FirstDiaryDetailView: BaseView {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .clear
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
@@ -81,15 +82,13 @@ final class FirstDiaryDetailView: BaseView {
             make.top.equalTo(firstStackView.snp.bottom)
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
             make.bottom.equalTo(categoryTabbarCollectionView.snp.top)
-            make.height.equalTo(self.snp.height).multipliedBy(0.15)
+            make.height.equalTo(130)
         }
         categoryTabbarCollectionView.snp.makeConstraints { make in
             make.top.equalTo(seasonCollectionView.snp.bottom)
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide)
-//            make.bottom.equalTo(collectionView.snp.top)
             make.height.equalTo(48)
         }
-        
         firstStackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(16)
             make.height.equalTo(self.snp.height).multipliedBy(0.2)

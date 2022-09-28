@@ -7,6 +7,7 @@ final class DetailCollectionViewCell: BaseCollectionViewCell {
 
     let imageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .clear
         view.layer.cornerRadius = 15
         view.clipsToBounds = true

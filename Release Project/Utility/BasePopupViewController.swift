@@ -2,14 +2,15 @@
 
 import UIKit
 
-class BaseViewController: UIViewController {
+
+class BasePopUpViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         setConstraints()
         setNavigationBar()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(red: 0.09957252358, green: 0.09957252358, blue: 0.09957252358, alpha: 0.8)
     }
     
     func configureUI() { }
@@ -26,12 +27,4 @@ class BaseViewController: UIViewController {
         alert.addAction(cancel)
         present(alert, animated: true)
     }
-    
-    func showAlertMessageNoHandler(title: String, button: String) {
-        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
-        let ok = UIAlertAction(title: button, style: .default)
-        alert.addAction(ok)
-        present(alert, animated: true)
-    }
-    
 }

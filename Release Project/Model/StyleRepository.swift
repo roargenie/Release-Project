@@ -5,10 +5,37 @@ import RealmSwift
 
 
 protocol StyleRepositoryType {
-    
+    func fetch<T: Object>(_ table: T.Type) -> Results<T>
+    func filterTag<T: Object>(_ table: T.Type) -> Results<T>
+    func fetchDateFilter(date: Date) -> Results<Style>
+    func fetchDateBeforeWeekFilter<T: Object>(_ item: T.Type) -> Results<T>
+    func fetchregDateFilter(itme: ClothItem) -> Results<ClothItem>
+    func isSelectedTrueArr<T: Object>(_ table: T.Type) -> Results<T>
+    func clothItemCategoryFilter(query: String) -> Results<ClothItem>
+    func clothItemOfStyleSeasonFilter() -> Results<Style>
+    func styleContainsClothItemFilter(item: ClothItem) -> Results<Style>
+    func spingAndAutumnItemFilter() -> Results<ClothItem>
+    func summerStyleFilter() -> Results<Style>
+    func winterStyleFilter() -> Results<Style>
+    func addItem<T: Object>(item: [T])
+    func addItemAndplusCount(style: Style, clothItem: ClothItem)
+    func isSelectedTrue() -> Results<ClothItem>
+    func categoryTagisSelected(item: Category)
+    func seasonTagisSelected(item: Season)
+    func clothItemisSelected(item: ClothItem)
+    func addCategoryToClothItem(item: Results<Category>) -> List<Category>
+    func addSeasonToClothItem(item: Results<Season>) -> List<Season>
+    func addClothItemToStyle(item: Results<ClothItem>) -> List<ClothItem>
+    func addSeasonToStyle(item: Results<Season>) -> List<Season>
+    func updateStyle(item: Style, contents: String)
+    func deleteClothItem(item: ClothItem)
+    func deleteStyleItem(item: Style)
+    func initCategoryTagIsSelected(item: Results<Category>)
+    func initSeasonTagIsSelected(item: Results<Season>)
+    func initClothItemIsSelected(item: Results<ClothItem>)
 }
 
-final class StyleRepository {
+final class StyleRepository: StyleRepositoryType {
     
     let localRealm = try! Realm()
     
@@ -24,8 +51,8 @@ final class StyleRepository {
         return localRealm.objects(Style.self).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 86400, since: date))
     }
     
-    func fetchDateBeforeWeekFilter(date: Date) -> Results<ClothItem> {
-        return localRealm.objects(ClothItem.self).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 604800, since: date))
+    func fetchDateBeforeWeekFilter<T: Object>(_ item: T.Type) -> Results<T> {
+        return localRealm.objects(T.self).filter("regDate >= %@ AND regDate < %@", Date(timeInterval: -604800, since: Date()), Date())
     }
     
     func fetchregDateFilter(itme: ClothItem) -> Results<ClothItem> {
@@ -241,7 +268,33 @@ final class StyleRepository {
         return task.season
     }
     
-    func deleteItem<T: Object>(item: T) {
+    func updateStyle(item: Style, contents: String) {
+        do {
+            try localRealm.write {
+                item.contents = contents
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func deleteClothItem(item: ClothItem) {
+        
+        FileManagerHelper.shared.removeImageFromDocument(fileName: "\(item.objectId).jpg")
+        
+        do {
+            try localRealm.write {
+                localRealm.delete(item)
+            }
+        } catch let error {
+            print(error)
+        }
+    }
+    
+    func deleteStyleItem(item: Style) {
+        
+        FileManagerHelper.shared.removeImageFromDocument(fileName: "\(item.objectId).jpg")
+        
         do {
             try localRealm.write {
                 localRealm.delete(item)

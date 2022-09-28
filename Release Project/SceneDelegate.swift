@@ -21,13 +21,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let mainVC = HomeViewController()
         let nav1 = UINavigationController(rootViewController: mainVC)
+        nav1.navigationBar.tintColor = .black
         let addItemVC = AddItemViewController()
         let nav2 = UINavigationController(rootViewController: addItemVC)
+        nav2.navigationBar.tintColor = .black
         let diaryVC = DiaryViewController()
         let nav3 = UINavigationController(rootViewController: diaryVC)
+        nav3.navigationBar.tintColor = .black
         
         let tabBarController = UITabBarController()
         tabBarController.setViewControllers([nav1, nav2, nav3], animated: true)
+        tabBarController.tabBar.tintColor = .black
         
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "house.fill")
@@ -46,8 +50,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
-        
-        
         
     }
 

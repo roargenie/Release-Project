@@ -22,6 +22,8 @@ final class SecondHomeDetailViewController: BaseViewController {
         }
     }
     
+    var viewStatus: ItemViewStatus = .read
+    
     var datatask = ClothItem()
     
     override func loadView() {
@@ -43,7 +45,12 @@ final class SecondHomeDetailViewController: BaseViewController {
     }
     
     override func setConstraints() {
-        
+        if viewStatus == .edit {
+            let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteButtonTapped))
+            navigationItem.rightBarButtonItems = [deleteButton]
+        } else {
+            
+        }
     }
     
     override func setNavigationBar() {
@@ -53,6 +60,13 @@ final class SecondHomeDetailViewController: BaseViewController {
     private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
         styleTasks = repository.styleContainsClothItemFilter(item: datatask)
+    }
+    
+    @objc func deleteButtonTapped() {
+        showAlertMessage(title: "삭제하시겠습니까?", button: "네, 삭제할게요!") { _ in
+            self.repository.deleteClothItem(item: self.datatask)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
 }

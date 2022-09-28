@@ -8,11 +8,12 @@ final class DiaryTableViewCell: BaseTableViewCell {
     
     let styleImageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .clear
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
         view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.darkGray.cgColor
+        view.layer.borderColor = UIColor.lightGray.cgColor
         return view
     }()
     

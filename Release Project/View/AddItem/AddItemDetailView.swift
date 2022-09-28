@@ -17,7 +17,7 @@ final class AddItemDetailView: BaseView {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .white
         view.layer.cornerRadius = 20
         view.clipsToBounds = true

@@ -8,34 +8,34 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
     
     let weatherStyleButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = .systemBlue
-        view.setTitle("오늘 날씨에 이런 스타일은 어때요?", for: .normal)
+        view.backgroundColor = .black
+        view.setTitle("스타일을 추천받을게요!", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
-        view.titleLabel?.font = .systemFont(ofSize: 12)
-        view.layer.cornerRadius = 15
+        view.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
+        view.layer.cornerRadius = 20
         view.layer.shadowColor = UIColor.gray.cgColor
-        view.layer.shadowOpacity = 0.5
-        view.layer.shadowOffset = CGSize(width: 3, height: 3)
+        view.layer.shadowOpacity = 0.7
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
         return view
     }()
     
     let weatherItemButton: UIButton = {
         let view = UIButton()
-        view.backgroundColor = .systemBlue
-        view.setTitle("오늘 날씨에 이런 아이템은 어때요?", for: .normal)
+        view.backgroundColor = .black
+        view.setTitle("아이템을 추천받을게요!", for: .normal)
         view.setTitleColor(UIColor.white, for: .normal)
-        view.titleLabel?.font = .systemFont(ofSize: 12)
+        view.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         view.layer.cornerRadius = 15
         view.layer.shadowColor = UIColor.gray.cgColor
         view.layer.shadowOpacity = 0.5
-        view.layer.shadowOffset = CGSize(width: 3, height: 3)
+        view.layer.shadowOffset = CGSize(width: 2, height: 2)
         return view
     }()
     
     lazy var stackView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [weatherStyleButton, weatherItemButton])
         view.axis = .horizontal
-        view.spacing = 20
+        view.spacing = 16
         view.alignment = .fill
         view.distribution = .fillEqually
         return view
@@ -56,7 +56,7 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
     override func setConstraints() {
         stackView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide).inset(16)
-            make.height.equalTo(100)
+            //make.height.equalTo(100)
         }
     }
     

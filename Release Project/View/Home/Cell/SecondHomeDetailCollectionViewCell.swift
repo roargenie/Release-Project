@@ -7,14 +7,18 @@ final class SecondHomeDetailCollectionViewCell: BaseCollectionViewCell {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
-        view.layer.cornerRadius = 20
+        view.contentMode = .scaleAspectFill
+        view.layer.borderWidth = 1
         view.clipsToBounds = true
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 20
+        clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {

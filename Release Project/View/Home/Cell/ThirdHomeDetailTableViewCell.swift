@@ -6,8 +6,10 @@ import UIKit
 final class ThirdHomeDetailTableViewCell: BaseTableViewCell {
     
     let clothImageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "shirts.jpeg"))
-        view.contentMode = .scaleToFill
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFill
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.lightGray.cgColor
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
         return view
@@ -38,7 +40,6 @@ final class ThirdHomeDetailTableViewCell: BaseTableViewCell {
         let view = UILabel()
         view.font = .systemFont(ofSize: 15, weight: .bold)
         view.textColor = .darkGray
-        view.text = "등록일 : 2022.07.09"
         return view
     }()
     

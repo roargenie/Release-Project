@@ -6,7 +6,6 @@ import RealmSwift
 import CoreLocation
 
 
-
 final class HomeViewController: BaseViewController {
     
     private var mainView = HomeView()
@@ -17,13 +16,17 @@ final class HomeViewController: BaseViewController {
     
     private let repository = StyleRepository()
     
-    var tasks: Results<ClothItem>! {
+    var clothItemTasks: Results<ClothItem>! {
         didSet {
             mainView.tableView.reloadData()
         }
     }
     
-    var tasks2: Results<ClothItem>!
+    var styleTasks: Results<Style>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     override func loadView() {
         self.view = mainView
@@ -54,6 +57,7 @@ final class HomeViewController: BaseViewController {
         let vc = FirstHomeDetailViewController1()
         vc.weatherData = weatherData
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
     }
     
@@ -61,22 +65,25 @@ final class HomeViewController: BaseViewController {
         let vc = FirstHomeDetailViewController2()
         vc.weatherData = weatherData
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
-    }
-    
-    @objc private func beforeOneWeekStyleButtonTapped() {
-        let vc = FirstHomeDetailViewController1()
-        self.tabBarController?.tabBar.isHidden = true
-        transition(vc, transitionStyle: .push)
-    }
-    
-    @objc private func beforeOneWeekItemButtonTapped() {
-        
     }
     
     func fetchRealm() {
-//        tasks = repository.fetch(ClothItem.self)
-        tasks = repository.fetchDateBeforeWeekFilter(date: <#T##Date#>)
+        clothItemTasks = repository.fetch(ClothItem.self)
+        styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
+    }
+    
+    private func checkPercent(query: String) -> Double {
+        let totalCount = repository.fetch(ClothItem.self).count
+        let itemCount = repository.clothItemCategoryFilter(query: query).count
+        let results = Double(itemCount) / Double(totalCount)
+        return results
+    }
+    
+    private func checkCategoryCount(query: String) -> Double {
+        let count = repository.clothItemCategoryFilter(query: query).count
+        return Double(count)
     }
     
     private func checkFirstRun() {
@@ -118,26 +125,34 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFirstTableViewCell else { return UITableViewCell() }
             cell.tempLabel.text = "\(String(format: "%.0f", weatherData.temp))°"
             cell.weatherLabel.text = "최고:\(String(format: "%.0f", weatherData.temp_max))° / 최저:\(String(format: "%.0f", weatherData.temp_min))°"
-
+            cell.selectionStyle = .none
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewSecondTableViewCell else { return UITableViewCell() }
             cell.weatherStyleButton.addTarget(self, action: #selector(weatherStyleButtonTapped), for: .touchUpInside)
             cell.weatherItemButton.addTarget(self, action: #selector(weatherItemButtonTapped), for: .touchUpInside)
+            cell.selectionStyle = .none
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdTableViewCell else { return UITableViewCell() }
             
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
-            
-//            cell.favoriteItemButton.addTarget(self, action: #selector(beforeOneWeekStyleButtonTapped), for: .touchUpInside)
-//            cell.notOftenItemButton.addTarget(self, action: #selector(beforeOneWeekItemButtonTapped), for: .touchUpInside)
+            cell.collectionView.reloadData()
+            cell.selectionStyle = .none
             return cell
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFourthTableViewCell else { return UITableViewCell() }
             
-            
+            DispatchQueue.main.async {
+                cell.outerPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "아우터"))
+                cell.topPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "상의"))
+                cell.bottomPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "하의"))
+                cell.shoesPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "신발"))
+                cell.accPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "악세"))
+                cell.otherPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "기타"))
+            }
+            cell.selectionStyle = .none
             return cell
         default:
             break
@@ -150,11 +165,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 150
         case 1:
-            return 150
+            return 160
         case 2:
             return 180
         case 3:
-            return 320
+            return 260
         default:
             break
         }
@@ -170,7 +185,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             view.headerLabel.text = "오늘 날씨에 이건 어때요?"
         case 2:
-            view.headerLabel.text = "나의 일주일 모아보기"
+            view.headerLabel.text = "최근 일주일 모아보기"
         case 3:
             view.headerLabel.text = "내 옷장은 이렇답니다"
         default:
@@ -188,21 +203,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        tasks.forEach {
-            tasks2 = repository.fetchDateBeforeWeekFilter(date: $0.regDate)
-        }
-        print("=================\(tasks2.count)")
-        print("\(tasks.count)")
-        return tasks2.count
+        return styleTasks.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewThirdCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdCollectionViewCell else { return UICollectionViewCell() }
         
-        let task = tasks2[indexPath.item]
-        
+        let task = styleTasks[indexPath.item]
         cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
-        
         return cell
     }
     
@@ -268,9 +276,8 @@ extension HomeViewController: CLLocationManagerDelegate {
             
             APIManager.shared.getWeather(lat: center.latitude, lon: center.longitude) { weather in
                 self.weatherData = weather
-                
                 print(weather)
-                self.mainView.tableView.reloadData()
+                self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
             }
         }
     }

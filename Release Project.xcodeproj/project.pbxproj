@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F607355028E3839700AC18C0 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607354F28E3839700AC18C0 /* BasePopupViewController.swift */; };
 		F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */; };
 		F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96928DAF82400B74898 /* WeatherModel.swift */; };
 		F60AC96E28DB05B000B74898 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F60AC96D28DB05B000B74898 /* .gitignore */; };
@@ -20,6 +21,9 @@
 		F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98D28DC5DA100B74898 /* Extension.swift */; };
 		F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */; };
 		F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */; };
+		F689993628E0568100083BBB /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689993528E0568100083BBB /* ProgressBar.swift */; };
+		F689993928E0C62100083BBB /* ViewStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689993828E0C62100083BBB /* ViewStatus.swift */; };
+		F689995B28E1F2A900083BBB /* ProgressBarLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689995A28E1F2A900083BBB /* ProgressBarLabel.swift */; };
 		F68F00FA28D34E5400B7B349 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00F928D34E5400B7B349 /* Realm */; };
 		F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FB28D34E5400B7B349 /* RealmSwift */; };
 		F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FE28D34E6900B7B349 /* SnapKit */; };
@@ -48,21 +52,18 @@
 		F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */; };
 		F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */; };
 		F6C1F42F28CC9BE800B5FD0E /* StyleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */; };
-		F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */; };
 		F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43228CC9C0900B5FD0E /* APIManager.swift */; };
 		F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */; };
 		F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */; };
 		F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */; };
 		F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */; };
 		F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */; };
-		F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */; };
 		F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45228CCE89400B5FD0E /* DiaryView.swift */; };
 		F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */; };
 		F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */; };
 		F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */; };
 		F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */; };
 		F6C1F45D28CE0B9300B5FD0E /* AddItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */; };
-		F6C1F45F28CE0D0400B5FD0E /* TagButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */; };
 		F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */; };
 		F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */; };
 		F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F607354F28E3839700AC18C0 /* BasePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
 		F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailImageTableViewCell.swift; sourceTree = "<group>"; };
 		F60AC96928DAF82400B74898 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F60AC96D28DB05B000B74898 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -97,6 +99,9 @@
 		F60AC98D28DC5DA100B74898 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeasonCollectionViewCell.swift; sourceTree = "<group>"; };
+		F689993528E0568100083BBB /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		F689993828E0C62100083BBB /* ViewStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStatus.swift; sourceTree = "<group>"; };
+		F689995A28E1F2A900083BBB /* ProgressBarLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarLabel.swift; sourceTree = "<group>"; };
 		F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAddItemDetailCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -121,21 +126,18 @@
 		F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+Extension.swift"; sourceTree = "<group>"; };
 		F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModel.swift; sourceTree = "<group>"; };
 		F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRepository.swift; sourceTree = "<group>"; };
-		F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		F6C1F43228CC9C0900B5FD0E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
-		F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemCollectionReusableView.swift; sourceTree = "<group>"; };
 		F6C1F45228CCE89400B5FD0E /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
 		F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		F6C1F45628CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		F6C1F45A28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondHomeDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailView.swift; sourceTree = "<group>"; };
-		F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagButton.swift; sourceTree = "<group>"; };
 		F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailViewController.swift; sourceTree = "<group>"; };
 		F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F6C1F47128D0781200B5FD0E /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
@@ -275,7 +277,6 @@
 			children = (
 				F6C1F43228CC9C0900B5FD0E /* APIManager.swift */,
 				F6D8212228DA167F00763183 /* FileManagerHelper.swift */,
-				F6C1F43028CC9BFE00B5FD0E /* UserDefaultsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -285,8 +286,10 @@
 			children = (
 				F68F011428D3988F00B7B349 /* Constant */,
 				F6C1F46028CE0D0800B5FD0E /* CustomView */,
+				F689993828E0C62100083BBB /* ViewStatus.swift */,
 				F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */,
 				F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */,
+				F607354F28E3839700AC18C0 /* BasePopupViewController.swift */,
 				F6C1F43528CC9E8E00B5FD0E /* BaseTableViewCell.swift */,
 				F6C1F43728CC9ECE00B5FD0E /* BaseCollectionViewCell.swift */,
 			);
@@ -383,7 +386,6 @@
 			children = (
 				F6C1F44228CCC6B200B5FD0E /* AddItemCollectionViewCell.swift */,
 				F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */,
-				F6C1F44828CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift */,
 				F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */,
 				F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */,
 				F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */,
@@ -406,9 +408,10 @@
 		F6C1F46028CE0D0800B5FD0E /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F45E28CE0D0400B5FD0E /* TagButton.swift */,
 				F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */,
 				F6DB7FD428D0D122004AF264 /* CustomUIView.swift */,
+				F689995A28E1F2A900083BBB /* ProgressBarLabel.swift */,
+				F689993528E0568100083BBB /* ProgressBar.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -514,7 +517,6 @@
 				F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */,
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
-				F6C1F45F28CE0D0400B5FD0E /* TagButton.swift in Sources */,
 				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
 				F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */,
 				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */,
@@ -523,12 +525,14 @@
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
 				F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */,
 				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
+				F689995B28E1F2A900083BBB /* ProgressBarLabel.swift in Sources */,
 				F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */,
 				F6C1F43D28CCC03C00B5FD0E /* AddItemView.swift in Sources */,
 				F6C1F42F28CC9BE800B5FD0E /* StyleRepository.swift in Sources */,
 				F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */,
 				F6C1F45D28CE0B9300B5FD0E /* AddItemDetailView.swift in Sources */,
 				F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */,
+				F689993928E0C62100083BBB /* ViewStatus.swift in Sources */,
 				F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */,
 				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
 				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
@@ -538,6 +542,7 @@
 				F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */,
 				F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */,
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
+				F689993628E0568100083BBB /* ProgressBar.swift in Sources */,
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
@@ -553,14 +558,13 @@
 				F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */,
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
 				F6DB7FE028D1EC18004AF264 /* DiarySecondDetailViewController.swift in Sources */,
-				F6C1F43128CC9BFE00B5FD0E /* UserDefaultsManager.swift in Sources */,
 				F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */,
 				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
 				F60AC97228DB063500B74898 /* APIKey.swift in Sources */,
+				F607355028E3839700AC18C0 /* BasePopupViewController.swift in Sources */,
 				F6C1F41028CC9A5700B5FD0E /* HomeViewController.swift in Sources */,
 				F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */,
 				F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */,
-				F6C1F44928CCCDBD00B5FD0E /* AddItemCollectionReusableView.swift in Sources */,
 				F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */,
 				F6DB7FD528D0D122004AF264 /* CustomUIView.swift in Sources */,
 				F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */,
@@ -713,13 +717,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Release Project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "오늘 뭐입지?";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치권한";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 정보를 보여주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "동영상";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "갤러리 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -728,6 +732,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -748,13 +753,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Release Project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "오늘 뭐입지?";
 				INFOPLIST_KEY_NSCameraUsageDescription = "카메라";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "위치권한";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 정보를 보여주기 위해 권한이 필요합니다.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "동영상";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "갤러리 권한";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -763,6 +768,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -5,12 +5,6 @@ import UIKit
 
 final class SecondAddItemDetailCollectionViewCell: BaseCollectionViewCell {
     
-//    let categoryTagButton: TagButton = {
-//        let view = TagButton()
-//        //view.setTitle("Outer", for: .normal)
-//        return view
-//    }()
-    
     let categoryTagLabel: UILabel = {
         let view = UILabel()
         view.font = .systemFont(ofSize: 18, weight: .bold)
@@ -37,8 +31,4 @@ final class SecondAddItemDetailCollectionViewCell: BaseCollectionViewCell {
             make.edges.equalTo(self.safeAreaLayoutGuide).inset(4)
         }
     }
-    
-    
-    
-    
 }

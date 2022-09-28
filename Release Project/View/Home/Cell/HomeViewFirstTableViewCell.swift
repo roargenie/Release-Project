@@ -7,9 +7,8 @@ import UIKit
 final class HomeViewFirstTableViewCell: BaseTableViewCell {
     
     let weatherImageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleToFill
-        //view.backgroundColor = .gray
+        let view = UIImageView(image: UIImage(named: "Sun.jpg"))
+        view.contentMode = .scaleAspectFill
         return view
     }()
     
@@ -28,7 +27,6 @@ final class HomeViewFirstTableViewCell: BaseTableViewCell {
         view.font = .systemFont(ofSize: 13, weight: .bold)
         return view
     }()
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

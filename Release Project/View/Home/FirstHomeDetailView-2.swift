@@ -13,12 +13,6 @@ final class FirstHomeDetailView2: BaseView {
         return view
     }()
     
-//    let cancelButton: UIButton = {
-//        let view = UIButton()
-//        view.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
-//        return view
-//    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

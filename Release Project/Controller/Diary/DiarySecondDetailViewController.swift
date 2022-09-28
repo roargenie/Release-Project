@@ -3,13 +3,21 @@
 import UIKit
 
 
-final class DiarySecondDetailViewController: BaseViewController {
+final class DiarySecondDetailViewController: BasePopUpViewController {
     
     var mainView = SecondDiaryDetailView()
     
+    var datatask = Style()
+    
+    let repository = StyleRepository()
     
     override func loadView() {
         self.view = mainView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     override func viewDidLoad() {
@@ -17,43 +25,29 @@ final class DiarySecondDetailViewController: BaseViewController {
     }
     
     override func configureUI() {
-        mainView.collectionView.delegate = self
-        mainView.collectionView.dataSource = self
+        mainView.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
+        mainView.textView.text = datatask.contents
+        mainView.regDateLabel.text = datatask.regDate.formatted()
     }
     
     override func setConstraints() {
         
     }
     
-    override func setNavigationBar() {
-        let deleteButton = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteButtonTapped))
-        let editButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(editButtonTapped))
-        
-        self.navigationItem.rightBarButtonItems = [deleteButton, editButton]
+    @objc func saveButtonTapped() {
+        guard let text = mainView.textView.text else { return }
+        repository.updateStyle(item: datatask, contents: text)
+        self.dismiss(animated: true)
     }
     
-    @objc func deleteButtonTapped() {
-        
+    @objc func cancelButtonTapped() {
+        self.dismiss(animated: true)
     }
     
-    @objc func editButtonTapped() {
-        
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-    
-}
-
-
-extension DiarySecondDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.reuseIdentifier, for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .link
-        return cell
-    }
     
 }

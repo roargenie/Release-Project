@@ -7,20 +7,18 @@ final class FirstHomeDetailCollectionViewCell: BaseCollectionViewCell {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
         view.layer.cornerRadius = 20
         view.clipsToBounds = true
         return view
     }()
     
-//    let itemLabel: UILabel = {
-//        let view = UILabel()
-//        view.textAlignment = .center
-//        return view
-//    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 20
+        clipsToBounds = true
     }
     
     required init?(coder: NSCoder) {
@@ -35,10 +33,6 @@ final class FirstHomeDetailCollectionViewCell: BaseCollectionViewCell {
         imageView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-//        itemLabel.snp.makeConstraints { make in
-//            make.top.equalTo(imageView.snp.bottom)
-//            make.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
-//        }
     }
     
 }

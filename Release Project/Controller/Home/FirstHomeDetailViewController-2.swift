@@ -16,6 +16,8 @@ final class FirstHomeDetailViewController2: BaseViewController {
         }
     }
     
+    
+    
     var weatherData = WeatherModel()
     
     override func loadView() {
@@ -71,6 +73,8 @@ extension FirstHomeDetailViewController2: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = SecondHomeDetailViewController()
         vc.datatask = clothItemTasks[indexPath.item]
+        vc.viewStatus = .read
+        self.navigationItem.backButtonTitle = ""
         transition(vc, transitionStyle: .push)
         print(#function, "\(indexPath.item)")
     }
