@@ -68,13 +68,12 @@ final class SecondHomeDetailViewController: BaseViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
 }
-
 
 extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        mainView.emptyViewLabel.isHidden = styleTasks.count != 0 ? true : false
         return styleTasks.count
     }
     

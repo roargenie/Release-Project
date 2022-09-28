@@ -51,7 +51,7 @@ final class AddItemDetailViewController: BaseViewController {
         super.viewDidDisappear(animated)
         repository.initCategoryTagIsSelected(item: categoryTasks)
         repository.initSeasonTagIsSelected(item: seasonTasks)
-        _ = dataSendClosure?(repository.fetch(ClothItem.self))
+        _ = dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
         fetchRealm()
     }
     

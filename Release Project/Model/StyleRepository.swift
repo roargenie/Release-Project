@@ -6,7 +6,6 @@ import RealmSwift
 
 protocol StyleRepositoryType {
     func fetch<T: Object>(_ table: T.Type) -> Results<T>
-    func filterTag<T: Object>(_ table: T.Type) -> Results<T>
     func fetchDateFilter(date: Date) -> Results<Style>
     func fetchDateBeforeWeekFilter<T: Object>(_ item: T.Type) -> Results<T>
     func fetchregDateFilter(itme: ClothItem) -> Results<ClothItem>
@@ -40,19 +39,15 @@ final class StyleRepository: StyleRepositoryType {
     let localRealm = try! Realm()
     
     func fetch<T: Object>(_ table: T.Type) -> Results<T> {
-        return localRealm.objects(table.self).sorted(byKeyPath: "objectId", ascending: true)
-    }
-    
-    func filterTag<T: Object>(_ table: T.Type) -> Results<T> {
         return localRealm.objects(table.self)
     }
     
     func fetchDateFilter(date: Date) -> Results<Style> {
-        return localRealm.objects(Style.self).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 86400, since: date))
+        return localRealm.objects(Style.self).sorted(byKeyPath: "regDate", ascending: false).filter("regDate >= %@ AND regDate < %@", date, Date(timeInterval: 86400, since: date))
     }
     
     func fetchDateBeforeWeekFilter<T: Object>(_ item: T.Type) -> Results<T> {
-        return localRealm.objects(T.self).filter("regDate >= %@ AND regDate < %@", Date(timeInterval: -604800, since: Date()), Date())
+        return localRealm.objects(T.self).sorted(byKeyPath: "regDate", ascending: false).filter("regDate >= %@ AND regDate < %@", Date(timeInterval: -604800, since: Date()), Date())
     }
     
     func fetchregDateFilter(itme: ClothItem) -> Results<ClothItem> {
@@ -64,7 +59,7 @@ final class StyleRepository: StyleRepositoryType {
     }
     
     func clothItemCategoryFilter(query: String) -> Results<ClothItem> {
-        let task = localRealm.objects(ClothItem.self)
+        let task = localRealm.objects(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
         let filterdData = task.where {
             $0.category.title == "\(query)"
         }

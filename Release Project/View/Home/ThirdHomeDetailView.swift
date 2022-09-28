@@ -23,13 +23,14 @@ final class ThirdHomeDetailView: BaseView {
     }
     
     override func configureUI() {
-        self.addSubview(tableView)
+        [tableView].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
+        
     }
     
 }

@@ -117,7 +117,7 @@ extension AddItemPanModalVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            _ = dataSendClosure?(repository.fetch(ClothItem.self))
+            _ = dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
             self.dismiss(animated: true)
         } else {
             switch indexPath.row {

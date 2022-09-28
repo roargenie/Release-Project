@@ -13,6 +13,15 @@ final class FirstHomeDetailView1: BaseView {
         return view
     }()
     
+    let emptyViewLabel: UILabel = {
+        let view = UILabel()
+        view.textAlignment = .center
+        view.font = .systemFont(ofSize: 20, weight: .bold)
+        view.textColor = .systemGray2
+        view.text = "날씨에 맞는 스타일이 없어요 :)"
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -22,14 +31,16 @@ final class FirstHomeDetailView1: BaseView {
     }
     
     override func configureUI() {
-        [collectionView].forEach { self.addSubview($0) }
+        [collectionView, emptyViewLabel].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        
+        emptyViewLabel.snp.makeConstraints { make in
+            make.center.equalTo(collectionView.snp.center)
+        }
         
     }
     

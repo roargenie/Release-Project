@@ -13,6 +13,15 @@ final class SecondHomeDetailView: BaseView {
         return view
     }()
     
+    let emptyViewLabel: UILabel = {
+        let view = UILabel()
+        view.textAlignment = .center
+        view.font = .systemFont(ofSize: 20, weight: .bold)
+        view.textColor = .systemGray2
+        view.text = "아이템을 활용한 스타일이 없어요 :)"
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -22,12 +31,16 @@ final class SecondHomeDetailView: BaseView {
     }
     
     override func configureUI() {
-        self.addSubview(collectionView)
+        [collectionView, emptyViewLabel].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
+        }
+        emptyViewLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(self.snp.centerX)
+            make.centerY.equalTo(self.snp.centerY).multipliedBy(1.5)
         }
     }
     

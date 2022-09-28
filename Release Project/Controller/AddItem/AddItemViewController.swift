@@ -73,7 +73,7 @@ final class AddItemViewController: BaseViewController {
     }
     
     private func fetchRealm() {
-        clothItemTasks = repository.fetch(ClothItem.self)
+        clothItemTasks = repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
         categoryTasks = repository.fetch(Category.self)
         print(#function)
     }
@@ -83,6 +83,7 @@ final class AddItemViewController: BaseViewController {
 extension AddItemViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        mainView.emptyViewLabel.isHidden = clothItemTasks.count != 0 ? true : false
         return clothItemTasks.count
     }
     

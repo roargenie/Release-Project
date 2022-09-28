@@ -72,6 +72,7 @@ final class DiaryViewController: BaseViewController {
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        mainView.emptyViewLabel.isHidden = styleTasks.count != 0 ? true : false
         return styleTasks.count
     }
     

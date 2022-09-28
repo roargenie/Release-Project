@@ -7,7 +7,7 @@ import UIKit
 final class HomeViewFirstTableViewCell: BaseTableViewCell {
     
     let weatherImageView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "Sun.jpg"))
+        let view = UIImageView()
         view.contentMode = .scaleAspectFill
         return view
     }()

@@ -12,6 +12,15 @@ final class HomeViewThirdTableViewCell: BaseTableViewCell {
         return view
     }()
     
+    let emptyViewLabel: UILabel = {
+        let view = UILabel()
+        view.textAlignment = .center
+        view.font = .systemFont(ofSize: 20, weight: .bold)
+        view.textColor = .systemGray2
+        view.text = "다이어리를 작성해 주세요 :)"
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -21,12 +30,17 @@ final class HomeViewThirdTableViewCell: BaseTableViewCell {
     }
     
     override func configureUI() {
-        self.contentView.addSubview(collectionView)
+        [collectionView, emptyViewLabel].forEach { self.contentView.addSubview($0) }
     }
     
     override func setConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
+        }
+        emptyViewLabel.snp.makeConstraints { make in
+            make.center.equalTo(self.snp.center)
+            make.height.equalTo(self.snp.height).multipliedBy(0.5)
+            make.width.equalTo(self.snp.width).multipliedBy(0.7)
         }
     }
     

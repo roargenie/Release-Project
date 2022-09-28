@@ -2,6 +2,7 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 
 struct WeatherModel {
@@ -17,128 +18,128 @@ struct WeatherModel {
     
     fileprivate let repository = StyleRepository()
     
-    func getWeatherText(id: Int) -> String {
+    func getWeatherImage(id: Int) -> UIImage {
         switch id {
             
         case 200:
-            return "가벼운 비를 동반한 천둥번개 ⛈"
+            return UIImage(named: "200.png")!
         case 201:
-            return "비를 동반한 천둥번개 ⛈"
+            return UIImage(named: "200.png")!
         case 202:
-            return "강한 비를 동반한 천둥번개 ⛈"
+            return UIImage(named: "202.png")!
         case 210:
-            return "가벼운 천둥번개 ⚡️"
+            return UIImage(named: "210.png")!
         case 211:
-            return "천둥번개 ⚡️"
+            return UIImage(named: "210.png")!
         case 212:
-            return "강한 천둥번개 ⚡️"
+            return UIImage(named: "210.png")!
         case 221:
-            return "간헐적 천둥번개 ⚡️"
+            return UIImage(named: "210.png")!
         case 230:
-            return "가벼운 이슬비와 천둥번개 🌩"
+            return UIImage(named: "200.png")!
         case 231:
-            return "이슬비와 천둥번개 🌩"
+            return UIImage(named: "200.png")!
         case 232:
-            return "강한 이슬비와 천둥번개 ⛈"
+            return UIImage(named: "202.png")!
             
         case 300:
-            return "가벼운 보슬비 🌦"
+            return UIImage(named: "300.png")!
         case 301:
-            return "보슬비 🌧"
+            return UIImage(named: "301.png")!
         case 302:
-            return "강하게 오는 이슬비 🌧"
+            return UIImage(named: "301.png")!
         case 310:
-            return "가벼운 강도의 이슬비 🌦"
+            return UIImage(named: "300.png")!
         case 311:
-            return "이슬비 🌧"
+            return UIImage(named: "301.png")!
         case 312:
-            return "강하게 오는 이슬비 🌧"
+            return UIImage(named: "300.png")!
         case 313:
-            return "소나기처럼 오는 비와 이슬비 ☔️"
+            return UIImage(named: "301.png")!
         case 314:
-            return "강한 소나기의 이슬비 ☔️"
+            return UIImage(named: "301.png")!
         case 321:
-            return "소나기 이슬비 ☔️"
+            return UIImage(named: "301.png")!
             
         case 500:
-            return "가벼운 비 🌦"
+            return UIImage(named: "301.png")!
         case 501:
-            return "적당한 비 🌧"
+            return UIImage(named: "301.png")!
         case 502:
-            return "강한 비 🌧"
+            return UIImage(named: "301.png")!
         case 503:
-            return "매우 강한 비 🌧"
+            return UIImage(named: "301.png")!
         case 504:
-            return "짱 강한 비 🌧"
+            return UIImage(named: "301.png")!
         case 511:
-            return "얼어붙는 비 ❄️🌧"
+            return UIImage(named: "601.png")!
         case 520:
-            return "가벼운 소나기 ☔️"
+            return UIImage(named: "301.png")!
         case 521:
-            return "소나기 ☔️"
+            return UIImage(named: "301.png")!
         case 522:
-            return "강한 소나기 ☔️☔️"
+            return UIImage(named: "301.png")!
         case 531:
-            return "듬성듬성 오는 소나기 ☔️"
+            return UIImage(named: "301.png")!
             
         case 600:
-            return "가벼운 눈 ❄️"
+            return UIImage(named: "602.png")!
         case 601:
-            return "눈 🌨"
+            return UIImage(named: "602.png")!
         case 602:
-            return "함박눈 ☃️"
+            return UIImage(named: "602.png")!
         case 611:
-            return "진눈깨비 🌨🌧"
+            return UIImage(named: "602.png")!
         case 612:
-            return "가벼운 진눈깨비 🌨☔️"
+            return UIImage(named: "611.png")!
         case 613:
-            return "소나기 진눈깨비 🌨☔️"
+            return UIImage(named: "611.png")!
         case 615:
-            return "얕은 비와 눈 🌨🌧"
+            return UIImage(named: "611.png")!
         case 616:
-            return "비와 눈 🌨🌧"
+            return UIImage(named: "611.png")!
         case 620:
-            return "가벼운 소낙눈 ❄️"
+            return UIImage(named: "611.png")!
         case 621:
-            return "소낙눈 ❄️"
+            return UIImage(named: "611.png")!
         case 622:
-            return "강한 소낙눈 ❄️🌨"
+            return UIImage(named: "611.png")!
             
         case 701:
-            return "미스트: 안개 🌫"
+            return UIImage(named: "721.png")!
         case 711:
-            return "스모크: 연기 😶‍🌫️"
+            return UIImage(named: "721.png")!
         case 721:
-            return "헤이즈: 안개 🌫"
+            return UIImage(named: "721.png")!
         case 731:
-            return "모래/먼지 소용돌이 🌪"
+            return UIImage(named: "781.png")!
         case 741:
-            return "포그: 안개 🌫"
+            return UIImage(named: "721.png")!
         case 751:
-            return "모래 🏜"
+            return UIImage(named: "751.png")!
         case 761:
-            return "먼지 💨"
+            return UIImage(named: "761.png")!
         case 762:
-            return "화산재 🌋"
+            return UIImage(named: "762.png")!
         case 771:
-            return "돌풍 🌀"
+            return UIImage(named: "771.png")!
         case 781:
-            return "토네이도 🌪"
+            return UIImage(named: "781.png")!
             
         case 800:
-            return "맑고 화창한 날씨 ☀️"
+            return UIImage(named: "800.png")!
             
         case 801:
-            return "11~25%의 적은 구름이 있는 흐린 날씨 🌤"
+            return UIImage(named: "801.png")!
         case 802:
-            return "25~50%가 구름으로 뒤덮인 날씨 ⛅️"
+            return UIImage(named: "802.jpg")!
         case 803:
-            return "51~84%의 구름이 있는 흐린 날씨 🌥"
+            return UIImage(named: "803.png")!
         case 804:
-            return "하늘에 85~100%가 구름으로 뒤덮인 날씨 ☁️"
+            return UIImage(named: "804.png")!
             
         default:
-            return "\(self.id)"
+            return UIImage()
             
         }
     }
@@ -147,15 +148,15 @@ struct WeatherModel {
         switch temp {
             // 겨울
         case ..<5:
-            return repository.winterItemFilter()
+            return repository.winterItemFilter().sorted(byKeyPath: "regDate", ascending: false)
             // 봄, 가을
         case 5..<20:
-            return repository.spingAndAutumnItemFilter()
+            return repository.spingAndAutumnItemFilter().sorted(byKeyPath: "regDate", ascending: false)
             // 여름
         case 20...:
-            return repository.summerItemFilter()
+            return repository.summerItemFilter().sorted(byKeyPath: "regDate", ascending: false)
         default:
-            return repository.fetch(ClothItem.self)
+            return repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
         }
     }
     
@@ -163,15 +164,15 @@ struct WeatherModel {
         switch temp {
             // 겨울
         case ..<5:
-            return repository.winterStyleFilter()
+            return repository.winterStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
             // 봄, 가을
         case 5..<20:
-            return repository.springAndAutumnStyleFilter()
+            return repository.springAndAutumnStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
             // 여름
         case 20...:
-            return repository.summerStyleFilter()
+            return repository.summerStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
         default:
-            return repository.fetch(Style.self)
+            return repository.fetch(Style.self).sorted(byKeyPath: "regDate", ascending: false)
         }
     }
     

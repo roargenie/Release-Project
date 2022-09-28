@@ -125,7 +125,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFirstTableViewCell else { return UITableViewCell() }
             cell.tempLabel.text = "\(String(format: "%.0f", weatherData.temp))°"
             cell.weatherLabel.text = "최고:\(String(format: "%.0f", weatherData.temp_max))° / 최저:\(String(format: "%.0f", weatherData.temp_min))°"
+            cell.weatherImageView.image = weatherData.getWeatherImage(id: weatherData.id)
             cell.selectionStyle = .none
+            
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewSecondTableViewCell else { return UITableViewCell() }
@@ -135,7 +137,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdTableViewCell else { return UITableViewCell() }
-            
+            cell.emptyViewLabel.isHidden = styleTasks.count != 0 ? true : false
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             cell.collectionView.reloadData()
@@ -167,7 +169,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             return 160
         case 2:
-            return 180
+            return 190
         case 3:
             return 260
         default:

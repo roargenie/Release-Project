@@ -131,6 +131,7 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == mainView.collectionView {
+            mainView.emptyViewLabel.isHidden = clothItemTasks.count != 0 ? true : false
             return clothItemTasks.count
         } else if collectionView == mainView.seasonCollectionView {
             return seasonTasks.count

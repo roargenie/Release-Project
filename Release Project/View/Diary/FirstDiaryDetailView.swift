@@ -61,6 +61,15 @@ final class FirstDiaryDetailView: BaseView {
         return view
     }()
     
+    let emptyViewLabel: UILabel = {
+        let view = UILabel()
+        view.textAlignment = .center
+        view.font = .systemFont(ofSize: 20, weight: .bold)
+        view.textColor = .systemGray2
+        view.text = "아이템을 등록해 주세요 :)"
+        return view
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -70,7 +79,7 @@ final class FirstDiaryDetailView: BaseView {
     }
     
     override func configureUI() {
-        [collectionView, seasonCollectionView, categoryTabbarCollectionView, firstStackView].forEach { self.addSubview($0) }
+        [collectionView, seasonCollectionView, categoryTabbarCollectionView, firstStackView, emptyViewLabel].forEach { self.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -95,6 +104,9 @@ final class FirstDiaryDetailView: BaseView {
         }
         imageView.snp.makeConstraints { make in
             make.width.equalTo(firstStackView.snp.width).multipliedBy(0.4)
+        }
+        emptyViewLabel.snp.makeConstraints { make in
+            make.center.equalTo(collectionView.snp.center)
         }
         
     }

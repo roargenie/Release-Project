@@ -16,8 +16,6 @@ final class FirstHomeDetailViewController2: BaseViewController {
         }
     }
     
-    
-    
     var weatherData = WeatherModel()
     
     override func loadView() {
@@ -56,6 +54,7 @@ final class FirstHomeDetailViewController2: BaseViewController {
 extension FirstHomeDetailViewController2: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        mainView.emptyViewLabel.isHidden = clothItemTasks.count != 0 ? true : false
         return clothItemTasks.count
     }
     
