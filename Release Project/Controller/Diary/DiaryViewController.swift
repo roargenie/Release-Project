@@ -9,6 +9,8 @@ final class DiaryViewController: BaseViewController {
     
     private var mainView = DiaryView()
     
+    var selectedDay = Date()
+    
     private var pickedImage: UIImage?
     
     private let repository = StyleRepository()
@@ -18,6 +20,12 @@ final class DiaryViewController: BaseViewController {
             mainView.tableView.reloadData()
         }
     }
+    
+    var clothItemTasks: Results<ClothItem>!
+    
+    var categoryTasks: Results<Category>!
+    
+    var seasonTasks: Results<Season>!
     
     override func loadView() {
         self.view = mainView
@@ -30,6 +38,13 @@ final class DiaryViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         fetchRealm()
         mainView.calendar.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repository.initClothItemIsSelected(item: clothItemTasks)
+        repository.initCategoryTagIsSelected(item: categoryTasks)
+        repository.initSeasonTagIsSelected(item: seasonTasks)
         self.tabBarController?.tabBar.isHidden = false
     }
     
@@ -49,8 +64,10 @@ final class DiaryViewController: BaseViewController {
     
     private func fetchRealm() {
         guard let date = mainView.calendar.today else { return }
-        print(date)
         styleTasks = repository.fetchDateFilter(date: date)
+        clothItemTasks = repository.fetch(ClothItem.self)
+        seasonTasks = repository.fetch(Season.self)
+        categoryTasks = repository.fetch(Category.self)
     }
     
     override func setNavigationBar() {
@@ -60,6 +77,7 @@ final class DiaryViewController: BaseViewController {
     
     @objc private func plusButtonTapped() {
         let vc = DiaryDetailViewController()
+        vc.selectedDay = selectedDay
         vc.clothItemTasks = repository.fetch(ClothItem.self)
         self.tabBarController?.tabBar.isHidden = true
         self.navigationItem.backButtonTitle = ""
@@ -97,16 +115,6 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         transition(vc, transitionStyle: .push)
     }
     
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomHeaderView.identifier) as? CustomHeaderView else { return UIView() }
-//        headerView.calendar.delegate = self
-//        headerView.calendar.dataSource = self
-//        headerView.calendar.reloadData()
-//        today = headerView.calendar.today
-//
-//        return headerView
-//    }
-    
 }
 
 extension DiaryViewController: FSCalendarDelegate, FSCalendarDataSource {
@@ -116,6 +124,8 @@ extension DiaryViewController: FSCalendarDelegate, FSCalendarDataSource {
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        selectedDay = date
+        print(selectedDay)
         styleTasks = repository.fetchDateFilter(date: date)
     }
 }

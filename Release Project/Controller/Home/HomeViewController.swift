@@ -40,6 +40,10 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         fetchRealm()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
     }
     

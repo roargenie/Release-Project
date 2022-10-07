@@ -8,7 +8,6 @@ final class DiaryView: BaseView {
     let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .grouped)
         view.register(DiaryTableViewCell.self, forCellReuseIdentifier: DiaryTableViewCell.reuseIdentifier)
-//        view.register(CustomHeaderView.self, forHeaderFooterViewReuseIdentifier: CustomHeaderView.identifier)
         view.separatorInset = .zero
         view.backgroundColor = .white
         return view
@@ -18,17 +17,12 @@ final class DiaryView: BaseView {
         let view = FSCalendar()
         view.backgroundColor = .white
         view.locale = Locale(identifier: "ko_KR")
-        view.appearance.headerMinimumDissolvedAlpha = 0.2
-        //view.appearance.headerTitleFont = UIFont(name: "NotoSansKR-Medium", size: 24)
-        //view.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 2)
-        view.appearance.weekdayTextColor = .gray
-        //view.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 2)
+        view.appearance.headerMinimumDissolvedAlpha = 0
+        view.appearance.weekdayTextColor = .black
         view.appearance.headerDateFormat = "YYYY년 MM월"
         view.appearance.headerTitleColor = UIColor.black
-        view.appearance.calendar.headerHeight = 60
+        view.appearance.calendar.headerHeight = 50
         view.appearance.headerTitleAlignment = .center
-//        view.appearance.eventDefaultColor = .red
-//        view.appearance.eventSelectionColor = .red
         view.appearance.titleWeekendColor = .red
         return view
     }()
@@ -41,7 +35,6 @@ final class DiaryView: BaseView {
         view.text = "다이어리를 작성해 주세요 :)"
         return view
     }()
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,7 +51,7 @@ final class DiaryView: BaseView {
     override func setConstraints() {
         calendar.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(self.safeAreaLayoutGuide)
-            make.height.equalTo(self.snp.height).multipliedBy(0.35)
+            make.height.equalTo(self.snp.height).multipliedBy(0.4)
         }
         tableView.snp.makeConstraints { make in
             make.top.equalTo(calendar.snp.bottom)

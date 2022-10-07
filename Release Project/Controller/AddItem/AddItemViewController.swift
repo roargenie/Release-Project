@@ -20,6 +20,7 @@ final class AddItemViewController: BaseViewController {
     
     var categoryTasks: Results<Category>!
     
+    var seasonTasks: Results<Season>!
     
     override func loadView() {
         self.view = mainView
@@ -32,9 +33,15 @@ final class AddItemViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
         mainView.collectionView.reloadData()
         print(#function)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        repository.initCategoryTagIsSelected(item: categoryTasks)
+        repository.initSeasonTagIsSelected(item: seasonTasks)
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func configureUI() {
@@ -75,6 +82,7 @@ final class AddItemViewController: BaseViewController {
     private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
         categoryTasks = repository.fetch(Category.self)
+        seasonTasks = repository.fetch(Season.self)
         print(#function)
     }
     

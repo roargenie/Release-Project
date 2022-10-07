@@ -37,22 +37,22 @@ final class AddItemDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "아이템 추가"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRealm()
-        repository.initCategoryTagIsSelected(item: categoryTasks)
-        repository.initSeasonTagIsSelected(item: seasonTasks)
+//        repository.initCategoryTagIsSelected(item: categoryTasks)
+//        repository.initSeasonTagIsSelected(item: seasonTasks)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        repository.initCategoryTagIsSelected(item: categoryTasks)
-        repository.initSeasonTagIsSelected(item: seasonTasks)
+//        repository.initCategoryTagIsSelected(item: categoryTasks)
+//        repository.initSeasonTagIsSelected(item: seasonTasks)
         _ = dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
-        fetchRealm()
+//        fetchRealm()
     }
     
     override func configureUI() {

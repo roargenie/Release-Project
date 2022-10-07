@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F607355028E3839700AC18C0 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607354F28E3839700AC18C0 /* BasePopupViewController.swift */; };
+		F607355328E5DE4300AC18C0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F607355228E5DE4300AC18C0 /* IQKeyboardManagerSwift */; };
 		F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */; };
 		F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96928DAF82400B74898 /* WeatherModel.swift */; };
 		F60AC96E28DB05B000B74898 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F60AC96D28DB05B000B74898 /* .gitignore */; };
@@ -170,6 +171,7 @@
 				F60AC97528DB0CFD00B74898 /* SwiftyJSON in Frameworks */,
 				F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */,
 				F60AC98128DB642900B74898 /* PanModal in Frameworks */,
+				F607355328E5DE4300AC18C0 /* IQKeyboardManagerSwift in Frameworks */,
 				F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */,
 				F68F00FA28D34E5400B7B349 /* Realm in Frameworks */,
 				F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */,
@@ -441,6 +443,7 @@
 				F68F010728D34E9600B7B349 /* FSCalendar */,
 				F60AC97428DB0CFD00B74898 /* SwiftyJSON */,
 				F60AC98028DB642900B74898 /* PanModal */,
+				F607355228E5DE4300AC18C0 /* IQKeyboardManagerSwift */,
 			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
@@ -478,6 +481,7 @@
 				F68F010628D34E9600B7B349 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */,
+				F607355128E5DE4300AC18C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
@@ -717,15 +721,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Release Project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "오늘 뭐입지?";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 정보를 보여주기 위해 권한이 필요합니다.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "동영상";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "갤러리 권한";
+				INFOPLIST_KEY_NSCameraUsageDescription = "아이템 등록과 다이어리 작성을 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨정보를 보여주기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "아이템 등록과 다이어리 작성을 위해 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -738,7 +741,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rOarMJ.Release-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -753,15 +756,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Release Project/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "오늘 뭐입지?";
-				INFOPLIST_KEY_NSCameraUsageDescription = "카메라";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 정보를 보여주기 위해 권한이 필요합니다.";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "동영상";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "갤러리 권한";
+				INFOPLIST_KEY_NSCameraUsageDescription = "아이템 등록과 다이어리 작성을 위해 카메라 접근 권한이 필요합니다.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "사용자의 현재 위치를 기반으로 날씨정보를 보여주기 위해 권한이 필요합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "아이템 등록과 다이어리 작성을 위해 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -774,7 +776,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rOarMJ.Release-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -807,6 +809,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F607355128E5DE4300AC18C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 		F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -866,6 +876,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F607355228E5DE4300AC18C0 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F607355128E5DE4300AC18C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		F60AC97428DB0CFD00B74898 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

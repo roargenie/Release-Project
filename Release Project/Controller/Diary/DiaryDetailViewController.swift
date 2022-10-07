@@ -11,6 +11,8 @@ final class DiaryDetailViewController: BaseViewController {
     
     private let repository = StyleRepository()
     
+    var selectedDay = Date()
+    
     var clothItemTasks: Results<ClothItem>! {
         didSet {
             mainView.collectionView.reloadData()
@@ -46,22 +48,23 @@ final class DiaryDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "다이어리 추가"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRealm()
-        repository.initClothItemIsSelected(item: clothItemTasks)
-        repository.initCategoryTagIsSelected(item: categoryTasks)
-        repository.initSeasonTagIsSelected(item: seasonTasks)
+//        repository.initClothItemIsSelected(item: clothItemTasks)
+//        repository.initCategoryTagIsSelected(item: categoryTasks)
+//        repository.initSeasonTagIsSelected(item: seasonTasks)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        repository.initClothItemIsSelected(item: clothItemTasks)
-        repository.initCategoryTagIsSelected(item: categoryTasks)
-        repository.initSeasonTagIsSelected(item: seasonTasks)
-        fetchRealm()
+//        repository.initClothItemIsSelected(item: clothItemTasks)
+//        repository.initCategoryTagIsSelected(item: categoryTasks)
+//        repository.initSeasonTagIsSelected(item: seasonTasks)
+//        fetchRealm()
     }
     
     override func configureUI() {
@@ -111,7 +114,7 @@ final class DiaryDetailViewController: BaseViewController {
         let clothItemData = repository.addClothItemToStyle(item: repository.isSelectedTrueArr(ClothItem.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
         if !clothItemData.isEmpty && !seasonTagData.isEmpty {
-            let savedItem = Style(contents: text, regDate: Date(), clothItem: clothItemData, season: seasonTagData)
+            let savedItem = Style(contents: text, regDate: selectedDay, clothItem: clothItemData, season: seasonTagData)
             repository.isSelectedTrueArr(ClothItem.self).forEach {
                 repository.addItemAndplusCount(style: savedItem, clothItem: $0)
             }
@@ -122,6 +125,7 @@ final class DiaryDetailViewController: BaseViewController {
         } else {
             showAlertMessageNoHandler(title: "태그와 아이템을 선택해주세요!", button: "확인")
         }
+        print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
 }
@@ -197,7 +201,6 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
             fetchRealm()
         } else if collectionView == mainView.seasonCollectionView {
             let task = seasonTasks[indexPath.item]
-            
             repository.seasonTagisSelected(item: task)
             fetchRealm()
             print(#function, indexPath.item)
