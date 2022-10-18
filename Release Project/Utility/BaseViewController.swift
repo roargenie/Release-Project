@@ -34,4 +34,10 @@ class BaseViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    func setupTapGestures(imageView: UIImageView, selector: Selector) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: selector)
+        imageView.addGestureRecognizer(tapGesture)
+        imageView.isUserInteractionEnabled = true
+    }
+    
 }

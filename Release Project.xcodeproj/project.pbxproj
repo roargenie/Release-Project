@@ -20,6 +20,10 @@
 		F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98628DB769300B74898 /* AddItemPanModalView.swift */; };
 		F60AC98928DB76A600B74898 /* AddItemPanModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */; };
 		F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98D28DC5DA100B74898 /* Extension.swift */; };
+		F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F65472C628F80CCC0047037B /* GoogleService-Info.plist */; };
+		F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F65472CB28F80DE20047037B /* FirebaseCrashlytics */; };
+		F65472CE28F80DE20047037B /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = F65472CD28F80DE20047037B /* FirebaseMessaging */; };
 		F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */; };
 		F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */; };
 		F689993628E0568100083BBB /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F689993528E0568100083BBB /* ProgressBar.swift */; };
@@ -34,6 +38,8 @@
 		F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */; };
 		F68F011128D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */; };
 		F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */; };
+		F6A19A1A28F4316300274411 /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A19A1928F4316300274411 /* DetailImageViewController.swift */; };
+		F6A19A1D28F431C300274411 /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A19A1C28F431C300274411 /* DetailImageView.swift */; };
 		F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */; };
 		F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */; };
 		F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */; };
@@ -98,6 +104,8 @@
 		F60AC98628DB769300B74898 /* AddItemPanModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalView.swift; sourceTree = "<group>"; };
 		F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalTableViewCell.swift; sourceTree = "<group>"; };
 		F60AC98D28DC5DA100B74898 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F65472C528F8090E0047037B /* Release Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Release Project.entitlements"; sourceTree = "<group>"; };
+		F65472C628F80CCC0047037B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68343B028D6331E00B94628 /* DetailSeasonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeasonCollectionViewCell.swift; sourceTree = "<group>"; };
 		F689993528E0568100083BBB /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -106,6 +114,8 @@
 		F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011028D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdAddItemDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAddItemDetailCollectionReusableView.swift; sourceTree = "<group>"; };
+		F6A19A1928F4316300274411 /* DetailImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		F6A19A1C28F431C300274411 /* DetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageView.swift; sourceTree = "<group>"; };
 		F6C1F3D528CC971B00B5FD0E /* Release Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Release Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,10 +176,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65472CE28F80DE20047037B /* FirebaseMessaging in Frameworks */,
 				F68F010528D34E8800B7B349 /* Alamofire in Frameworks */,
+				F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				F68F010828D34E9600B7B349 /* FSCalendar in Frameworks */,
 				F60AC97528DB0CFD00B74898 /* SwiftyJSON in Frameworks */,
 				F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */,
+				F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */,
 				F60AC98128DB642900B74898 /* PanModal in Frameworks */,
 				F607355328E5DE4300AC18C0 /* IQKeyboardManagerSwift in Frameworks */,
 				F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */,
@@ -196,6 +209,22 @@
 			path = Constant;
 			sourceTree = "<group>";
 		};
+		F6A19A1828F4311E00274411 /* DetailImageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F6A19A1928F4316300274411 /* DetailImageViewController.swift */,
+			);
+			path = DetailImageViewController;
+			sourceTree = "<group>";
+		};
+		F6A19A1B28F4319700274411 /* DetailImageView */ = {
+			isa = PBXGroup;
+			children = (
+				F6A19A1C28F431C300274411 /* DetailImageView.swift */,
+			);
+			path = DetailImageView;
+			sourceTree = "<group>";
+		};
 		F6C1F3CC28CC971B00B5FD0E = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +245,7 @@
 		F6C1F3D728CC971B00B5FD0E /* Release Project */ = {
 			isa = PBXGroup;
 			children = (
+				F65472C528F8090E0047037B /* Release Project.entitlements */,
 				F60AC97028DB062800B74898 /* Key */,
 				F6C1F3EC28CC975800B5FD0E /* Model */,
 				F6C1F3F028CC97A100B5FD0E /* Manager */,
@@ -229,6 +259,7 @@
 				F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */,
 				F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */,
 				F6C1F3E628CC971E00B5FD0E /* Info.plist */,
+				F65472C628F80CCC0047037B /* GoogleService-Info.plist */,
 			);
 			path = "Release Project";
 			sourceTree = "<group>";
@@ -246,6 +277,7 @@
 		F6C1F3ED28CC977B00B5FD0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6A19A1B28F4319700274411 /* DetailImageView */,
 				F6C1F3FE28CC996000B5FD0E /* Home */,
 				F6C1F42528CC9B5B00B5FD0E /* AddItem */,
 				F6C1F42728CC9B6800B5FD0E /* Diary */,
@@ -256,6 +288,7 @@
 		F6C1F3EE28CC978000B5FD0E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F6A19A1828F4311E00274411 /* DetailImageViewController */,
 				F6C1F3FF28CC997000B5FD0E /* Home */,
 				F6C1F42228CC9B0100B5FD0E /* AddItem */,
 				F6C1F42428CC9B2600B5FD0E /* Diary */,
@@ -444,6 +477,9 @@
 				F60AC97428DB0CFD00B74898 /* SwiftyJSON */,
 				F60AC98028DB642900B74898 /* PanModal */,
 				F607355228E5DE4300AC18C0 /* IQKeyboardManagerSwift */,
+				F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */,
+				F65472CB28F80DE20047037B /* FirebaseCrashlytics */,
+				F65472CD28F80DE20047037B /* FirebaseMessaging */,
 			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
@@ -482,6 +518,7 @@
 				F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */,
 				F607355128E5DE4300AC18C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
@@ -499,6 +536,7 @@
 			files = (
 				F60AC96E28DB05B000B74898 /* .gitignore in Resources */,
 				F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */,
+				F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */,
 				F6C1F3E228CC971E00B5FD0E /* Assets.xcassets in Resources */,
 				F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */,
 			);
@@ -558,6 +596,7 @@
 				F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */,
 				F6DB7FE228D1EC26004AF264 /* SecondDiaryDetailView.swift in Sources */,
 				F6C1F43628CC9E8E00B5FD0E /* BaseTableViewCell.swift in Sources */,
+				F6A19A1D28F431C300274411 /* DetailImageView.swift in Sources */,
 				F60AC98928DB76A600B74898 /* AddItemPanModalTableViewCell.swift in Sources */,
 				F6DB7FC728D0AA74004AF264 /* HomeViewSecondTableViewCell.swift in Sources */,
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
@@ -574,6 +613,7 @@
 				F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */,
 				F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */,
 				F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */,
+				F6A19A1A28F4316300274411 /* DetailImageViewController.swift in Sources */,
 				F68F011128D3550C00B7B349 /* ThirdAddItemDetailCollectionViewCell.swift in Sources */,
 				F60AC98528DB765300B74898 /* AddItemPanModalVC.swift in Sources */,
 			);
@@ -720,6 +760,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Release Project/Release Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
@@ -733,15 +774,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rOarMJ.Release-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -755,6 +795,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Release Project/Release Project.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FJNF7APGSX;
@@ -768,15 +809,14 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rOarMJ.Release-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -831,6 +871,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
 			};
 		};
 		F68F00F828D34E5400B7B349 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
@@ -890,6 +938,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
+		};
+		F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		F65472CB28F80DE20047037B /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F65472CD28F80DE20047037B /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		F68F00F928D34E5400B7B349 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;

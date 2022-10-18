@@ -68,6 +68,13 @@ final class SecondHomeDetailViewController: BaseViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    @objc func touchUpImageView() {
+        let vc = DetailImageViewController()
+        vc.clothTask = datatask
+        vc.viewStatus = .cloth
+        transition(vc, transitionStyle: .presentFull)
+    }
 }
 
 extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -103,6 +110,7 @@ extension SecondHomeDetailViewController: UICollectionViewDelegate, UICollection
             headerView.seasonContentLabel.text = seasonStr
             headerView.wornCountContentLabel.text = String(task.wornCount)
             headerView.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(datatask.objectId).jpg")
+            setupTapGestures(imageView: headerView.imageView, selector: #selector(touchUpImageView))
             
             return headerView
         default:

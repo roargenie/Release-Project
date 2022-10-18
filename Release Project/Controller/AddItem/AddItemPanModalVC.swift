@@ -70,7 +70,7 @@ extension AddItemPanModalVC: PanModalPresentable {
     }
     
     var longFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(450)
+        return .maxHeightWithTopInset(350)
     }
     
     var cornerRadius: CGFloat {

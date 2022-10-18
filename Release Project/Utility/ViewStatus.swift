@@ -12,3 +12,8 @@ enum DiaryViewStatus {
     case read
     case edit
 }
+
+enum DetailImageViewStatus {
+    case cloth
+    case style
+}

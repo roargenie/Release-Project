@@ -79,6 +79,13 @@ final class ThirdHomeDetailViewController: BaseViewController {
         }
     }
     
+    @objc func touchUpImageView() {
+        let vc = DetailImageViewController()
+        vc.styleTask = dataTasks
+        vc.viewStatus = .style
+        transition(vc, transitionStyle: .presentFull)
+    }
+    
 }
 
 extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSource {
@@ -114,6 +121,7 @@ extension ThirdHomeDetailViewController: UITableViewDelegate, UITableViewDataSou
         let task = dataTasks
         
         headerView.styleImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
+        setupTapGestures(imageView: headerView.styleImageView, selector: #selector(touchUpImageView))
         
         return headerView
     }

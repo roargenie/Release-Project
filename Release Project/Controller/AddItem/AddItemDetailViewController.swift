@@ -73,17 +73,25 @@ final class AddItemDetailViewController: BaseViewController {
     @objc private func saveButtonTapped() {
         let categoryTagData = repository.addCategoryToClothItem(item: repository.isSelectedTrueArr(Category.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
-        if !categoryTagData.isEmpty && !seasonTagData.isEmpty {
-            let savedItem = ClothItem(itemName: "", regDate: Date(), category: categoryTagData, season: seasonTagData)
-            repository.addItem(item: [savedItem])
-            if let image = mainView.imageView.image {
-                FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+        if mainView.imageView.image != nil {
+            if !categoryTagData.isEmpty && !seasonTagData.isEmpty {
+                let savedItem = ClothItem(itemName: "", regDate: Date(), category: categoryTagData, season: seasonTagData)
+                repository.addItem(item: [savedItem])
+                if let image = mainView.imageView.image {
+                    FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+                }
+                self.navigationController?.popViewController(animated: true)
+                
+            } else if categoryTagData.isEmpty && !seasonTagData.isEmpty {
+                showAlertMessageNoHandler(title: "카테고리를 선택해주세요!", button: "확인")
+            } else if seasonTagData.isEmpty && !categoryTagData.isEmpty {
+                showAlertMessageNoHandler(title: "계절을 선택해주세요!", button: "확인")
+            } else if categoryTagData.isEmpty && seasonTagData.isEmpty {
+                showAlertMessageNoHandler(title: "태그를 선택해주세요!", button: "확인")
             }
-            self.navigationController?.popViewController(animated: true)
         } else {
-            showAlertMessageNoHandler(title: "태그를 선택해주세요!", button: "확인")
+            showAlertMessageNoHandler(title: "이미지를 선택해주세요!", button: "확인")
         }
-        
     }
     
     @objc private func cameraButtonTapped() {

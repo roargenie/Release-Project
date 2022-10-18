@@ -125,7 +125,6 @@ extension DiaryViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         selectedDay = date
-        print(selectedDay)
         styleTasks = repository.fetchDateFilter(date: date)
     }
 }

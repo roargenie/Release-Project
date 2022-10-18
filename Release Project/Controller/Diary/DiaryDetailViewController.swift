@@ -113,23 +113,28 @@ final class DiaryDetailViewController: BaseViewController {
         
         let clothItemData = repository.addClothItemToStyle(item: repository.isSelectedTrueArr(ClothItem.self))
         let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
-        if !clothItemData.isEmpty && !seasonTagData.isEmpty {
-            let savedItem = Style(contents: text, regDate: selectedDay, clothItem: clothItemData, season: seasonTagData)
-            repository.isSelectedTrueArr(ClothItem.self).forEach {
-                repository.addItemAndplusCount(style: savedItem, clothItem: $0)
+        
+        if mainView.imageView.image != nil {
+            if !clothItemData.isEmpty && !seasonTagData.isEmpty {
+                let savedItem = Style(contents: text, regDate: selectedDay, clothItem: clothItemData, season: seasonTagData)
+                repository.isSelectedTrueArr(ClothItem.self).forEach {
+                    repository.addItemAndplusCount(style: savedItem, clothItem: $0)
+                }
+                if let image = mainView.imageView.image {
+                    FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
+                }
+                self.navigationController?.popViewController(animated: true)
+            } else if clothItemData.isEmpty && !seasonTagData.isEmpty {
+                showAlertMessageNoHandler(title: "착용하신 아이템을 선택해주세요!", button: "확인")
+            } else if !clothItemData.isEmpty && seasonTagData.isEmpty {
+                showAlertMessageNoHandler(title: "계절을 선택해주세요!", button: "확인")
             }
-            if let image = mainView.imageView.image {
-                FileManagerHelper.shared.saveImageToDocument(fileName: "\(savedItem.objectId).jpg", image: image)
-            }
-            self.navigationController?.popViewController(animated: true)
+            print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
         } else {
-            showAlertMessageNoHandler(title: "태그와 아이템을 선택해주세요!", button: "확인")
+            showAlertMessageNoHandler(title: "이미지를 선택해주세요!", button: "확인")
         }
-        print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
 }
-
 
 extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -247,7 +252,6 @@ extension DiaryDetailViewController: UICollectionViewDelegate, UICollectionViewD
                 break
             }
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
