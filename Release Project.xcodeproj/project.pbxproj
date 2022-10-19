@@ -20,6 +20,10 @@
 		F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98628DB769300B74898 /* AddItemPanModalView.swift */; };
 		F60AC98928DB76A600B74898 /* AddItemPanModalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */; };
 		F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC98D28DC5DA100B74898 /* Extension.swift */; };
+		F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE128FFDE6D00709560 /* SettingViewController.swift */; };
+		F631EFE528FFDEA800709560 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE428FFDEA800709560 /* SettingView.swift */; };
+		F631EFE828FFDF1000709560 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE728FFDF1000709560 /* SettingCollectionViewCell.swift */; };
+		F631EFEA28FFE95100709560 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE928FFE95100709560 /* SettingModel.swift */; };
 		F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F65472C628F80CCC0047037B /* GoogleService-Info.plist */; };
 		F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F65472CB28F80DE20047037B /* FirebaseCrashlytics */; };
@@ -104,6 +108,10 @@
 		F60AC98628DB769300B74898 /* AddItemPanModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalView.swift; sourceTree = "<group>"; };
 		F60AC98828DB76A600B74898 /* AddItemPanModalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPanModalTableViewCell.swift; sourceTree = "<group>"; };
 		F60AC98D28DC5DA100B74898 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		F631EFE128FFDE6D00709560 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F631EFE428FFDEA800709560 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F631EFE728FFDF1000709560 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
+		F631EFE928FFE95100709560 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		F65472C528F8090E0047037B /* Release Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Release Project.entitlements"; sourceTree = "<group>"; };
 		F65472C628F80CCC0047037B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +210,31 @@
 			path = Key;
 			sourceTree = "<group>";
 		};
+		F631EFE028FFDE1B00709560 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F631EFE128FFDE6D00709560 /* SettingViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F631EFE328FFDE7C00709560 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F631EFE628FFDED100709560 /* Cell */,
+				F631EFE428FFDEA800709560 /* SettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F631EFE628FFDED100709560 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F631EFE728FFDF1000709560 /* SettingCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		F68F011428D3988F00B7B349 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +303,7 @@
 				F60AC96928DAF82400B74898 /* WeatherModel.swift */,
 				F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */,
 				F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */,
+				F631EFE928FFE95100709560 /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +315,7 @@
 				F6C1F3FE28CC996000B5FD0E /* Home */,
 				F6C1F42528CC9B5B00B5FD0E /* AddItem */,
 				F6C1F42728CC9B6800B5FD0E /* Diary */,
+				F631EFE328FFDE7C00709560 /* Setting */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +327,7 @@
 				F6C1F3FF28CC997000B5FD0E /* Home */,
 				F6C1F42228CC9B0100B5FD0E /* AddItem */,
 				F6C1F42428CC9B2600B5FD0E /* Diary */,
+				F631EFE028FFDE1B00709560 /* Setting */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -552,6 +588,7 @@
 				F60AC98328DB722F00B74898 /* UIViewController+Extension.swift in Sources */,
 				F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */,
 				F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */,
+				F631EFEA28FFE95100709560 /* SettingModel.swift in Sources */,
 				F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
 				F6C1F47228D0781200B5FD0E /* CustomHeaderView.swift in Sources */,
@@ -576,6 +613,7 @@
 				F6C1F45528CCE8A700B5FD0E /* DiaryViewController.swift in Sources */,
 				F689993928E0C62100083BBB /* ViewStatus.swift in Sources */,
 				F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */,
+				F631EFE528FFDEA800709560 /* SettingView.swift in Sources */,
 				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
 				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
 				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
@@ -583,11 +621,13 @@
 				F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */,
 				F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */,
 				F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */,
+				F631EFE828FFDF1000709560 /* SettingCollectionViewCell.swift in Sources */,
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
 				F689993628E0568100083BBB /* ProgressBar.swift in Sources */,
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
+				F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
 				F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */,
 				F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */,

@@ -15,12 +15,6 @@ final class DetailImageView: BaseView {
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.addSubview(detailImageView)
-//        view.contentMode = .scaleAspectFit
-//        view.contentSize = CGSize(width: view.contentSize.width, height: 100)
-        
-//        view.isPagingEnabled = true
-//        view.alwaysBounceHorizontal = false
-//        view.alwaysBounceVertical = false
         view.zoomScale = 1.0
         view.minimumZoomScale = 1.0
         view.maximumZoomScale = 2.0
@@ -49,7 +43,6 @@ final class DetailImageView: BaseView {
     override func setConstraints() {
         detailImageView.snp.makeConstraints { make in
             make.center.equalTo(scrollView.snp.center)
-//            make.edges.equalTo(scrollView.snp.edges)
             make.width.equalTo(self.snp.width)
             make.height.equalTo(self.snp.height)
         }

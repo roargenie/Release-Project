@@ -28,9 +28,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let diaryVC = DiaryViewController()
         let nav3 = UINavigationController(rootViewController: diaryVC)
         nav3.navigationBar.tintColor = .black
+        let settingVC = SettingViewController()
+        let nav4 = UINavigationController(rootViewController: settingVC)
+        nav4.navigationBar.tintColor = .black
         
         let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([nav1, nav2, nav3], animated: true)
+        tabBarController.setViewControllers([nav1, nav2, nav3, nav4], animated: true)
         tabBarController.tabBar.tintColor = .black
         
         if let items = tabBarController.tabBar.items {
@@ -46,6 +49,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[2].image = UIImage(systemName: "calendar.circle")
             items[2].title = "다이어리"
             
+            items[3].selectedImage = UIImage(systemName: "gearshape.fill")
+            items[3].image = UIImage(systemName: "gearshape")
+            items[3].title = "설정"
         }
         
         window?.rootViewController = tabBarController
