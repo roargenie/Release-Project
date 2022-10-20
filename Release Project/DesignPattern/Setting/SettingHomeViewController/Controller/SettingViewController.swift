@@ -36,6 +36,7 @@ extension SettingViewController {
             let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
             return cell
         }
+        
         var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
         snapshot.appendSections([0, 1, 2])
         snapshot.appendItems(SettingTitle.notice.title, toSection: 0)

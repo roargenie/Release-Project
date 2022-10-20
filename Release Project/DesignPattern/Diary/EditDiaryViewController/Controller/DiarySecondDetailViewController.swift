@@ -5,11 +5,11 @@ import UIKit
 
 final class DiarySecondDetailViewController: BasePopUpViewController {
     
-    var mainView = SecondDiaryDetailView()
+    private let mainView = SecondDiaryDetailView()
     
     var datatask = Style()
     
-    let repository = StyleRepository()
+    private let repository = StyleRepository()
     
     override func loadView() {
         self.view = mainView
@@ -17,7 +17,6 @@ final class DiarySecondDetailViewController: BasePopUpViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidLoad() {
@@ -31,17 +30,13 @@ final class DiarySecondDetailViewController: BasePopUpViewController {
         mainView.regDateLabel.text = datatask.regDate.formatted()
     }
     
-    override func setConstraints() {
-        
-    }
-    
-    @objc func saveButtonTapped() {
+    @objc private func saveButtonTapped() {
         guard let text = mainView.textView.text else { return }
         repository.updateStyle(item: datatask, contents: text)
         self.dismiss(animated: true)
     }
     
-    @objc func cancelButtonTapped() {
+    @objc private func cancelButtonTapped() {
         self.dismiss(animated: true)
     }
     

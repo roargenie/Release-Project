@@ -3,7 +3,7 @@
 import Foundation
 
 
-enum SettingTitle: Int, CaseIterable {
+enum SettingTitle {
     case notice
     case fileManage
     case info
