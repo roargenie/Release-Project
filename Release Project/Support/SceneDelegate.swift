@@ -19,42 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: scene)
-        let mainVC = HomeViewController()
-        let nav1 = UINavigationController(rootViewController: mainVC)
-        nav1.navigationBar.tintColor = .black
-        let addItemVC = AddItemViewController()
-        let nav2 = UINavigationController(rootViewController: addItemVC)
-        nav2.navigationBar.tintColor = .black
-        let diaryVC = DiaryViewController()
-        let nav3 = UINavigationController(rootViewController: diaryVC)
-        nav3.navigationBar.tintColor = .black
-        let settingVC = SettingViewController()
-        let nav4 = UINavigationController(rootViewController: settingVC)
-        nav4.navigationBar.tintColor = .black
-        
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers([nav1, nav2, nav3, nav4], animated: true)
-        tabBarController.tabBar.tintColor = .black
-        
-        if let items = tabBarController.tabBar.items {
-            items[0].selectedImage = UIImage(systemName: "house.fill")
-            items[0].image = UIImage(systemName: "house")
-            items[0].title = "홈"
-            
-            items[1].selectedImage = UIImage(systemName: "archivebox.fill")
-            items[1].image = UIImage(systemName: "archivebox")
-            items[1].title = "내 서랍장"
-            
-            items[2].selectedImage = UIImage(systemName: "calendar.circle.fill")
-            items[2].image = UIImage(systemName: "calendar.circle")
-            items[2].title = "다이어리"
-            
-            items[3].selectedImage = UIImage(systemName: "gearshape.fill")
-            items[3].image = UIImage(systemName: "gearshape")
-            items[3].title = "설정"
-        }
-        
-        window?.rootViewController = tabBarController
+        let rootVC = TabbarViewController()
+        window?.rootViewController = rootVC
         window?.makeKeyAndVisible()
         
     }

@@ -50,6 +50,7 @@ final class HomeViewController: BaseViewController {
     override func configureUI() {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        mainView.tableView.sectionHeaderHeight = 35
         locationManager.delegate = self
     }
     
@@ -195,11 +196,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return view
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 35
-    }
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {

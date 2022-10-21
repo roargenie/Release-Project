@@ -5,7 +5,7 @@ import UIKit
 
 final class HomeViewThirdTableViewCell: BaseTableViewCell {
         
-    let collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(HomeViewThirdCollectionViewCell.self, forCellWithReuseIdentifier: HomeViewThirdCollectionViewCell.reuseIdentifier)
         view.showsHorizontalScrollIndicator = false
@@ -40,7 +40,7 @@ final class HomeViewThirdTableViewCell: BaseTableViewCell {
         }
     }
     
-    static func collectionViewLayout() -> UICollectionViewFlowLayout {
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth: CGFloat = UIScreen.main.bounds.width
         let itemSize: CGFloat = (deviceWidth - 42) / 2

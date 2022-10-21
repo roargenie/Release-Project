@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F607355028E3839700AC18C0 /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607354F28E3839700AC18C0 /* BasePopupViewController.swift */; };
 		F607355328E5DE4300AC18C0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F607355228E5DE4300AC18C0 /* IQKeyboardManagerSwift */; };
-		F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */; };
+		F60AC96828DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96728DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift */; };
 		F60AC96A28DAF82400B74898 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC96928DAF82400B74898 /* WeatherModel.swift */; };
 		F60AC96E28DB05B000B74898 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F60AC96D28DB05B000B74898 /* .gitignore */; };
 		F60AC97228DB063500B74898 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60AC97128DB063500B74898 /* APIKey.swift */; };
@@ -25,6 +25,7 @@
 		F631EFE828FFDF1000709560 /* SettingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE728FFDF1000709560 /* SettingCollectionViewCell.swift */; };
 		F631EFEA28FFE95100709560 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE928FFE95100709560 /* SettingModel.swift */; };
 		F631F0E729028E6E00709560 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631F0E629028E6E00709560 /* Color.swift */; };
+		F631F0EA2902BDB600709560 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631F0E92902BDB600709560 /* TabbarViewController.swift */; };
 		F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F65472C628F80CCC0047037B /* GoogleService-Info.plist */; };
 		F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F65472CB28F80DE20047037B /* FirebaseCrashlytics */; };
@@ -99,7 +100,7 @@
 
 /* Begin PBXFileReference section */
 		F607354F28E3839700AC18C0 /* BasePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
-		F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailImageTableViewCell.swift; sourceTree = "<group>"; };
+		F60AC96728DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdHomeDetailCustomHeaderView.swift; sourceTree = "<group>"; };
 		F60AC96928DAF82400B74898 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		F60AC96D28DB05B000B74898 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F60AC97128DB063500B74898 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		F631EFE728FFDF1000709560 /* SettingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCollectionViewCell.swift; sourceTree = "<group>"; };
 		F631EFE928FFE95100709560 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		F631F0E629028E6E00709560 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F631F0E92902BDB600709560 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		F65472C528F8090E0047037B /* Release Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Release Project.entitlements"; sourceTree = "<group>"; };
 		F65472C628F80CCC0047037B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -218,9 +220,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0AE2901B64B00709560 /* DesignPattern */ = {
+		F631F0AE2901B64B00709560 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				F631F0E82902BD9200709560 /* Tabbar */,
 				F6C1F3EC28CC975800B5FD0E /* Model */,
 				F631F0AF2901B66100709560 /* Home */,
 				F631F0B02901B66700709560 /* AddItem */,
@@ -228,7 +231,7 @@
 				F631F0B22901B67400709560 /* Setting */,
 				F631F0CA2901B9F200709560 /* DetailImage */,
 			);
-			path = DesignPattern;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		F631F0AF2901B66100709560 /* Home */ = {
@@ -530,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */,
+				F60AC96728DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift */,
 				F631F0D12901BD7000709560 /* Cell */,
 			);
 			path = View;
@@ -539,7 +543,6 @@
 			isa = PBXGroup;
 			children = (
 				F6C1F45828CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift */,
-				F60AC96728DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -715,6 +718,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		F631F0E82902BD9200709560 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F631F0E92902BDB600709560 /* TabbarViewController.swift */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
 		F68F011428D3988F00B7B349 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,7 +758,7 @@
 				F6C1F3F128CC97B200B5FD0E /* Utility */,
 				F6C1F3EF28CC979B00B5FD0E /* Extension */,
 				F6C1F3F028CC97A100B5FD0E /* Manager */,
-				F631F0AE2901B64B00709560 /* DesignPattern */,
+				F631F0AE2901B64B00709560 /* Scene */,
 				F631F0BF2901B71300709560 /* Support */,
 				F65472C528F8090E0047037B /* Release Project.entitlements */,
 				F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */,
@@ -921,6 +932,7 @@
 				F631F0E729028E6E00709560 /* Color.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
 				F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */,
+				F631F0EA2902BDB600709560 /* TabbarViewController.swift in Sources */,
 				F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */,
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
@@ -930,7 +942,7 @@
 				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
-				F60AC96828DA40BB00B74898 /* ThirdHomeDetailImageTableViewCell.swift in Sources */,
+				F60AC96828DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift in Sources */,
 				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
 				F689995B28E1F2A900083BBB /* ProgressBarLabel.swift in Sources */,
 				F6C1F43828CC9ECE00B5FD0E /* BaseCollectionViewCell.swift in Sources */,

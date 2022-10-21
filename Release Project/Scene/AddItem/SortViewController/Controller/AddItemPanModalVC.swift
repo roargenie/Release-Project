@@ -48,18 +48,9 @@ final class AddItemPanModalVC: BaseViewController {
         mainView.tableView.rowHeight = 50
     }
     
-    override func setConstraints() {
-        
-    }
-    
     private func fetchRealm() {
         categoryTasks = repository.fetch(Category.self)
     }
-    
-//    func dataSendClosure(query: String, completion: ((Results<ClothItem>) -> Void)?) {
-//        completion?(repository.clothItemCategoryFilter(query: query))
-//    }
-    
 }
 
 extension AddItemPanModalVC: PanModalPresentable {
@@ -116,22 +107,22 @@ extension AddItemPanModalVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 0 {
-            _ = dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
+            dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
             self.dismiss(animated: true)
         } else {
             switch indexPath.row {
             case 0:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "아우터"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "아우터"))
             case 1:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "상의"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "상의"))
             case 2:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "하의"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "하의"))
             case 3:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "신발"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "신발"))
             case 4:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "악세"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "악세"))
             case 5:
-                _ = dataSendClosure?(repository.clothItemCategoryFilter(query: "기타"))
+                dataSendClosure?(repository.clothItemCategoryFilter(query: "기타"))
             default:
                 break
             }
