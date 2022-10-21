@@ -9,7 +9,7 @@ import PanModal
 
 final class AddItemPanModalVC: BaseViewController {
     
-    private var mainView = AddItemPanModalView()
+    private let mainView = AddItemPanModalView()
     
     private let repository = StyleRepository()
     
@@ -52,7 +52,7 @@ final class AddItemPanModalVC: BaseViewController {
         
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         categoryTasks = repository.fetch(Category.self)
     }
     
@@ -61,7 +61,6 @@ final class AddItemPanModalVC: BaseViewController {
 //    }
     
 }
-
 
 extension AddItemPanModalVC: PanModalPresentable {
     

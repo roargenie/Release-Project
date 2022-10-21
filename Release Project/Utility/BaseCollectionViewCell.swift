@@ -10,9 +10,10 @@ class BaseCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configureUI()
         setConstraints()
-        self.backgroundColor = .white
+        self.backgroundColor = Color.backGroundColor
     }
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

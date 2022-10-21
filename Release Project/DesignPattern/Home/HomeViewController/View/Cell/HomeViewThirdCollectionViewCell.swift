@@ -24,10 +24,6 @@ final class HomeViewThirdCollectionViewCell: BaseCollectionViewCell {
         self.layer.cornerRadius = 20
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         self.addSubview(imageView)
     }

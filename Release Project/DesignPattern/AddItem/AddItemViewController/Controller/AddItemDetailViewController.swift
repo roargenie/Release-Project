@@ -12,7 +12,7 @@ final class AddItemDetailViewController: BaseViewController {
         case category = 0, season
     }
     
-    private var mainView = AddItemDetailView()
+    private let mainView = AddItemDetailView()
     
     private let repository = StyleRepository()
     
@@ -43,25 +43,16 @@ final class AddItemDetailViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchRealm()
-//        repository.initCategoryTagIsSelected(item: categoryTasks)
-//        repository.initSeasonTagIsSelected(item: seasonTasks)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-//        repository.initCategoryTagIsSelected(item: categoryTasks)
-//        repository.initSeasonTagIsSelected(item: seasonTasks)
         _ = dataSendClosure?(repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false))
-//        fetchRealm()
     }
     
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-    }
-    
-    override func setConstraints() {
-        
     }
     
     override func setNavigationBar() {

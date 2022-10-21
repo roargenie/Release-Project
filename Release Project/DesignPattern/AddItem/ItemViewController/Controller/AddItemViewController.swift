@@ -8,7 +8,7 @@ import PanModal
 
 final class AddItemViewController: BaseViewController {
     
-    var mainView = AddItemView()
+    private let mainView = AddItemView()
     
     private let repository = StyleRepository()
     
@@ -60,7 +60,7 @@ final class AddItemViewController: BaseViewController {
         navigationItem.rightBarButtonItems = [addButton]
     }
     
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let vc = AddItemDetailViewController()
         vc.dataSendClosure = { data in
             self.clothItemTasks = data
@@ -70,7 +70,7 @@ final class AddItemViewController: BaseViewController {
         transition(vc, transitionStyle: .push)
     }
     
-    @objc func listButtonTapped() {
+    @objc private func listButtonTapped() {
         let vc = AddItemPanModalVC()
         vc.categoryTasks = categoryTasks
         vc.dataSendClosure = { data in

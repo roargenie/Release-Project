@@ -94,10 +94,6 @@ final class HomeViewFourthTableViewCell: BaseTableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [firstStackView, secondStackView, outerLabel, topLabel, bottomLabel, shoesLabel, accLabel, otherLabel].forEach { self.contentView.addSubview($0) }
     }

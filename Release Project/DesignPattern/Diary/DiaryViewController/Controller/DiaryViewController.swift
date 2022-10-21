@@ -7,7 +7,7 @@ import FSCalendar
 
 final class DiaryViewController: BaseViewController {
     
-    private var mainView = DiaryView()
+    private let mainView = DiaryView()
     
     var selectedDay = Date()
     

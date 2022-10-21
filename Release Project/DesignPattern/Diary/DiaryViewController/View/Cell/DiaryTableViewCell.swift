@@ -39,10 +39,6 @@ final class DiaryTableViewCell: BaseTableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [diaryStackView].forEach { self.contentView.addSubview($0) }
     }

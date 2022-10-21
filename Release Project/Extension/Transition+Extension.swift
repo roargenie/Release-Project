@@ -5,7 +5,7 @@ import UIKit
 
 extension UIViewController {
     
-    enum TransitionStyle {
+    @frozen enum TransitionStyle {
         case presentFull
         case present
         case push

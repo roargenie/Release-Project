@@ -38,18 +38,9 @@ final class FirstHomeDetailViewController1: BaseViewController {
         mainView.collectionView.dataSource = self
     }
     
-    override func setConstraints() {
-        
-    }
-    
-    override func setNavigationBar() {
-         
-    }
-    
     private func fetchRealm() {
         styleTasks = weatherData.weatherStyle(temp: weatherData.temp)
     }
-    
     
 }
 

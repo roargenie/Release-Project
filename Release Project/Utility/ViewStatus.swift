@@ -3,17 +3,17 @@
 import Foundation
 
 
-enum ItemViewStatus {
+@frozen enum ItemViewStatus {
     case read
     case edit
 }
 
-enum DiaryViewStatus {
+@frozen enum DiaryViewStatus {
     case read
     case edit
 }
 
-enum DetailImageViewStatus {
+@frozen enum DetailImageViewStatus {
     case cloth
     case style
 }

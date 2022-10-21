@@ -5,7 +5,7 @@ import UIKit
 
 final class DetailImageViewController: UIViewController {
     
-    private var mainView = DetailImageView()
+    private let mainView = DetailImageView()
     
     var styleTask = Style()
     var clothTask = ClothItem()

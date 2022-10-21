@@ -8,7 +8,7 @@ import RealmSwift
  */
 final class ThirdHomeDetailViewController: BaseViewController {
     
-    private var mainView = ThirdHomeDetailView()
+    private let mainView = ThirdHomeDetailView()
     
     private let repository = StyleRepository()
     
@@ -49,10 +49,6 @@ final class ThirdHomeDetailViewController: BaseViewController {
         mainView.tableView.sectionFooterHeight = 0
     }
     
-    override func setConstraints() {
-        
-    }
-    
     override func setNavigationBar() {
         if viewStatus == .edit {
             let editButton = UIBarButtonItem(image: UIImage(systemName: "pencil"), style: .plain, target: self, action: #selector(editButtonTapped))
@@ -66,20 +62,20 @@ final class ThirdHomeDetailViewController: BaseViewController {
         styleTasks = repository.fetch(Style.self)
     }
     
-    @objc func editButtonTapped() {
+    @objc private func editButtonTapped() {
         let vc = DiarySecondDetailViewController()
         vc.datatask = dataTasks
         transition(vc, transitionStyle: .presentFull)
     }
     
-    @objc func deleteButtonTapped() {
+    @objc private func deleteButtonTapped() {
         showAlertMessage(title: "삭제하시겠습니까?", button: "네, 삭제할게요!") { _ in
             self.repository.deleteStyleItem(item: self.dataTasks)
             self.navigationController?.popViewController(animated: true)
         }
     }
     
-    @objc func touchUpImageView() {
+    @objc private func touchUpImageView() {
         let vc = DetailImageViewController()
         vc.styleTask = dataTasks
         vc.viewStatus = .style

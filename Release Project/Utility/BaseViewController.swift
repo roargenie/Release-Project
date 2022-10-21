@@ -9,7 +9,7 @@ class BaseViewController: UIViewController {
         configureUI()
         setConstraints()
         setNavigationBar()
-        view.backgroundColor = .white
+        view.backgroundColor = Color.backGroundColor
     }
     
     func configureUI() { }

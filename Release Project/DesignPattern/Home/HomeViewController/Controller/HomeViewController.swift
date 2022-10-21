@@ -53,10 +53,6 @@ final class HomeViewController: BaseViewController {
         locationManager.delegate = self
     }
     
-    override func setConstraints() {
-        
-    }
-    
     @objc private func weatherStyleButtonTapped() {
         let vc = FirstHomeDetailViewController1()
         vc.weatherData = weatherData
@@ -73,7 +69,7 @@ final class HomeViewController: BaseViewController {
         transition(vc, transitionStyle: .push)
     }
     
-    func fetchRealm() {
+    private func fetchRealm() {
         clothItemTasks = repository.fetch(ClothItem.self)
         styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
     }

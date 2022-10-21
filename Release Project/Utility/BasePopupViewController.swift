@@ -10,7 +10,7 @@ class BasePopUpViewController: UIViewController {
         configureUI()
         setConstraints()
         setNavigationBar()
-        view.backgroundColor = UIColor(red: 0.09957252358, green: 0.09957252358, blue: 0.09957252358, alpha: 0.8)
+        view.backgroundColor = Color.popUpViewBackGroundColor
     }
     
     func configureUI() { }

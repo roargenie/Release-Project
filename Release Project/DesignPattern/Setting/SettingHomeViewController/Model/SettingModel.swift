@@ -3,7 +3,8 @@
 import Foundation
 
 
-enum SettingTitle {
+
+@frozen enum SettingTitle {
     case notice
     case fileManage
     case info

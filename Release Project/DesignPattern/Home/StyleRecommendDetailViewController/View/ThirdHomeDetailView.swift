@@ -18,10 +18,6 @@ final class ThirdHomeDetailView: BaseView {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [tableView].forEach { self.addSubview($0) }
     }
@@ -30,7 +26,6 @@ final class ThirdHomeDetailView: BaseView {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(self.safeAreaLayoutGuide)
         }
-        
     }
     
 }

@@ -16,10 +16,6 @@ final class ThirdAddItemDetailCollectionViewCell: BaseCollectionViewCell {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         self.addSubview(seasonTagLabel)
         self.layer.cornerRadius = 20

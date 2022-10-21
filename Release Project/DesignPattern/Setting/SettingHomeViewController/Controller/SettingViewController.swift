@@ -6,7 +6,7 @@ import UIKit
 
 final class SettingViewController: BaseViewController {
     
-    var mainView = SettingView()
+    private let mainView = SettingView()
     
     private var dataSource: UICollectionViewDiffableDataSource<Int, String>!
     

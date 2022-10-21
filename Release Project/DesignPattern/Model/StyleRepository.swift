@@ -5,6 +5,7 @@ import RealmSwift
 
 
 protocol StyleRepositoryType {
+    
     func fetch<T: Object>(_ table: T.Type) -> Results<T>
     func fetchDateFilter(date: Date) -> Results<Style>
     func fetchDateBeforeWeekFilter<T: Object>(_ item: T.Type) -> Results<T>

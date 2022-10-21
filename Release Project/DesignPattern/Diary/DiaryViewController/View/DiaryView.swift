@@ -40,10 +40,6 @@ final class DiaryView: BaseView {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [tableView, calendar, emptyViewLabel].forEach { self.addSubview($0) }
     }

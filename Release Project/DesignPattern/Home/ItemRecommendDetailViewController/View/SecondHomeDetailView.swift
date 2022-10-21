@@ -5,7 +5,7 @@ import UIKit
 
 final class SecondHomeDetailView: BaseView {
     
-    let collectionView: UICollectionView = {
+    lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(SecondHomeDetailCollectionViewCell.self, forCellWithReuseIdentifier: SecondHomeDetailCollectionViewCell.reuseIdentifier)
         view.register(HomeDetailCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HomeDetailCollectionReusableView.identifier)
@@ -26,10 +26,6 @@ final class SecondHomeDetailView: BaseView {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [collectionView, emptyViewLabel].forEach { self.addSubview($0) }
     }
@@ -44,7 +40,7 @@ final class SecondHomeDetailView: BaseView {
         }
     }
     
-    static func collectionViewLayout() -> UICollectionViewFlowLayout {
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         let deviceWidth: CGFloat = UIScreen.main.bounds.width
         let itemSize: CGFloat = (deviceWidth - 42) / 2

@@ -49,10 +49,6 @@ final class SecondDiaryDetailView: BaseView {
         self.backgroundColor = .darkGray
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     override func configureUI() {
         [saveButton, cancelButton, regDateLabel, lineView, textView].forEach { self.addSubview($0) }
     }

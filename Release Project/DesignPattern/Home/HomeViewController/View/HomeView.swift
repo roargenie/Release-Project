@@ -12,17 +12,13 @@ final class HomeView: BaseView {
         view.register(HomeViewThirdTableViewCell.self, forCellReuseIdentifier: HomeViewThirdTableViewCell.reuseIdentifier)
         view.register(HomeViewFourthTableViewCell.self, forCellReuseIdentifier: HomeViewFourthTableViewCell.reuseIdentifier)
         view.register(ReusableHeaderView.self, forHeaderFooterViewReuseIdentifier: ReusableHeaderView.identifier)
-        view.backgroundColor = .white
+        view.backgroundColor = Color.backGroundColor
         view.separatorStyle = .none
         return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     override func configureUI() {

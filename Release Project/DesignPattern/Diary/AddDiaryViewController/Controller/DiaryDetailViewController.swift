@@ -7,7 +7,7 @@ import YPImagePicker
 
 final class DiaryDetailViewController: BaseViewController {
     
-    private var mainView = FirstDiaryDetailView()
+    private let mainView = FirstDiaryDetailView()
     
     private let repository = StyleRepository()
     

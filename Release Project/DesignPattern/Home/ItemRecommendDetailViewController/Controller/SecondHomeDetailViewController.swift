@@ -6,7 +6,7 @@ import RealmSwift
 
 final class SecondHomeDetailViewController: BaseViewController {
     
-    private var mainView = SecondHomeDetailView()
+    private let mainView = SecondHomeDetailView()
     
     private let repository = StyleRepository()
     

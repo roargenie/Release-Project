@@ -6,7 +6,7 @@ import RealmSwift
 
 final class FirstHomeDetailViewController2: BaseViewController {
     
-    private var mainView = FirstHomeDetailView1()
+    private let mainView = FirstHomeDetailView1()
     
     private let repository = StyleRepository()
     
@@ -31,18 +31,9 @@ final class FirstHomeDetailViewController2: BaseViewController {
         fetchRealm()
     }
     
-    
     override func configureUI() {
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-    }
-    
-    override func setConstraints() {
-        
-    }
-    
-    override func setNavigationBar() {
-         
     }
     
     private func fetchRealm() {

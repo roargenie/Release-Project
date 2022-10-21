@@ -17,7 +17,6 @@ final class Category: Object {
         self.title = title
         self.isSelected = false
     }
-
 }
 
 final class Season: Object {
