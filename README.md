@@ -19,7 +19,7 @@
 - `MVC` `CodeBaseUI` `Alamofire` `YPImagePicker` `FSCalendar` `Realm` `Firebase Analytics` `Firebase Crashlytics` `Firebase Cloud Messaging` `Snapkit` `PanModal` `IQKeyboardManager` `CoreLocation`
 
 ### 기술 설명
-- `Realm`을 사용한 데이터 베이스 구축[📌  스키마 설계 상세하게 보기](https://www.notion.so/514e7b34cb734e0d8184873dcd80d1bc) 
+- `Realm`을 사용한 데이터 베이스 구축[📌  스키마 설계 상세하게 보기](https://www.notion.so/a600206b53b14a92b1f989b0d4a89072#514e7b34cb734e0d8184873dcd80d1bc) 
   - 날씨, 카테고리, 아이템, 다이어리 4개의 테이블을 사용하여 카테고리 등 태그가 추가 되더라도 유지보수가 편리하도록 설계 
   - 각각의 테이블의 PK를 다른 연관된 테이블에서 FK로 사용하여 여러개의 테이블을 필터하여 조건에 맞는 데이터를 가져옴
 - `FileManager`를 사용하여 `Realm`에 저장된 ObjectId로 파일 이름이 저장되도록 구현
