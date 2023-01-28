@@ -78,6 +78,21 @@
       layer.add(animation, forKey: "strokeEnd")
   }
   ```
+  ```swift
+  case 3:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFourthTableViewCell else { return UITableViewCell() }
+
+      DispatchQueue.main.async {
+          cell.outerPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "아우터"))
+          cell.topPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "상의"))
+          cell.bottomPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "하의"))
+          cell.shoesPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "신발"))
+          cell.accPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "악세"))
+          cell.otherPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "기타"))
+      }
+      cell.selectionStyle = .none
+      return cell
+  ```
 - 아이템 추가 화면 카테고리 정렬시 역으로 여러가지 페치가 일어나는 상황에서의 이슈
   - Realm fetch를 viewWillAppear에서 해주고 있었는데, 한 가지 방식으로만 fetch 할 수 있어서
     클로저를 이용하여 문제 해결.
