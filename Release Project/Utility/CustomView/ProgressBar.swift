@@ -56,3 +56,4 @@ final class ProgressBar: UIView {
         layer.add(animation, forKey: "strokeEnd")
     }
 }
+

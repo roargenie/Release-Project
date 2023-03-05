@@ -77,10 +77,6 @@ final class DiaryDetailViewController: BaseViewController {
         mainView.textView.delegate = self
     }
     
-    override func setConstraints() {
-        
-    }
-    
     override func setNavigationBar() {
         let saveButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(saveButtonTapped))
         let cameraButton = UIBarButtonItem(image: UIImage(systemName: "camera"), style: .plain, target: self, action: #selector(cameraButtonTapped))

@@ -29,7 +29,6 @@ final class DetailImageViewController: UIViewController {
         } else {
             mainView.detailImageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(styleTask.objectId).jpg")
         }
-        
         mainView.cancelButton.addTarget(self, action: #selector(cancelButtonTapped), for: .touchUpInside)
     }
     
