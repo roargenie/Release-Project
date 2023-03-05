@@ -48,7 +48,6 @@
 		F6A19A1D28F431C300274411 /* DetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A19A1C28F431C300274411 /* DetailImageView.swift */; };
 		F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */; };
 		F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */; };
-		F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */; };
 		F6C1F3E228CC971E00B5FD0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */; };
 		F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */; };
 		F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */; };
@@ -80,6 +79,16 @@
 		F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */; };
 		F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */; };
 		F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */; };
+		F6D7E7AD29B4C40000BEB85E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7AC29B4C40000BEB85E /* HomeViewModel.swift */; };
+		F6D7E7B129B4C5BA00BEB85E /* ItemRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B029B4C5BA00BEB85E /* ItemRecommendViewModel.swift */; };
+		F6D7E7B429B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B329B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift */; };
+		F6D7E7B729B4C62800BEB85E /* MyItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B629B4C62800BEB85E /* MyItemViewModel.swift */; };
+		F6D7E7BA29B4C64300BEB85E /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B929B4C64300BEB85E /* AddItemViewModel.swift */; };
+		F6D7E7BD29B4C6D700BEB85E /* SortViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7BC29B4C6D700BEB85E /* SortViewModel.swift */; };
+		F6D7E7C029B4C6E600BEB85E /* DiaryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7BF29B4C6E600BEB85E /* DiaryListViewModel.swift */; };
+		F6D7E7C329B4C6F500BEB85E /* AddDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C229B4C6F500BEB85E /* AddDiaryViewModel.swift */; };
+		F6D7E7C629B4C70200BEB85E /* EditDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C529B4C70200BEB85E /* EditDiaryViewModel.swift */; };
+		F6D7E7C929B4C71600BEB85E /* DetailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C829B4C71600BEB85E /* DetailImageViewModel.swift */; };
 		F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */; };
 		F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8212228DA167F00763183 /* FileManagerHelper.swift */; };
 		F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */; };
@@ -130,7 +139,6 @@
 		F6C1F3D528CC971B00B5FD0E /* Release Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Release Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F6C1F3DF28CC971B00B5FD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6C1F3E428CC971E00B5FD0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6C1F3E628CC971E00B5FD0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -163,6 +171,16 @@
 		F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailViewController.swift; sourceTree = "<group>"; };
 		F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		F6D7E7AC29B4C40000BEB85E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7B029B4C5BA00BEB85E /* ItemRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecommendViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7B329B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecommendDetailViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7B629B4C62800BEB85E /* MyItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7B929B4C64300BEB85E /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7BC29B4C6D700BEB85E /* SortViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7BF29B4C6E600BEB85E /* DiaryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7C229B4C6F500BEB85E /* AddDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7C529B4C70200BEB85E /* EditDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7C829B4C71600BEB85E /* DetailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewModel.swift; sourceTree = "<group>"; };
 		F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6D8212228DA167F00763183 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 		F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDiaryDetailView.swift; sourceTree = "<group>"; };
@@ -220,48 +238,48 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0AE2901B64B00709560 /* Scene */ = {
+		F631F0AE2901B64B00709560 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				F631F0E82902BD9200709560 /* Tabbar */,
 				F6C1F3EC28CC975800B5FD0E /* Model */,
 				F631F0AF2901B66100709560 /* Home */,
-				F631F0B02901B66700709560 /* AddItem */,
+				F631F0B02901B66700709560 /* StorageCloset */,
 				F631F0B12901B66F00709560 /* Diary */,
 				F631F0B22901B67400709560 /* Setting */,
 				F631F0CA2901B9F200709560 /* DetailImage */,
 			);
-			path = Scene;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		F631F0AF2901B66100709560 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F631F0B52901B68D00709560 /* HomeViewController */,
-				F631F0B42901B68A00709560 /* StyleRecommendViewController */,
-				F631F0CD2901BD1E00709560 /* StyleRecommendDetailViewController */,
-				F631F0B32901B68600709560 /* ItemRecommendViewController */,
-				F631F0CE2901BD3900709560 /* ItemRecommendDetailViewController */,
+				F631F0B52901B68D00709560 /* Home */,
+				F631F0B42901B68A00709560 /* StyleRecommend */,
+				F631F0CD2901BD1E00709560 /* StyleRecommendDetail */,
+				F631F0B32901B68600709560 /* ItemRecommend */,
+				F631F0CE2901BD3900709560 /* ItemRecommendDetail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F631F0B02901B66700709560 /* AddItem */ = {
+		F631F0B02901B66700709560 /* StorageCloset */ = {
 			isa = PBXGroup;
 			children = (
-				F631F0B72901B69700709560 /* ItemViewController */,
-				F631F0B82901B69900709560 /* AddItemViewController */,
-				F631F0B62901B69500709560 /* SortViewController */,
+				F631F0B72901B69700709560 /* MyItem */,
+				F631F0B82901B69900709560 /* AddItem */,
+				F631F0B62901B69500709560 /* Sort */,
 			);
-			path = AddItem;
+			path = StorageCloset;
 			sourceTree = "<group>";
 		};
 		F631F0B12901B66F00709560 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
-				F631F0BB2901B6A200709560 /* DiaryViewController */,
-				F631F0BA2901B69F00709560 /* AddDiaryViewController */,
-				F631F0B92901B69D00709560 /* EditDiaryViewController */,
+				F631F0BB2901B6A200709560 /* DiaryList */,
+				F631F0BA2901B69F00709560 /* AddDiary */,
+				F631F0B92901B69D00709560 /* EditDiary */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -269,90 +287,92 @@
 		F631F0B22901B67400709560 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				F631F0C92901B97900709560 /* SettingHomeViewController */,
+				F631F0BD2901B6A900709560 /* View */,
+				F631F0BC2901B6A600709560 /* Model */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		F631F0B32901B68600709560 /* ItemRecommendViewController */ = {
+		F631F0B32901B68600709560 /* ItemRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7AF29B4C5AC00BEB85E /* ViewModel */,
 				F631F0C72901B94100709560 /* View */,
-				F631F0C62901B93B00709560 /* Controller */,
 			);
-			path = ItemRecommendViewController;
+			path = ItemRecommend;
 			sourceTree = "<group>";
 		};
-		F631F0B42901B68A00709560 /* StyleRecommendViewController */ = {
+		F631F0B42901B68A00709560 /* StyleRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7AE29B4C41C00BEB85E /* ViewModel */,
 				F631F0C42901B92B00709560 /* View */,
-				F631F0C32901B92500709560 /* Controller */,
 			);
-			path = StyleRecommendViewController;
+			path = StyleRecommend;
 			sourceTree = "<group>";
 		};
-		F631F0B52901B68D00709560 /* HomeViewController */ = {
+		F631F0B52901B68D00709560 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7AB29B4C3C200BEB85E /* ViewModel */,
 				F631F0C12901B8BB00709560 /* View */,
-				F631F0C02901B8B600709560 /* Controller */,
 			);
-			path = HomeViewController;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		F631F0B62901B69500709560 /* SortViewController */ = {
+		F631F0B62901B69500709560 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7BB29B4C6CF00BEB85E /* ViewModel */,
 				F631F0DC2901BFB300709560 /* View */,
-				F631F0DB2901BFAE00709560 /* Controller */,
 			);
-			path = SortViewController;
+			path = Sort;
 			sourceTree = "<group>";
 		};
-		F631F0B72901B69700709560 /* ItemViewController */ = {
+		F631F0B72901B69700709560 /* MyItem */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7B529B4C61F00BEB85E /* ViewModel */,
 				F631F0D62901BF9900709560 /* View */,
-				F631F0D52901BF9500709560 /* Controller */,
 			);
-			path = ItemViewController;
+			path = MyItem;
 			sourceTree = "<group>";
 		};
-		F631F0B82901B69900709560 /* AddItemViewController */ = {
+		F631F0B82901B69900709560 /* AddItem */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7B829B4C63A00BEB85E /* VIewModel */,
 				F631F0D92901BFA600709560 /* View */,
 				F631F0D82901BFA100709560 /* Controller */,
 			);
-			path = AddItemViewController;
+			path = AddItem;
 			sourceTree = "<group>";
 		};
-		F631F0B92901B69D00709560 /* EditDiaryViewController */ = {
+		F631F0B92901B69D00709560 /* EditDiary */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7C429B4C6F900BEB85E /* ViewModel */,
 				F631F0E52901C0D000709560 /* View */,
-				F631F0E42901C0CC00709560 /* Controller */,
 			);
-			path = EditDiaryViewController;
+			path = EditDiary;
 			sourceTree = "<group>";
 		};
-		F631F0BA2901B69F00709560 /* AddDiaryViewController */ = {
+		F631F0BA2901B69F00709560 /* AddDiary */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7C129B4C6E900BEB85E /* ViewModel */,
 				F631F0E22901C0C600709560 /* View */,
-				F631F0E12901C0C200709560 /* Controller */,
 			);
-			path = AddDiaryViewController;
+			path = AddDiary;
 			sourceTree = "<group>";
 		};
-		F631F0BB2901B6A200709560 /* DiaryViewController */ = {
+		F631F0BB2901B6A200709560 /* DiaryList */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7BE29B4C6DC00BEB85E /* ViewModel */,
 				F631F0DF2901C0B700709560 /* View */,
-				F631F0DE2901C0B000709560 /* Controller */,
 			);
-			path = DiaryViewController;
+			path = DiaryList;
 			sourceTree = "<group>";
 		};
 		F631F0BC2901B6A600709560 /* Model */ = {
@@ -367,34 +387,19 @@
 			isa = PBXGroup;
 			children = (
 				F631EFE428FFDEA800709560 /* SettingView.swift */,
+				F631EFE128FFDE6D00709560 /* SettingViewController.swift */,
 				F631EFE628FFDED100709560 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F631F0BE2901B6B500709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F631EFE128FFDE6D00709560 /* SettingViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F631F0BF2901B71300709560 /* Support */ = {
+		F631F0BF2901B71300709560 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				F6C1F3D828CC971B00B5FD0E /* AppDelegate.swift */,
 				F6C1F3DA28CC971B00B5FD0E /* SceneDelegate.swift */,
 			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		F631F0C02901B8B600709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */,
-			);
-			path = Controller;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		F631F0C12901B8BB00709560 /* View */ = {
@@ -402,6 +407,7 @@
 			children = (
 				F6C1F40728CC9A2200B5FD0E /* HomeView.swift */,
 				F6DB7FCC28D0C4FF004AF264 /* ReusableHeaderView.swift */,
+				F6C1F40F28CC9A5700B5FD0E /* HomeViewController.swift */,
 				F631F0C22901B8C100709560 /* Cell */,
 			);
 			path = View;
@@ -419,18 +425,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0C32901B92500709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0C42901B92B00709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6C1F40928CC9A3700B5FD0E /* FirstHomeDetailView-1.swift */,
+				F6C1F41128CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift */,
 				F631F0C52901B93200709560 /* Cell */,
 			);
 			path = View;
@@ -444,18 +443,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0C62901B93B00709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6DB7FD028D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0C72901B94100709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6DB7FCE28D0CC84004AF264 /* FirstHomeDetailView-2.swift */,
+				F6DB7FD028D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift */,
 				F631F0C82901B94400709560 /* Cell */,
 			);
 			path = View;
@@ -468,21 +460,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0C92901B97900709560 /* SettingHomeViewController */ = {
-			isa = PBXGroup;
-			children = (
-				F631F0BE2901B6B500709560 /* Controller */,
-				F631F0BD2901B6A900709560 /* View */,
-				F631F0BC2901B6A600709560 /* Model */,
-			);
-			path = SettingHomeViewController;
-			sourceTree = "<group>";
-		};
 		F631F0CA2901B9F200709560 /* DetailImage */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7C729B4C70900BEB85E /* ViewModel */,
 				F631F0CB2901BA2F00709560 /* View */,
-				F631F0CC2901BA3200709560 /* Controller */,
 			);
 			path = DetailImage;
 			sourceTree = "<group>";
@@ -491,34 +473,27 @@
 			isa = PBXGroup;
 			children = (
 				F6A19A1C28F431C300274411 /* DetailImageView.swift */,
+				F6A19A1928F4316300274411 /* DetailImageViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F631F0CC2901BA3200709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6A19A1928F4316300274411 /* DetailImageViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F631F0CD2901BD1E00709560 /* StyleRecommendDetailViewController */ = {
+		F631F0CD2901BD1E00709560 /* StyleRecommendDetail */ = {
 			isa = PBXGroup;
 			children = (
 				F631F0D02901BD6D00709560 /* View */,
 				F631F0CF2901BD6900709560 /* Controller */,
 			);
-			path = StyleRecommendDetailViewController;
+			path = StyleRecommendDetail;
 			sourceTree = "<group>";
 		};
-		F631F0CE2901BD3900709560 /* ItemRecommendDetailViewController */ = {
+		F631F0CE2901BD3900709560 /* ItemRecommendDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F6D7E7B229B4C5C600BEB85E /* ViewModel */,
 				F631F0D32901BD7B00709560 /* View */,
-				F631F0D22901BD7700709560 /* Controller */,
 			);
-			path = ItemRecommendDetailViewController;
+			path = ItemRecommendDetail;
 			sourceTree = "<group>";
 		};
 		F631F0CF2901BD6900709560 /* Controller */ = {
@@ -547,19 +522,12 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0D22901BD7700709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0D32901BD7B00709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6C1F40B28CC9A4100B5FD0E /* SecondHomeDetailView.swift */,
 				F6DB7FD228D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift */,
+				F6C1F41328CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift */,
 				F631F0D42901BD7F00709560 /* Cell */,
 			);
 			path = View;
@@ -573,18 +541,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0D52901BF9500709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0D62901BF9900709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6C1F43C28CCC03C00B5FD0E /* AddItemView.swift */,
+				F6C1F44428CCC92300B5FD0E /* AddItemViewController.swift */,
 				F631F0D72901BF9C00709560 /* Cell */,
 			);
 			path = View;
@@ -601,7 +562,6 @@
 		F631F0D82901BFA100709560 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,6 +571,7 @@
 			children = (
 				F6C1F45C28CE0B9300B5FD0E /* AddItemDetailView.swift */,
 				F68F011228D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift */,
+				F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */,
 				F631F0DA2901BFA900709560 /* Cell */,
 			);
 			path = View;
@@ -625,18 +586,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0DB2901BFAE00709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F60AC98428DB765300B74898 /* AddItemPanModalVC.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0DC2901BFB300709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F60AC98628DB769300B74898 /* AddItemPanModalView.swift */,
+				F60AC98428DB765300B74898 /* AddItemPanModalVC.swift */,
 				F631F0DD2901BFB500709560 /* Cell */,
 			);
 			path = View;
@@ -650,17 +604,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0DE2901C0B000709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0DF2901C0B700709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F45428CCE8A700B5FD0E /* DiaryViewController.swift */,
 				F6C1F45228CCE89400B5FD0E /* DiaryView.swift */,
 				F631F0E02901C0BE00709560 /* Cell */,
 			);
@@ -675,17 +622,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0E12901C0C200709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6DB7FD928D107F6004AF264 /* DiaryDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0E22901C0C600709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F6DB7FD928D107F6004AF264 /* DiaryDetailViewController.swift */,
 				F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */,
 				F631F0E32901C0C900709560 /* Cell */,
 			);
@@ -702,18 +642,11 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		F631F0E42901C0CC00709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6DB7FDF28D1EC18004AF264 /* DiarySecondDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0E52901C0D000709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6DB7FE128D1EC26004AF264 /* SecondDiaryDetailView.swift */,
+				F6DB7FDF28D1EC18004AF264 /* DiarySecondDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -755,13 +688,12 @@
 			isa = PBXGroup;
 			children = (
 				F60AC97028DB062800B74898 /* Key */,
+				F631F0BF2901B71300709560 /* Application */,
 				F6C1F3F128CC97B200B5FD0E /* Utility */,
 				F6C1F3EF28CC979B00B5FD0E /* Extension */,
 				F6C1F3F028CC97A100B5FD0E /* Manager */,
-				F631F0AE2901B64B00709560 /* Scene */,
-				F631F0BF2901B71300709560 /* Support */,
+				F631F0AE2901B64B00709560 /* Presentation */,
 				F65472C528F8090E0047037B /* Release Project.entitlements */,
-				F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */,
 				F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */,
 				F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */,
 				F6C1F3E628CC971E00B5FD0E /* Info.plist */,
@@ -824,6 +756,93 @@
 				F689993528E0568100083BBB /* ProgressBar.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		F6D7E7AB29B4C3C200BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7AC29B4C40000BEB85E /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7AE29B4C41C00BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7AF29B4C5AC00BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7B029B4C5BA00BEB85E /* ItemRecommendViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7B229B4C5C600BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7B329B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7B529B4C61F00BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7B629B4C62800BEB85E /* MyItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7B829B4C63A00BEB85E /* VIewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7B929B4C64300BEB85E /* AddItemViewModel.swift */,
+			);
+			path = VIewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7BB29B4C6CF00BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7BC29B4C6D700BEB85E /* SortViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7BE29B4C6DC00BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7BF29B4C6E600BEB85E /* DiaryListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7C129B4C6E900BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7C229B4C6F500BEB85E /* AddDiaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7C429B4C6F900BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7C529B4C70200BEB85E /* EditDiaryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F6D7E7C729B4C70900BEB85E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7C829B4C71600BEB85E /* DetailImageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -913,7 +932,6 @@
 				F6C1F3E528CC971E00B5FD0E /* LaunchScreen.storyboard in Resources */,
 				F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */,
 				F6C1F3E228CC971E00B5FD0E /* Assets.xcassets in Resources */,
-				F6C1F3E028CC971B00B5FD0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -929,18 +947,24 @@
 				F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */,
 				F631EFEA28FFE95100709560 /* SettingModel.swift in Sources */,
 				F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */,
+				F6D7E7AD29B4C40000BEB85E /* HomeViewModel.swift in Sources */,
 				F631F0E729028E6E00709560 /* Color.swift in Sources */,
+				F6D7E7C029B4C6E600BEB85E /* DiaryListViewModel.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
 				F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */,
+				F6D7E7B729B4C62800BEB85E /* MyItemViewModel.swift in Sources */,
 				F631F0EA2902BDB600709560 /* TabbarViewController.swift in Sources */,
+				F6D7E7BA29B4C64300BEB85E /* AddItemViewModel.swift in Sources */,
 				F6C1F45B28CDEA6C00B5FD0E /* SecondHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F45928CDEA5500B5FD0E /* ThirdHomeDetailTableViewCell.swift in Sources */,
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
+				F6D7E7C329B4C6F500BEB85E /* AddDiaryViewModel.swift in Sources */,
 				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
 				F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */,
 				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */,
 				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
+				F6D7E7B129B4C5BA00BEB85E /* ItemRecommendViewModel.swift in Sources */,
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
 				F60AC96828DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift in Sources */,
 				F6C1F41628CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift in Sources */,
@@ -955,6 +979,7 @@
 				F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */,
 				F631EFE528FFDEA800709560 /* SettingView.swift in Sources */,
 				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
+				F6D7E7B429B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift in Sources */,
 				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
 				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
 				F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */,
@@ -969,8 +994,11 @@
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
 				F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
+				F6D7E7C629B4C70200BEB85E /* EditDiaryViewModel.swift in Sources */,
 				F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */,
 				F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */,
+				F6D7E7C929B4C71600BEB85E /* DetailImageViewModel.swift in Sources */,
+				F6D7E7BD29B4C6D700BEB85E /* SortViewModel.swift in Sources */,
 				F6C1F41228CC9A6300B5FD0E /* FirstHomeDetailViewController-1.swift in Sources */,
 				F6DB7FC528D0AA6A004AF264 /* HomeViewFirstTableViewCell.swift in Sources */,
 				F6C1F3DB28CC971B00B5FD0E /* SceneDelegate.swift in Sources */,
@@ -1002,14 +1030,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F6C1F3DE28CC971B00B5FD0E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6C1F3DF28CC971B00B5FD0E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F6C1F3E328CC971E00B5FD0E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1152,7 +1172,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "아이템 등록과 다이어리 작성을 위해 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
@@ -1187,7 +1206,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "아이템 등록과 다이어리 작성을 위해 갤러리 접근 권한이 필요합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
