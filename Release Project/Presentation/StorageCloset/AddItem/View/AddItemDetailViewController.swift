@@ -14,7 +14,7 @@ final class AddItemDetailViewController: BaseViewController {
     
     private let mainView = AddItemDetailView()
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     var categoryTasks: Results<Category>! {
         didSet {

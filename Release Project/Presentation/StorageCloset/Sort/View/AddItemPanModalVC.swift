@@ -11,7 +11,7 @@ final class AddItemPanModalVC: BaseViewController {
     
     private let mainView = AddItemPanModalView()
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     var clothItemTasks: Results<ClothItem>! {
         didSet {

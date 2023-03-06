@@ -13,7 +13,7 @@ final class DiaryViewController: BaseViewController {
     
     private var pickedImage: UIImage?
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     var styleTasks: Results<Style>! {
         didSet {

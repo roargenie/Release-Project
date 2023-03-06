@@ -9,7 +9,7 @@ final class DiaryDetailViewController: BaseViewController {
     
     private let mainView = FirstDiaryDetailView()
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     var selectedDay = Date()
     

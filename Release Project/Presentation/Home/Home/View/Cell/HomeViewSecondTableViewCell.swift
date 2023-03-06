@@ -1,10 +1,16 @@
 
 
 import UIKit
-
+import RxCocoa
+import RxSwift
 
 
 final class HomeViewSecondTableViewCell: BaseTableViewCell {
+    
+    //MARK: - Properties
+
+    private let viewModel: HomeViewModel?
+    private let disposeBag = DisposeBag()
     
     let weatherStyleButton: UIButton = {
         let view = UIButton()
@@ -41,9 +47,16 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    
+    //MARK: - Init
+
+    init(viewModel: HomeViewModel, style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        self.viewModel = viewModel
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        bind()
     }
+    
+    //MARK: - Method
     
     override func configureUI() {
         [stackView].forEach { self.contentView.addSubview($0) }
@@ -55,5 +68,27 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
             //make.height.equalTo(100)
         }
     }
+    
+    private func bind() {
+        
+        weatherStyleButton.rx.tap.map { RecommendButtonStatus.style }
+            .asDriver(onErrorJustReturn: .style)
+            .drive { [weak self] value in
+                guard value == .style else { return }
+                self?.viewModel?.recommendButtonStatus.accept(value)
+            }
+            .disposed(by: disposeBag)
+        
+        weatherItemButton.rx.tap.map { RecommendButtonStatus.item }
+            .asDriver(onErrorJustReturn: .item)
+            .drive { [weak self] value in
+                guard value == .item else { return }
+                self?.viewModel?.recommendButtonStatus.accept(value)
+            }
+            .disposed(by: disposeBag)
+        
+    }
+    
+    
     
 }

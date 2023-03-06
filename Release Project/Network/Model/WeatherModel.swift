@@ -16,7 +16,7 @@ struct WeatherModel {
     var temp_min = Double()
     var temp_max = Double()
     
-    fileprivate let repository = StyleRepository()
+    fileprivate let repository = StyleRepository.shared
     
     func getWeatherImage(id: Int) -> UIImage {
         switch id {

@@ -12,8 +12,9 @@ final class HomeView: BaseView {
         view.register(HomeViewThirdTableViewCell.self, forCellReuseIdentifier: HomeViewThirdTableViewCell.reuseIdentifier)
         view.register(HomeViewFourthTableViewCell.self, forCellReuseIdentifier: HomeViewFourthTableViewCell.reuseIdentifier)
         view.register(ReusableHeaderView.self, forHeaderFooterViewReuseIdentifier: ReusableHeaderView.identifier)
-        view.backgroundColor = Color.backGroundColor
+        view.backgroundColor = .green
         view.separatorStyle = .none
+        view.estimatedRowHeight = UITableView.automaticDimension
         return view
     }()
     

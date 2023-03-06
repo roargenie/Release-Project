@@ -9,7 +9,7 @@ final class DiarySecondDetailViewController: BasePopUpViewController {
     
     var datatask = Style()
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     override func loadView() {
         self.view = mainView

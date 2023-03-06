@@ -10,7 +10,7 @@ final class ThirdHomeDetailViewController: BaseViewController {
     
     private let mainView = ThirdHomeDetailView()
     
-    private let repository = StyleRepository()
+    private let repository = StyleRepository.shared
     
     var dataTasks = Style()
     

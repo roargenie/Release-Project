@@ -22,7 +22,7 @@ final class TabbarViewController: UITabBarController, UITabBarControllerDelegate
         tabBar.tintColor = .black
         tabBar.barTintColor = .white
         
-        let mainVC = UINavigationController(rootViewController: HomeViewController())
+        let mainVC = UINavigationController(rootViewController: HomeViewController(mainView: HomeView(), viewModel: HomeViewModel()))
         mainVC.navigationBar.tintColor = .black
         let addItemVC = UINavigationController(rootViewController: AddItemViewController())
         addItemVC.navigationBar.tintColor = .black

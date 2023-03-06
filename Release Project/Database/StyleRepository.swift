@@ -37,6 +37,12 @@ protocol StyleRepositoryType {
 
 final class StyleRepository: StyleRepositoryType {
     
+    static let shared = StyleRepository()
+    private init() { }
+    
+    var clothItemTasks: Results<ClothItem>!
+    var styleTasks: Results<Style>!
+    
     let localRealm = try! Realm()
     
     func fetch<T: Object>(_ table: T.Type) -> Results<T> {

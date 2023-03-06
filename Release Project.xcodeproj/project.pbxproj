@@ -114,6 +114,10 @@
 		F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */; };
 		F6DB7FE028D1EC18004AF264 /* DiarySecondDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FDF28D1EC18004AF264 /* DiarySecondDetailViewController.swift */; };
 		F6DB7FE228D1EC26004AF264 /* SecondDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FE128D1EC26004AF264 /* SecondDiaryDetailView.swift */; };
+		F6FA619B29B65D9000C5F6B6 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA619A29B65D9000C5F6B6 /* ViewModelType.swift */; };
+		F6FA619E29B665C000C5F6B6 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA619D29B665C000C5F6B6 /* UIViewController+Rx.swift */; };
+		F6FA61A029B6756700C5F6B6 /* RecommendButtonStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA619F29B6756700C5F6B6 /* RecommendButtonStatus.swift */; };
+		F6FA61A329B67BFD00C5F6B6 /* HomeSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FA61A229B67BFD00C5F6B6 /* HomeSectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +213,10 @@
 		F6DB7FDD28D114E2004AF264 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6DB7FDF28D1EC18004AF264 /* DiarySecondDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySecondDetailViewController.swift; sourceTree = "<group>"; };
 		F6DB7FE128D1EC26004AF264 /* SecondDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondDiaryDetailView.swift; sourceTree = "<group>"; };
+		F6FA619A29B65D9000C5F6B6 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		F6FA619D29B665C000C5F6B6 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		F6FA619F29B6756700C5F6B6 /* RecommendButtonStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendButtonStatus.swift; sourceTree = "<group>"; };
+		F6FA61A229B67BFD00C5F6B6 /* HomeSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSectionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +339,7 @@
 		F631F0B52901B68D00709560 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F6FA61A129B67BE700C5F6B6 /* SectionModel */,
 				F6D7E7AB29B4C3C200BEB85E /* ViewModel */,
 				F631F0C12901B8BB00709560 /* View */,
 			);
@@ -690,6 +699,8 @@
 			isa = PBXGroup;
 			children = (
 				F631F0E629028E6E00709560 /* Color.swift */,
+				F689993828E0C62100083BBB /* ViewStatus.swift */,
+				F6FA619F29B6756700C5F6B6 /* RecommendButtonStatus.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -718,6 +729,7 @@
 				F631F0BF2901B71300709560 /* Application */,
 				F6C1F3F128CC97B200B5FD0E /* Utility */,
 				F6C1F3EF28CC979B00B5FD0E /* Extension */,
+				F6FA619829B65D6C00C5F6B6 /* Global */,
 				F6C1F3F028CC97A100B5FD0E /* Network */,
 				F63EF22629B4E0AF003C01D2 /* Database */,
 				F631F0AE2901B64B00709560 /* Presentation */,
@@ -741,6 +753,7 @@
 		F6C1F3EF28CC979B00B5FD0E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F6FA619C29B665B200C5F6B6 /* Rx */,
 				F60AC98D28DC5DA100B74898 /* Extension.swift */,
 				F6C1F42828CC9B8D00B5FD0E /* Transition+Extension.swift */,
 				F6C1F42A28CC9B9700B5FD0E /* Protocol+Extension.swift */,
@@ -765,7 +778,6 @@
 			children = (
 				F68F011428D3988F00B7B349 /* Constant */,
 				F6C1F46028CE0D0800B5FD0E /* CustomView */,
-				F689993828E0C62100083BBB /* ViewStatus.swift */,
 				F6C1F3F228CC97FB00B5FD0E /* BaseView.swift */,
 				F6C1F3F428CC980F00B5FD0E /* BaseViewController.swift */,
 				F607354F28E3839700AC18C0 /* BasePopupViewController.swift */,
@@ -880,6 +892,38 @@
 				F6D7E7CD29B4CE5400BEB85E /* Router.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		F6FA619829B65D6C00C5F6B6 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F6FA619929B65D7200C5F6B6 /* Protocol */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		F6FA619929B65D7200C5F6B6 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F6FA619A29B65D9000C5F6B6 /* ViewModelType.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F6FA619C29B665B200C5F6B6 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				F6FA619D29B665C000C5F6B6 /* UIViewController+Rx.swift */,
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		F6FA61A129B67BE700C5F6B6 /* SectionModel */ = {
+			isa = PBXGroup;
+			children = (
+				F6FA61A229B67BFD00C5F6B6 /* HomeSectionModel.swift */,
+			);
+			path = SectionModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1006,10 +1050,12 @@
 				F6DB7FD128D0CCAE004AF264 /* FirstHomeDetailViewController-2.swift in Sources */,
 				F6D7E7C329B4C6F500BEB85E /* AddDiaryViewModel.swift in Sources */,
 				F6C1F40828CC9A2200B5FD0E /* HomeView.swift in Sources */,
+				F6FA61A329B67BFD00C5F6B6 /* HomeSectionModel.swift in Sources */,
 				F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */,
 				F6C1F40A28CC9A3700B5FD0E /* FirstHomeDetailView-1.swift in Sources */,
 				F6DB7FCD28D0C4FF004AF264 /* ReusableHeaderView.swift in Sources */,
 				F6C1F43328CC9C0900B5FD0E /* APIManager.swift in Sources */,
+				F6FA619B29B65D9000C5F6B6 /* ViewModelType.swift in Sources */,
 				F6D7E7B129B4C5BA00BEB85E /* ItemRecommendViewModel.swift in Sources */,
 				F6C1F44528CCC92300B5FD0E /* AddItemViewController.swift in Sources */,
 				F60AC96828DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift in Sources */,
@@ -1027,6 +1073,7 @@
 				F6C1F40C28CC9A4100B5FD0E /* SecondHomeDetailView.swift in Sources */,
 				F6D7E7B429B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift in Sources */,
 				F6C1F42B28CC9B9700B5FD0E /* Protocol+Extension.swift in Sources */,
+				F6FA61A029B6756700C5F6B6 /* RecommendButtonStatus.swift in Sources */,
 				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
 				F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */,
@@ -1039,6 +1086,7 @@
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
+				F6FA619E29B665C000C5F6B6 /* UIViewController+Rx.swift in Sources */,
 				F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
 				F6D7E7CE29B4CE5400BEB85E /* Router.swift in Sources */,
