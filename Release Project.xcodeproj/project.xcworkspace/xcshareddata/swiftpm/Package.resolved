@@ -163,6 +163,24 @@
       }
     },
     {
+      "identity" : "rxdatasources",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxDataSources.git",
+      "state" : {
+        "revision" : "90c29b48b628479097fe775ed1966d75ac374518",
+        "version" : "5.0.2"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    },
+    {
       "identity" : "snapkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SnapKit/SnapKit.git",
@@ -196,6 +214,15 @@
       "state" : {
         "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
         "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then.git",
+      "state" : {
+        "revision" : "d41ef523faef0f911369f79c0b96815d9dbb6d7a",
+        "version" : "3.0.0"
       }
     },
     {

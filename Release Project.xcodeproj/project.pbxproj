@@ -26,6 +26,14 @@
 		F631EFEA28FFE95100709560 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631EFE928FFE95100709560 /* SettingModel.swift */; };
 		F631F0E729028E6E00709560 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631F0E629028E6E00709560 /* Color.swift */; };
 		F631F0EA2902BDB600709560 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F631F0E92902BDB600709560 /* TabbarViewController.swift */; };
+		F63EF22829B4E102003C01D2 /* StyleRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EF22729B4E102003C01D2 /* StyleRecommendViewModel.swift */; };
+		F63EF22B29B4E120003C01D2 /* StyleRecommendDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63EF22A29B4E120003C01D2 /* StyleRecommendDetailViewModel.swift */; };
+		F63EF22E29B4E1A1003C01D2 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF22D29B4E1A1003C01D2 /* RxCocoa */; };
+		F63EF23029B4E1A1003C01D2 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF22F29B4E1A1003C01D2 /* RxRelay */; };
+		F63EF23229B4E1A1003C01D2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF23129B4E1A1003C01D2 /* RxSwift */; };
+		F63EF23529B4E1C2003C01D2 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF23429B4E1C2003C01D2 /* Differentiator */; };
+		F63EF23729B4E1C2003C01D2 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF23629B4E1C2003C01D2 /* RxDataSources */; };
+		F63EF23A29B4E207003C01D2 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F63EF23929B4E207003C01D2 /* Then */; };
 		F65472C728F80CCC0047037B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F65472C628F80CCC0047037B /* GoogleService-Info.plist */; };
 		F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F65472CB28F80DE20047037B /* FirebaseCrashlytics */; };
@@ -89,6 +97,7 @@
 		F6D7E7C329B4C6F500BEB85E /* AddDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C229B4C6F500BEB85E /* AddDiaryViewModel.swift */; };
 		F6D7E7C629B4C70200BEB85E /* EditDiaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C529B4C70200BEB85E /* EditDiaryViewModel.swift */; };
 		F6D7E7C929B4C71600BEB85E /* DetailImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7C829B4C71600BEB85E /* DetailImageViewModel.swift */; };
+		F6D7E7CE29B4CE5400BEB85E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7CD29B4CE5400BEB85E /* Router.swift */; };
 		F6D8211F28D7115800763183 /* DetailTabbarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */; };
 		F6D8212328DA167F00763183 /* FileManagerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D8212228DA167F00763183 /* FileManagerHelper.swift */; };
 		F6DB7FBF28D0862F004AF264 /* FirstDiaryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */; };
@@ -124,6 +133,8 @@
 		F631EFE928FFE95100709560 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
 		F631F0E629028E6E00709560 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F631F0E92902BDB600709560 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		F63EF22729B4E102003C01D2 /* StyleRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRecommendViewModel.swift; sourceTree = "<group>"; };
+		F63EF22A29B4E120003C01D2 /* StyleRecommendDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleRecommendDetailViewModel.swift; sourceTree = "<group>"; };
 		F65472C528F8090E0047037B /* Release Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Release Project.entitlements"; sourceTree = "<group>"; };
 		F65472C628F80CCC0047037B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewThirdCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +192,7 @@
 		F6D7E7C229B4C6F500BEB85E /* AddDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDiaryViewModel.swift; sourceTree = "<group>"; };
 		F6D7E7C529B4C70200BEB85E /* EditDiaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryViewModel.swift; sourceTree = "<group>"; };
 		F6D7E7C829B4C71600BEB85E /* DetailImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageViewModel.swift; sourceTree = "<group>"; };
+		F6D7E7CD29B4CE5400BEB85E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F6D8211E28D7115800763183 /* DetailTabbarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTabbarCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6D8212228DA167F00763183 /* FileManagerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerHelper.swift; sourceTree = "<group>"; };
 		F6DB7FBE28D0862F004AF264 /* FirstDiaryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDiaryDetailView.swift; sourceTree = "<group>"; };
@@ -205,15 +217,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65472CE28F80DE20047037B /* FirebaseMessaging in Frameworks */,
+				F63EF23A29B4E207003C01D2 /* Then in Frameworks */,
 				F68F010528D34E8800B7B349 /* Alamofire in Frameworks */,
+				F63EF23029B4E1A1003C01D2 /* RxRelay in Frameworks */,
 				F65472CA28F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				F63EF23529B4E1C2003C01D2 /* Differentiator in Frameworks */,
+				F63EF22E29B4E1A1003C01D2 /* RxCocoa in Frameworks */,
 				F68F010828D34E9600B7B349 /* FSCalendar in Frameworks */,
 				F60AC97528DB0CFD00B74898 /* SwiftyJSON in Frameworks */,
 				F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */,
 				F65472CC28F80DE20047037B /* FirebaseCrashlytics in Frameworks */,
 				F60AC98128DB642900B74898 /* PanModal in Frameworks */,
+				F63EF23729B4E1C2003C01D2 /* RxDataSources in Frameworks */,
 				F607355328E5DE4300AC18C0 /* IQKeyboardManagerSwift in Frameworks */,
 				F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */,
+				F63EF23229B4E1A1003C01D2 /* RxSwift in Frameworks */,
 				F68F00FA28D34E5400B7B349 /* Realm in Frameworks */,
 				F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */,
 			);
@@ -242,7 +260,6 @@
 			isa = PBXGroup;
 			children = (
 				F631F0E82902BD9200709560 /* Tabbar */,
-				F6C1F3EC28CC975800B5FD0E /* Model */,
 				F631F0AF2901B66100709560 /* Home */,
 				F631F0B02901B66700709560 /* StorageCloset */,
 				F631F0B12901B66F00709560 /* Diary */,
@@ -481,8 +498,8 @@
 		F631F0CD2901BD1E00709560 /* StyleRecommendDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F63EF22929B4E114003C01D2 /* ViewModel */,
 				F631F0D02901BD6D00709560 /* View */,
-				F631F0CF2901BD6900709560 /* Controller */,
 			);
 			path = StyleRecommendDetail;
 			sourceTree = "<group>";
@@ -496,19 +513,12 @@
 			path = ItemRecommendDetail;
 			sourceTree = "<group>";
 		};
-		F631F0CF2901BD6900709560 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		F631F0D02901BD6D00709560 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				F6C1F40D28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift */,
 				F60AC96728DA40BB00B74898 /* ThirdHomeDetailCustomHeaderView.swift */,
+				F6C1F41528CC9A7300B5FD0E /* ThirdHomeDetailViewController.swift */,
 				F631F0D12901BD7000709560 /* Cell */,
 			);
 			path = View;
@@ -659,6 +669,23 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		F63EF22629B4E0AF003C01D2 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */,
+				F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		F63EF22929B4E114003C01D2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F63EF22A29B4E120003C01D2 /* StyleRecommendDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		F68F011428D3988F00B7B349 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
@@ -691,7 +718,8 @@
 				F631F0BF2901B71300709560 /* Application */,
 				F6C1F3F128CC97B200B5FD0E /* Utility */,
 				F6C1F3EF28CC979B00B5FD0E /* Extension */,
-				F6C1F3F028CC97A100B5FD0E /* Manager */,
+				F6C1F3F028CC97A100B5FD0E /* Network */,
+				F63EF22629B4E0AF003C01D2 /* Database */,
 				F631F0AE2901B64B00709560 /* Presentation */,
 				F65472C528F8090E0047037B /* Release Project.entitlements */,
 				F6C1F3E128CC971E00B5FD0E /* Assets.xcassets */,
@@ -706,8 +734,6 @@
 			isa = PBXGroup;
 			children = (
 				F60AC96928DAF82400B74898 /* WeatherModel.swift */,
-				F6C1F42C28CC9BD900B5FD0E /* StyleModel.swift */,
-				F6C1F42E28CC9BE800B5FD0E /* StyleRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -723,13 +749,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		F6C1F3F028CC97A100B5FD0E /* Manager */ = {
+		F6C1F3F028CC97A100B5FD0E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F6C1F3EC28CC975800B5FD0E /* Model */,
+				F6D7E7CC29B4CE4B00BEB85E /* Router */,
 				F6C1F43228CC9C0900B5FD0E /* APIManager.swift */,
 				F6D8212228DA167F00763183 /* FileManagerHelper.swift */,
 			);
-			path = Manager;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		F6C1F3F128CC97B200B5FD0E /* Utility */ = {
@@ -769,6 +797,7 @@
 		F6D7E7AE29B4C41C00BEB85E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F63EF22729B4E102003C01D2 /* StyleRecommendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -845,6 +874,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F6D7E7CC29B4CE4B00BEB85E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F6D7E7CD29B4CE5400BEB85E /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -874,6 +911,12 @@
 				F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */,
 				F65472CB28F80DE20047037B /* FirebaseCrashlytics */,
 				F65472CD28F80DE20047037B /* FirebaseMessaging */,
+				F63EF22D29B4E1A1003C01D2 /* RxCocoa */,
+				F63EF22F29B4E1A1003C01D2 /* RxRelay */,
+				F63EF23129B4E1A1003C01D2 /* RxSwift */,
+				F63EF23429B4E1C2003C01D2 /* Differentiator */,
+				F63EF23629B4E1C2003C01D2 /* RxDataSources */,
+				F63EF23929B4E207003C01D2 /* Then */,
 			);
 			productName = "Release Project";
 			productReference = F6C1F3D528CC971B00B5FD0E /* Release Project.app */;
@@ -913,6 +956,9 @@
 				F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */,
 				F607355128E5DE4300AC18C0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F63EF22C29B4E1A1003C01D2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F63EF23329B4E1C2003C01D2 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				F63EF23829B4E207003C01D2 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = F6C1F3D628CC971B00B5FD0E /* Products */;
 			projectDirPath = "";
@@ -989,11 +1035,13 @@
 				F631EFE828FFDF1000709560 /* SettingCollectionViewCell.swift in Sources */,
 				F6C1F3D928CC971B00B5FD0E /* AppDelegate.swift in Sources */,
 				F689993628E0568100083BBB /* ProgressBar.swift in Sources */,
+				F63EF22829B4E102003C01D2 /* StyleRecommendViewModel.swift in Sources */,
 				F6C1F41428CC9A6B00B5FD0E /* SecondHomeDetailViewController.swift in Sources */,
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
 				F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
+				F6D7E7CE29B4CE5400BEB85E /* Router.swift in Sources */,
 				F6D7E7C629B4C70200BEB85E /* EditDiaryViewModel.swift in Sources */,
 				F6DB7FC928D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift in Sources */,
 				F6DB7FCB28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift in Sources */,
@@ -1010,6 +1058,7 @@
 				F6C1F40E28CC9A4B00B5FD0E /* ThirdHomeDetailView.swift in Sources */,
 				F6DB7FE028D1EC18004AF264 /* DiarySecondDetailViewController.swift in Sources */,
 				F68343B128D6331E00B94628 /* DetailSeasonCollectionViewCell.swift in Sources */,
+				F63EF22B29B4E120003C01D2 /* StyleRecommendDetailViewModel.swift in Sources */,
 				F6C1F42928CC9B8D00B5FD0E /* Transition+Extension.swift in Sources */,
 				F60AC97228DB063500B74898 /* APIKey.swift in Sources */,
 				F607355028E3839700AC18C0 /* BasePopupViewController.swift in Sources */,
@@ -1271,6 +1320,30 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F63EF22C29B4E1A1003C01D2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		F63EF23329B4E1C2003C01D2 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F63EF23829B4E207003C01D2 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		F65472C828F80DE20047037B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1336,6 +1409,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F60AC97F28DB642900B74898 /* XCRemoteSwiftPackageReference "PanModal" */;
 			productName = PanModal;
+		};
+		F63EF22D29B4E1A1003C01D2 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF22C29B4E1A1003C01D2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		F63EF22F29B4E1A1003C01D2 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF22C29B4E1A1003C01D2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		F63EF23129B4E1A1003C01D2 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF22C29B4E1A1003C01D2 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F63EF23429B4E1C2003C01D2 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF23329B4E1C2003C01D2 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		F63EF23629B4E1C2003C01D2 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF23329B4E1C2003C01D2 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		F63EF23929B4E207003C01D2 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F63EF23829B4E207003C01D2 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 		F65472C928F80DE20047037B /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
