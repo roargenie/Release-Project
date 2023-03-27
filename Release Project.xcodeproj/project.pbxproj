@@ -87,6 +87,10 @@
 		F6C1F46228CE232C00B5FD0E /* AddItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */; };
 		F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */; };
 		F6C1F47528D07AB700B5FD0E /* DiaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */; };
+		F6C31C2F29D1EC980011738A /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C31C2E29D1EC980011738A /* WeatherCollectionViewCell.swift */; };
+		F6C31C3129D1ECA40011738A /* ItemRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C31C3029D1ECA40011738A /* ItemRecommendCollectionViewCell.swift */; };
+		F6C31C3329D1ECB10011738A /* MonthOfWeekCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C31C3229D1ECB10011738A /* MonthOfWeekCollectionViewCell.swift */; };
+		F6C31C3529D1ECBF0011738A /* CategoryPercentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C31C3429D1ECBF0011738A /* CategoryPercentCollectionViewCell.swift */; };
 		F6D7E7AD29B4C40000BEB85E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7AC29B4C40000BEB85E /* HomeViewModel.swift */; };
 		F6D7E7B129B4C5BA00BEB85E /* ItemRecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B029B4C5BA00BEB85E /* ItemRecommendViewModel.swift */; };
 		F6D7E7B429B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D7E7B329B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift */; };
@@ -186,6 +190,10 @@
 		F6C1F46128CE232C00B5FD0E /* AddItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemDetailViewController.swift; sourceTree = "<group>"; };
 		F6C1F46C28D0503F00B5FD0E /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		F6C1F47428D07AB700B5FD0E /* DiaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCell.swift; sourceTree = "<group>"; };
+		F6C31C2E29D1EC980011738A /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C31C3029D1ECA40011738A /* ItemRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C31C3229D1ECB10011738A /* MonthOfWeekCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthOfWeekCollectionViewCell.swift; sourceTree = "<group>"; };
+		F6C31C3429D1ECBF0011738A /* CategoryPercentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPercentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F6D7E7AC29B4C40000BEB85E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F6D7E7B029B4C5BA00BEB85E /* ItemRecommendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecommendViewModel.swift; sourceTree = "<group>"; };
 		F6D7E7B329B4C5D200BEB85E /* ItemRecommendDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecommendDetailViewModel.swift; sourceTree = "<group>"; };
@@ -447,6 +455,10 @@
 				F6DB7FC828D0AA7D004AF264 /* HomeViewThirdTableViewCell.swift */,
 				F66A0A4628DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift */,
 				F6DB7FCA28D0AA96004AF264 /* HomeViewFourthTableViewCell.swift */,
+				F6C31C2E29D1EC980011738A /* WeatherCollectionViewCell.swift */,
+				F6C31C3029D1ECA40011738A /* ItemRecommendCollectionViewCell.swift */,
+				F6C31C3229D1ECB10011738A /* MonthOfWeekCollectionViewCell.swift */,
+				F6C31C3429D1ECBF0011738A /* CategoryPercentCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1041,6 +1053,7 @@
 				F631F0E729028E6E00709560 /* Color.swift in Sources */,
 				F6D7E7C029B4C6E600BEB85E /* DiaryListViewModel.swift in Sources */,
 				F6DB7FDA28D107F6004AF264 /* DiaryDetailViewController.swift in Sources */,
+				F6C31C3529D1ECBF0011738A /* CategoryPercentCollectionViewCell.swift in Sources */,
 				F66A0A4728DCDCA800D39E3C /* HomeViewThirdCollectionViewCell.swift in Sources */,
 				F6D7E7B729B4C62800BEB85E /* MyItemViewModel.swift in Sources */,
 				F631F0EA2902BDB600709560 /* TabbarViewController.swift in Sources */,
@@ -1077,6 +1090,7 @@
 				F6C1F3F528CC980F00B5FD0E /* BaseViewController.swift in Sources */,
 				F6C1F45728CDEA3E00B5FD0E /* FirstHomeDetailCollectionViewCell.swift in Sources */,
 				F6C1F42D28CC9BD900B5FD0E /* StyleModel.swift in Sources */,
+				F6C31C2F29D1EC980011738A /* WeatherCollectionViewCell.swift in Sources */,
 				F6C1F44328CCC6B200B5FD0E /* AddItemCollectionViewCell.swift in Sources */,
 				F6C1F46D28D0503F00B5FD0E /* CustomImageView.swift in Sources */,
 				F631EFE828FFDF1000709560 /* SettingCollectionViewCell.swift in Sources */,
@@ -1087,6 +1101,7 @@
 				F6DB7FDE28D114E2004AF264 /* DetailCollectionViewCell.swift in Sources */,
 				F60AC98728DB769300B74898 /* AddItemPanModalView.swift in Sources */,
 				F6FA619E29B665C000C5F6B6 /* UIViewController+Rx.swift in Sources */,
+				F6C31C3329D1ECB10011738A /* MonthOfWeekCollectionViewCell.swift in Sources */,
 				F631EFE228FFDE6D00709560 /* SettingViewController.swift in Sources */,
 				F6DB7FCF28D0CC84004AF264 /* FirstHomeDetailView-2.swift in Sources */,
 				F6D7E7CE29B4CE5400BEB85E /* Router.swift in Sources */,
@@ -1115,6 +1130,7 @@
 				F6DB7FD328D0CE7A004AF264 /* HomeDetailCollectionReusableView.swift in Sources */,
 				F6C1F45328CCE89400B5FD0E /* DiaryView.swift in Sources */,
 				F6DB7FD528D0D122004AF264 /* CustomUIView.swift in Sources */,
+				F6C31C3129D1ECA40011738A /* ItemRecommendCollectionViewCell.swift in Sources */,
 				F68F011328D365F300B7B349 /* FirstAddItemDetailCollectionReusableView.swift in Sources */,
 				F60AC98E28DC5DA100B74898 /* Extension.swift in Sources */,
 				F6C1F3F328CC97FB00B5FD0E /* BaseView.swift in Sources */,

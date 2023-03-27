@@ -1,10 +1,13 @@
-
+//
+//  CategoryPercentCollectionViewCell.swift
+//  Release Project
+//
+//  Created by 이명진 on 2023/03/28.
+//
 
 import UIKit
 
-
-
-final class HomeViewFourthTableViewCell: BaseTableViewCell {
+final class CategoryPercentCollectionViewCell: BaseCollectionViewCell {
     
     let outerLabel: ProgressBarLabel = {
         let view = ProgressBarLabel()
@@ -90,12 +93,13 @@ final class HomeViewFourthTableViewCell: BaseTableViewCell {
         return view
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .purple
     }
     
     override func configureUI() {
-        [firstStackView, secondStackView, outerLabel, topLabel, bottomLabel, shoesLabel, accLabel, otherLabel].forEach { self.contentView.addSubview($0) }
+        [firstStackView, secondStackView, outerLabel, topLabel, bottomLabel, shoesLabel, accLabel, otherLabel].forEach { contentView.addSubview($0) }
     }
     
     override func setConstraints() {
@@ -129,6 +133,22 @@ final class HomeViewFourthTableViewCell: BaseTableViewCell {
         }
     }
     
-    
+    func setupCell(model: [CategoryPercentItemModel]) {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.outerPercent.progressBarDrawing(color: .systemPink, value: model[0].value ?? 0)
+            self.topPercent.progressBarDrawing(color: .systemPink, value: model[1].value ?? 0)
+            self.bottomPercent.progressBarDrawing(color: .systemPink, value: model[2].value ?? 0)
+            self.shoesPercent.progressBarDrawing(color: .systemPink, value: model[3].value ?? 0)
+            self.accPercent.progressBarDrawing(color: .systemPink, value: model[4].value ?? 0)
+            self.otherPercent.progressBarDrawing(color: .systemPink, value: model[5].value ?? 0)
+        }
+        outerLabel.text = model[0].title
+        topLabel.text = model[1].title
+        bottomLabel.text = model[2].title
+        shoesLabel.text = model[3].title
+        accLabel.text = model[4].title
+        otherLabel.text = model[5].title
+    }
     
 }

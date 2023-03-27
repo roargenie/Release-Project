@@ -9,7 +9,7 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
     
     //MARK: - Properties
 
-    private let viewModel: HomeViewModel?
+    private let viewModel: HomeViewModel
     private let disposeBag = DisposeBag()
     
     let weatherStyleButton: UIButton = {
@@ -49,9 +49,14 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
     
     
     //MARK: - Init
-
-    init(viewModel: HomeViewModel, style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
+        super.init()
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        viewModel = HomeViewModel()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         bind()
     }
@@ -75,7 +80,7 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
             .asDriver(onErrorJustReturn: .style)
             .drive { [weak self] value in
                 guard value == .style else { return }
-                self?.viewModel?.recommendButtonStatus.accept(value)
+                self?.viewModel.recommendButtonStatus.accept(value)
             }
             .disposed(by: disposeBag)
         
@@ -83,7 +88,7 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
             .asDriver(onErrorJustReturn: .item)
             .drive { [weak self] value in
                 guard value == .item else { return }
-                self?.viewModel?.recommendButtonStatus.accept(value)
+                self?.viewModel.recommendButtonStatus.accept(value)
             }
             .disposed(by: disposeBag)
         

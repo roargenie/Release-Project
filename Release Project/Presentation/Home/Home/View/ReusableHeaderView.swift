@@ -3,19 +3,17 @@
 import UIKit
 
 
-final class ReusableHeaderView: UITableViewHeaderFooterView {
+final class ReusableHeaderView: UICollectionReusableView {
     
     static let identifier = "ReusableHeaderView"
     
-    let headerLabel: UILabel = {
-        let view = UILabel()
-        view.textColor = .black
-        view.font = .systemFont(ofSize: 20, weight: .heavy)
-        return view
-    }()
+    let headerTitleLabel: UILabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .systemFont(ofSize: 20, weight: .heavy)
+    }
     
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         configureUI()
         setConstraints()
     }
@@ -25,14 +23,18 @@ final class ReusableHeaderView: UITableViewHeaderFooterView {
     }
     
     func configureUI() {
-        self.addSubview(headerLabel)
+        addSubview(headerTitleLabel)
     }
     
     func setConstraints() {
-        headerLabel.snp.makeConstraints { make in
+        headerTitleLabel.snp.makeConstraints { make in
             make.top.bottom.equalTo(self.safeAreaLayoutGuide)
             make.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(20)
         }
+    }
+    
+    func setupView(text: String) {
+        headerTitleLabel.text = text
     }
     
 }

@@ -17,20 +17,67 @@ final class HomeViewController: BaseViewController {
     private let locationManager = CLLocationManager()
     
     var weatherData = WeatherModel()
-    private var dataSource: RxTableViewSectionedReloadDataSource<HomeSection>!
-//    private let repository = StyleRepository()
-    
-//    var clothItemTasks: Results<ClothItem>! {
-//        didSet {
-//            mainView?.tableView.reloadData()
-//        }
-//    }
-//
-//    var styleTasks: Results<Style>! {
-//        didSet {
-//            mainView?.tableView.reloadData()
-//        }
-//    }
+    var sections = [
+        HomeSectionModel(
+            model: .weather,
+            items: [.weather(
+                WeatherItemModel(id: 0,
+                                 temp: 0,
+                                 temp_min: 0,
+                                 temp_max: 0))]),
+        HomeSectionModel(
+            model: .itemRecommend,
+            items: [.itemRecommend(
+                ItemRecommendItemModel(title: "스타일을 추천받을게요!")),
+                    .itemRecommend(
+                        ItemRecommendItemModel(title: "아이템을 추천받을게요!"))]),
+        HomeSectionModel(
+            model: .monthOfWeek,
+            items: [.monthOfWeek([
+                MonthOfWeekItemModel(content: nil, styleItem: nil),
+                MonthOfWeekItemModel(content: nil, styleItem: nil),
+                MonthOfWeekItemModel(content: nil, styleItem: nil),
+                MonthOfWeekItemModel(content: nil, styleItem: nil),
+                MonthOfWeekItemModel(content: nil, styleItem: nil)])]),
+        HomeSectionModel(
+            model: .categoryPercent,
+            items: [.categoryPercent([
+                CategoryPercentItemModel(value: nil, title: "아우터"),
+                CategoryPercentItemModel(value: nil, title: "상의"),
+                CategoryPercentItemModel(value: nil, title: "하의"),
+                CategoryPercentItemModel(value: nil, title: "신발"),
+                CategoryPercentItemModel(value: nil, title: "악세"),
+                CategoryPercentItemModel(value: nil, title: "기타")])])
+    ]
+        
+    private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<HomeSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
+        switch item {
+        case .weather(let item):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionViewCell.reuseIdentifier, for: indexPath) as! WeatherCollectionViewCell
+            cell.tempLabel.text = "\(item.temp)"
+            cell.highestAndMinimumTempLabel.text = "\(item.temp_max) / \(item.temp_min)"
+            return cell
+        case .itemRecommend(let item):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemRecommendCollectionViewCell.reuseIdentifier, for: indexPath) as! ItemRecommendCollectionViewCell
+            
+            return cell
+        case .monthOfWeek(let item):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MonthOfWeekCollectionViewCell.reuseIdentifier, for: indexPath) as! MonthOfWeekCollectionViewCell
+            
+            return cell
+        case .categoryPercent(let item):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryPercentCollectionViewCell.reuseIdentifier, for: indexPath) as! CategoryPercentCollectionViewCell
+            cell.setupCell(model: item)
+//            print(item)
+            return cell
+        }
+        
+    }) { dataSource, collectionView, kind, indexPath in
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: ReusableHeaderView.identifier, for: indexPath) as! ReusableHeaderView
+        headerView.setupView(text: HomeSection(index: indexPath.section).headerTitle)
+        return headerView
+    }
+
     
     init(mainView: HomeView, viewModel: HomeViewModel) {
         self.mainView = mainView
@@ -45,13 +92,12 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkUserDeviceLocationServiceAuthorization()
-        setupTableViewDataSource()
+        
         bind()
-//        checkFirstRun()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        fetchRealm()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,9 +106,6 @@ final class HomeViewController: BaseViewController {
     }
     
     override func configureUI() {
-//        mainView?.tableView.delegate = self
-//        mainView?.tableView.dataSource = self
-//        mainView.tableView.sectionHeaderHeight = 35
         locationManager.delegate = self
     }
     
@@ -72,42 +115,42 @@ final class HomeViewController: BaseViewController {
             viewWillAppearEvent: self.rx.viewWillAppear.asSignal())
         let output = viewModel.transform(input: input)
         
-        output.items
-            .drive(mainView.tableView.rx.items(dataSource: dataSource))
+        Observable.just(sections)
+            .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
         
     }
     
-    private func setupTableViewDataSource() {
-        
-        dataSource = RxTableViewSectionedReloadDataSource(configureCell: { dataSource, tableView, indexPath, item in
-            switch indexPath.section {
-            case 0:
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFirstTableViewCell
-                cell.backgroundColor = .blue
-                cell.weatherLabel.text = item.items
-                return cell
-            case 1:
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewSecondTableViewCell
-                cell.backgroundColor = .brown
-                return cell
-            case 2:
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewThirdTableViewCell
-                cell.backgroundColor = .gray
-                return cell
-            case 3:
-                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFourthTableViewCell
-                cell.backgroundColor = .magenta
-                return cell
-            default:
-                return UITableViewCell()
-            }
-        }, titleForHeaderInSection: { dataSource, index in
-            return dataSource.sectionModels[index].headerTitle
-        })
-        
-    }
+//    private func setupTableViewDataSource() {
+//
+//        dataSource = RxTableViewSectionedReloadDataSource(configureCell: { dataSource, tableView, indexPath, item in
+//            switch indexPath.section {
+//            case 0:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFirstTableViewCell
+//                cell.backgroundColor = .blue
+//                cell.weatherLabel.text = item.items
+//                return cell
+//            case 1:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewSecondTableViewCell
+//                cell.backgroundColor = .brown
+//                return cell
+//            case 2:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewThirdTableViewCell
+//                cell.backgroundColor = .gray
+//                return cell
+//            case 3:
+//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFourthTableViewCell
+//                cell.backgroundColor = .magenta
+//                return cell
+//            default:
+//                return UITableViewCell()
+//            }
+//        }, titleForHeaderInSection: { dataSource, index in
+//            return dataSource.sectionModels[index].headerTitle
+//        })
+//
+//    }
 //    @objc private func weatherStyleButtonTapped() {
 //        let vc = FirstHomeDetailViewController1()
 //        vc.weatherData = weatherData
@@ -217,21 +260,21 @@ final class HomeViewController: BaseViewController {
 //        return UITableViewCell()
 //    }
 //
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        switch indexPath.section {
-//        case 0:
-//            return 150
-//        case 1:
-//            return 160
-//        case 2:
-//            return 190
-//        case 3:
-//            return 260
-//        default:
-//            break
-//        }
-//        return 0
-//    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 150
+        case 1:
+            return 160
+        case 2:
+            return 190
+        case 3:
+            return 260
+        default:
+            break
+        }
+        return 0
+    }
 //
 //    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 //        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReusableHeaderView.identifier) as? ReusableHeaderView else { return UIView() }

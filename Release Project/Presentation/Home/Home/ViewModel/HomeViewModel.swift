@@ -12,12 +12,9 @@ import RealmSwift
 
 final class HomeViewModel: ViewModelType {
     
-    let sections = [
-        HomeSection(headerTitle: "오늘의 날씨에요", items: [HomeModel(items: "1")]),
-        HomeSection(headerTitle: "오늘 날씨에 이건 어때요?", items: [HomeModel(items: "2")]),
-        HomeSection(headerTitle: "최근 일주일 모아보기", items: [HomeModel(items: "3")]),
-        HomeSection(headerTitle: "내 옷장은 이렇답니다", items: [HomeModel(items: "4")])
-    ]
+//    let sections = [
+//        
+//    ]
     
     struct Input {
         let viewDidLoadEvent: Signal<Void>
@@ -25,12 +22,12 @@ final class HomeViewModel: ViewModelType {
     }
     
     struct Output {
-        let items: Driver<[HomeSection]>
+//        let items: Driver<[HomeSection]>
     }
     var disposeBag = DisposeBag()
     
     let recommendButtonStatus = PublishRelay<RecommendButtonStatus>()
-    private let items = BehaviorRelay<[HomeSection]>(value: [])
+//    private lazy var items = BehaviorRelay<[HomeSection]>(value: sections)
     
     func transform(input: Input) -> Output {
         
@@ -39,7 +36,7 @@ final class HomeViewModel: ViewModelType {
             .emit { vm, _ in
                 print("=============viewdidload")
                 vm.checkFirstRun()
-                vm.items.accept(vm.sections)
+//                vm.items.onNext(vm.sections)
             }
             .disposed(by: disposeBag)
         
@@ -65,8 +62,7 @@ final class HomeViewModel: ViewModelType {
         
         
         
-        return Output(
-            items: items.asDriver(onErrorJustReturn: []))
+        return Output()
     }
 }
 
