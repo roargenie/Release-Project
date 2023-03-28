@@ -12,63 +12,79 @@ import RealmSwift
 
 final class HomeViewModel: ViewModelType {
     
-//    let sections = [
-//        
-//    ]
+    var sections = [
+        HomeSectionModel(
+            model: .weather,
+            items: []),
+        HomeSectionModel(
+            model: .itemRecommend,
+            items: [.itemRecommend(
+                ItemRecommendItemModel(title: "스타일을 추천받을게요!")),
+                    .itemRecommend(
+                        ItemRecommendItemModel(title: "아이템을 추천받을게요!"))]),
+        HomeSectionModel(
+            model: .monthOfWeek,
+            items: [
+//                .monthOfWeek(
+//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+//                .monthOfWeek(
+//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+//                .monthOfWeek(
+//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+//                .monthOfWeek(
+//                    MonthOfWeekItemModel(content: nil, styleItem: nil))
+            ]),
+        HomeSectionModel(
+            model: .categoryPercent,
+            items: [.categoryPercent([
+                CategoryPercentItemModel(value: nil, title: "아우터"),
+                CategoryPercentItemModel(value: nil, title: "상의"),
+                CategoryPercentItemModel(value: nil, title: "하의"),
+                CategoryPercentItemModel(value: nil, title: "신발"),
+                CategoryPercentItemModel(value: nil, title: "악세"),
+                CategoryPercentItemModel(value: nil, title: "기타")])])
+    ]
+    
+//    let coordinate = BehaviorRelay<[Double]>(value: [])
+    private let items = BehaviorRelay<[HomeSectionModel]>(value: [])
     
     struct Input {
-        let viewDidLoadEvent: Signal<Void>
+        let viewDidLoadEvent: Observable<Void>
         let viewWillAppearEvent: Signal<Void>
     }
     
     struct Output {
-//        let items: Driver<[HomeSection]>
+        let items: Driver<[HomeSectionModel]>
     }
     var disposeBag = DisposeBag()
     
-    let recommendButtonStatus = PublishRelay<RecommendButtonStatus>()
-//    private lazy var items = BehaviorRelay<[HomeSection]>(value: sections)
     
     func transform(input: Input) -> Output {
         
         input.viewDidLoadEvent
             .withUnretained(self)
-            .emit { vm, _ in
-                print("=============viewdidload")
+            .bind { vm, _ in
                 vm.checkFirstRun()
-//                vm.items.onNext(vm.sections)
             }
             .disposed(by: disposeBag)
         
         input.viewWillAppearEvent
             .withUnretained(self)
             .emit { vm, _ in
+                print("===========ViewWillAppear🟢")
                 vm.fetchRealm()
             }
             .disposed(by: disposeBag)
         
-        recommendButtonStatus.asSignal()
-            .withUnretained(self)
-            .emit { vm, status in
-                switch status {
-                case .item:
-                    print("item 추천 화면 이동")
-                case .style:
-                    print("style 추천 화면 이동")
-                }
-            }
-            .disposed(by: disposeBag)
-        
-        
-        
-        
-        return Output()
+        return Output(
+            items: items.asDriver())
     }
 }
 
 extension HomeViewModel {
     
     private func checkFirstRun() {
+        print("============Check FirstRun", #function)
         if UserDefaults.standard.bool(forKey: "FirstRun") == false {
             
             let outer = Category(title: "아우터")
@@ -104,6 +120,16 @@ extension HomeViewModel {
     private func checkCategoryCount(query: String) -> Double {
         let count = StyleRepository.shared.clothItemCategoryFilter(query: query).count
         return Double(count)
+    }
+    
+    func requestWeatherData(_ latitude: Double, _ longitude: Double) {
+        APIManager.shared.getWeather(lat: latitude, lon: longitude) { [weak self] weather in
+            guard let self = self else { return }
+            let section = [HomeItem.weather(WeatherItemModel(items: weather))]
+            self.sections[0].items = section
+            self.items.accept(self.sections)
+            print("========🟢========== 날씨 정보 아이템 모델에 들어감.", self.sections[0].items)
+        }
     }
     
 }

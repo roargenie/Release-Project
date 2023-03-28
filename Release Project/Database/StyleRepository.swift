@@ -342,5 +342,37 @@ final class StyleRepository: StyleRepositoryType {
         }
     }
     
+    func weatherClothItem(temp: Double) -> Results<ClothItem> {
+        switch temp {
+            // 겨울
+        case ..<5:
+            return winterItemFilter().sorted(byKeyPath: "regDate", ascending: false)
+            // 봄, 가을
+        case 5..<20:
+            return spingAndAutumnItemFilter().sorted(byKeyPath: "regDate", ascending: false)
+            // 여름
+        case 20...:
+            return summerItemFilter().sorted(byKeyPath: "regDate", ascending: false)
+        default:
+            return fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
+        }
+    }
+
+    func weatherStyle(temp: Double) -> Results<Style> {
+        switch temp {
+            // 겨울
+        case ..<5:
+            return winterStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
+            // 봄, 가을
+        case 5..<20:
+            return springAndAutumnStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
+            // 여름
+        case 20...:
+            return summerStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
+        default:
+            return fetch(Style.self).sorted(byKeyPath: "regDate", ascending: false)
+        }
+    }
+    
     
 }

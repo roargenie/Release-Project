@@ -67,11 +67,11 @@ extension HomeView {
                         heightDimension: .absolute(44)),
                     elementKind: UICollectionView.elementKindSectionHeader,
                     alignment: .top)]
-//                section.contentInsets = NSDirectionalEdgeInsets(
-//                    top: 8,
-//                    leading: 8,
-//                    bottom: 8,
-//                    trailing: 8)
+                section.contentInsets = NSDirectionalEdgeInsets(
+                    top: 0,
+                    leading: 0,
+                    bottom: 8,
+                    trailing: 0)
                 return section
             case 1:
                 let itemSize = NSCollectionLayoutSize(widthDimension: .absolute((self.frame.width - 24) / 2), heightDimension: .fractionalHeight(1.0))
@@ -81,11 +81,11 @@ extension HomeView {
 //                    leading: 0,
 //                    bottom: 0,
 //                    trailing: 0)
-                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute((self.frame.width - 16) / 2))
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.25))
                 let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
                 group.interItemSpacing = .fixed(8)
                 group.contentInsets = NSDirectionalEdgeInsets(
-                    top: 8,
+                    top: 0,
                     leading: 8,
                     bottom: 8,
                     trailing: 8)
@@ -124,7 +124,7 @@ extension HomeView {
                     alignment: .top)]
                 section.interGroupSpacing = 8
                 section.contentInsets = NSDirectionalEdgeInsets(
-                    top: 8,
+                    top: 0,
                     leading: 8,
                     bottom: 8,
                     trailing: 8)

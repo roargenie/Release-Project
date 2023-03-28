@@ -28,7 +28,6 @@ final class WeatherCollectionViewCell: BaseCollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
     }
     
     override func configureUI() {
@@ -52,6 +51,10 @@ final class WeatherCollectionViewCell: BaseCollectionViewCell {
         }
     }
     
-    
+    func setupCell(_ item: WeatherItemModel) {
+        tempLabel.text = "\(String(format: "%.0f", item.items.temp))°"
+        highestAndMinimumTempLabel.text = "최고:\(String(format: "%.0f", item.items.temp_max))° / 최저:\(String(format: "%.0f", item.items.temp_min))°"
+        weatherImageView.image = WeatherModel.getWeatherImage(id: item.items.id)
+    }
     
 }

@@ -27,21 +27,27 @@ final class APIManager {
             case .success(let value):
                 let json = JSON(value)
                 
-                var weather = WeatherModel()
-                
                 let weatherData = json["weather"].arrayValue[0]
                 let weatherTempData = json["main"]
                 
-                weather.name = json["name"].stringValue
-                weather.id = weatherData["id"].intValue
-                weather.main = weatherData["main"].stringValue
-                weather.description = weatherData["description"].stringValue
-                weather.icon = weatherData["icon"].stringValue
+                let name = json["name"].stringValue
+                let id = weatherData["id"].intValue
+                let main = weatherData["main"].stringValue
+                let description = weatherData["description"].stringValue
+                let icon = weatherData["icon"].stringValue
                 
-                weather.temp = weatherTempData["temp"].doubleValue - 273
-                weather.temp_min = weatherTempData["temp_min"].doubleValue - 273
-                weather.temp_max = weatherTempData["temp_max"].doubleValue - 273
-                
+                let temp = weatherTempData["temp"].doubleValue - 273
+                let temp_min = weatherTempData["temp_min"].doubleValue - 273
+                let temp_max = weatherTempData["temp_max"].doubleValue - 273
+                var weather = WeatherModel(
+                    name: name,
+                    id: id,
+                    main: main,
+                    description: description,
+                    icon: icon,
+                    temp: temp,
+                    temp_min: temp_min,
+                    temp_max: temp_max)
                 completionHandler(weather)
                 
             case  .failure(let error):

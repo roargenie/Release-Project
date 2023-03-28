@@ -76,22 +76,6 @@ final class HomeViewSecondTableViewCell: BaseTableViewCell {
     
     private func bind() {
         
-        weatherStyleButton.rx.tap.map { RecommendButtonStatus.style }
-            .asDriver(onErrorJustReturn: .style)
-            .drive { [weak self] value in
-                guard value == .style else { return }
-                self?.viewModel.recommendButtonStatus.accept(value)
-            }
-            .disposed(by: disposeBag)
-        
-        weatherItemButton.rx.tap.map { RecommendButtonStatus.item }
-            .asDriver(onErrorJustReturn: .item)
-            .drive { [weak self] value in
-                guard value == .item else { return }
-                self?.viewModel.recommendButtonStatus.accept(value)
-            }
-            .disposed(by: disposeBag)
-        
     }
     
     

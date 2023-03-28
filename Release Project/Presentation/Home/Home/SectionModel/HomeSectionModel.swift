@@ -10,10 +10,11 @@ import RxDataSources
 import RealmSwift
 
 struct WeatherItemModel {
-    let id: Int
-    let temp: Double
-    let temp_min: Double
-    let temp_max: Double
+    let items: WeatherModel
+//    let id: Int
+//    let temp: Double
+//    let temp_min: Double
+//    let temp_max: Double
 }
 
 struct ItemRecommendItemModel {
@@ -64,7 +65,7 @@ enum HomeSection: Int, Equatable {
 enum HomeItem: Equatable {
     case weather(WeatherItemModel)
     case itemRecommend(ItemRecommendItemModel)
-    case monthOfWeek([MonthOfWeekItemModel])
+    case monthOfWeek(MonthOfWeekItemModel)
     case categoryPercent([CategoryPercentItemModel])
 }
 

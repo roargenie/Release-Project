@@ -16,7 +16,7 @@ final class FirstHomeDetailViewController2: BaseViewController {
         }
     }
     
-    var weatherData = WeatherModel()
+//    var weatherData = WeatherModel()
     
     override func loadView() {
         self.view = mainView
@@ -37,7 +37,7 @@ final class FirstHomeDetailViewController2: BaseViewController {
     }
     
     private func fetchRealm() {
-        clothItemTasks = weatherData.weatherClothItem(temp: weatherData.temp)
+//        clothItemTasks = weatherData.weatherClothItem(temp: weatherData.temp)
     }
     
 }

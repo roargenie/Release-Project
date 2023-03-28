@@ -16,50 +16,17 @@ final class HomeViewController: BaseViewController {
     
     private let locationManager = CLLocationManager()
     
-    var weatherData = WeatherModel()
-    var sections = [
-        HomeSectionModel(
-            model: .weather,
-            items: [.weather(
-                WeatherItemModel(id: 0,
-                                 temp: 0,
-                                 temp_min: 0,
-                                 temp_max: 0))]),
-        HomeSectionModel(
-            model: .itemRecommend,
-            items: [.itemRecommend(
-                ItemRecommendItemModel(title: "스타일을 추천받을게요!")),
-                    .itemRecommend(
-                        ItemRecommendItemModel(title: "아이템을 추천받을게요!"))]),
-        HomeSectionModel(
-            model: .monthOfWeek,
-            items: [.monthOfWeek([
-                MonthOfWeekItemModel(content: nil, styleItem: nil),
-                MonthOfWeekItemModel(content: nil, styleItem: nil),
-                MonthOfWeekItemModel(content: nil, styleItem: nil),
-                MonthOfWeekItemModel(content: nil, styleItem: nil),
-                MonthOfWeekItemModel(content: nil, styleItem: nil)])]),
-        HomeSectionModel(
-            model: .categoryPercent,
-            items: [.categoryPercent([
-                CategoryPercentItemModel(value: nil, title: "아우터"),
-                CategoryPercentItemModel(value: nil, title: "상의"),
-                CategoryPercentItemModel(value: nil, title: "하의"),
-                CategoryPercentItemModel(value: nil, title: "신발"),
-                CategoryPercentItemModel(value: nil, title: "악세"),
-                CategoryPercentItemModel(value: nil, title: "기타")])])
-    ]
-        
+//    var weatherData = WeatherModel()
+    
     private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<HomeSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
         switch item {
         case .weather(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeatherCollectionViewCell.reuseIdentifier, for: indexPath) as! WeatherCollectionViewCell
-            cell.tempLabel.text = "\(item.temp)"
-            cell.highestAndMinimumTempLabel.text = "\(item.temp_max) / \(item.temp_min)"
+            cell.setupCell(item)
             return cell
         case .itemRecommend(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemRecommendCollectionViewCell.reuseIdentifier, for: indexPath) as! ItemRecommendCollectionViewCell
-            
+            cell.recommendTitleLabel.text = item.title
             return cell
         case .monthOfWeek(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MonthOfWeekCollectionViewCell.reuseIdentifier, for: indexPath) as! MonthOfWeekCollectionViewCell
@@ -68,7 +35,7 @@ final class HomeViewController: BaseViewController {
         case .categoryPercent(let item):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryPercentCollectionViewCell.reuseIdentifier, for: indexPath) as! CategoryPercentCollectionViewCell
             cell.setupCell(model: item)
-//            print(item)
+            //            print(item)
             return cell
         }
         
@@ -77,7 +44,7 @@ final class HomeViewController: BaseViewController {
         headerView.setupView(text: HomeSection(index: indexPath.section).headerTitle)
         return headerView
     }
-
+    
     
     init(mainView: HomeView, viewModel: HomeViewModel) {
         self.mainView = mainView
@@ -92,12 +59,11 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkUserDeviceLocationServiceAuthorization()
-        
         bind()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -110,206 +76,21 @@ final class HomeViewController: BaseViewController {
     }
     
     private func bind() {
+        print(#function)
         let input = HomeViewModel.Input(
-            viewDidLoadEvent: self.rx.viewDidLoad.asSignal(),
+            viewDidLoadEvent: Observable.just(()),
             viewWillAppearEvent: self.rx.viewWillAppear.asSignal())
         let output = viewModel.transform(input: input)
         
-        Observable.just(sections)
-            .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
+//        Observable.just(viewModel.sections)
+//            .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
+//            .disposed(by: disposeBag)
+        output.items
+            .drive(mainView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        
     }
-    
-//    private func setupTableViewDataSource() {
-//
-//        dataSource = RxTableViewSectionedReloadDataSource(configureCell: { dataSource, tableView, indexPath, item in
-//            switch indexPath.section {
-//            case 0:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFirstTableViewCell
-//                cell.backgroundColor = .blue
-//                cell.weatherLabel.text = item.items
-//                return cell
-//            case 1:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewSecondTableViewCell
-//                cell.backgroundColor = .brown
-//                return cell
-//            case 2:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewThirdTableViewCell
-//                cell.backgroundColor = .gray
-//                return cell
-//            case 3:
-//                let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as! HomeViewFourthTableViewCell
-//                cell.backgroundColor = .magenta
-//                return cell
-//            default:
-//                return UITableViewCell()
-//            }
-//        }, titleForHeaderInSection: { dataSource, index in
-//            return dataSource.sectionModels[index].headerTitle
-//        })
-//
-//    }
-//    @objc private func weatherStyleButtonTapped() {
-//        let vc = FirstHomeDetailViewController1()
-//        vc.weatherData = weatherData
-//        self.tabBarController?.tabBar.isHidden = true
-//        self.navigationItem.backButtonTitle = ""
-//        transition(vc, transitionStyle: .push)
-//    }
-//
-//    @objc private func weatherItemButtonTapped() {
-//        let vc = FirstHomeDetailViewController2()
-//        vc.weatherData = weatherData
-//        self.tabBarController?.tabBar.isHidden = true
-//        self.navigationItem.backButtonTitle = ""
-//        transition(vc, transitionStyle: .push)
-//    }
-    
-//    private func fetchRealm() {
-//        clothItemTasks = repository.fetch(ClothItem.self)
-//        styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
-//    }
-//
-//    private func checkPercent(query: String) -> Double {
-//        let totalCount = repository.fetch(ClothItem.self).count
-//        let itemCount = repository.clothItemCategoryFilter(query: query).count
-//        let results = Double(itemCount) / Double(totalCount)
-//        return results
-//    }
-//
-//    private func checkCategoryCount(query: String) -> Double {
-//        let count = repository.clothItemCategoryFilter(query: query).count
-//        return Double(count)
-//    }
-    
-//    private func checkFirstRun() {
-//        if UserDefaults.standard.bool(forKey: "FirstRun") == false {
-//
-//            let outer = Category(title: "아우터")
-//            let top = Category(title: "상의")
-//            let bottom = Category(title: "하의")
-//            let shoes = Category(title: "신발")
-//            let acc = Category(title: "악세")
-//            let other = Category(title: "기타")
-//
-//            let spring = Season(title: "봄")
-//            let summer = Season(title: "여름")
-//            let autumn = Season(title: "가을")
-//            let winter = Season(title: "겨울")
-//            repository.addItem(item: [outer, top, bottom, shoes, acc, other, spring, summer, autumn, winter])
-//
-//            print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
-//            UserDefaults.standard.set(true, forKey: "FirstRun")
-//        }
-//    }
 }
-
-//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-//
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 4
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        switch indexPath.section {
-//        case 0:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFirstTableViewCell else { return UITableViewCell() }
-//            cell.tempLabel.text = "\(String(format: "%.0f", weatherData.temp))°"
-//            cell.weatherLabel.text = "최고:\(String(format: "%.0f", weatherData.temp_max))° / 최저:\(String(format: "%.0f", weatherData.temp_min))°"
-//            cell.weatherImageView.image = weatherData.getWeatherImage(id: weatherData.id)
-//            cell.selectionStyle = .none
-//
-//            return cell
-//        case 1:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewSecondTableViewCell else { return UITableViewCell() }
-//            cell.weatherStyleButton.addTarget(self, action: #selector(weatherStyleButtonTapped), for: .touchUpInside)
-//            cell.weatherItemButton.addTarget(self, action: #selector(weatherItemButtonTapped), for: .touchUpInside)
-//            cell.selectionStyle = .none
-//            return cell
-//        case 2:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdTableViewCell else { return UITableViewCell() }
-//            cell.emptyViewLabel.isHidden = styleTasks.count != 0 ? true : false
-//            cell.collectionView.delegate = self
-//            cell.collectionView.dataSource = self
-//            cell.collectionView.reloadData()
-//            cell.selectionStyle = .none
-//            return cell
-//        case 3:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFourthTableViewCell else { return UITableViewCell() }
-//
-//            DispatchQueue.main.async {
-//                cell.outerPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "아우터"))
-//                cell.topPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "상의"))
-//                cell.bottomPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "하의"))
-//                cell.shoesPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "신발"))
-//                cell.accPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "악세"))
-//                cell.otherPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "기타"))
-//            }
-//            cell.selectionStyle = .none
-//            return cell
-//        default:
-//            break
-//        }
-//        return UITableViewCell()
-//    }
-//
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch indexPath.section {
-        case 0:
-            return 150
-        case 1:
-            return 160
-        case 2:
-            return 190
-        case 3:
-            return 260
-        default:
-            break
-        }
-        return 0
-    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReusableHeaderView.identifier) as? ReusableHeaderView else { return UIView() }
-//
-//        switch section {
-//        case 0:
-//            view.headerLabel.text = "오늘의 날씨에요"
-//        case 1:
-//            view.headerLabel.text = "오늘 날씨에 이건 어때요?"
-//        case 2:
-//            view.headerLabel.text = "최근 일주일 모아보기"
-//        case 3:
-//            view.headerLabel.text = "내 옷장은 이렇답니다"
-//        default:
-//            break
-//        }
-//        return view
-//    }
-//}
-
-//extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-//
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return styleTasks.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewThirdCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdCollectionViewCell else { return UICollectionViewCell() }
-//
-//        let task = styleTasks[indexPath.item]
-//        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
-//        return cell
-//    }
-//
-//}
 
 extension HomeViewController {
     
@@ -368,12 +149,11 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let center = locations.last?.coordinate as? CLLocationCoordinate2D {
-            
-//            APIManager.shared.getWeather(lat: center.latitude, lon: center.longitude) { weather in
-//                self.weatherData = weather
-//                print(weather)
-//                self.mainView.tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
-//            }
+            // bind가 먼저 돼서 호출시점이 안맞음. RxCoreLocation 써야하나?
+//            self.viewModel.coordinate.accept([
+//                center.latitude,
+//                center.longitude])
+            viewModel.requestWeatherData(center.latitude, center.longitude)
         }
     }
     
@@ -385,5 +165,143 @@ extension HomeViewController: CLLocationManagerDelegate {
 //        print(#function)
         checkUserDeviceLocationServiceAuthorization()
     }
-    
 }
+    
+//    @objc private func weatherStyleButtonTapped() {
+//        let vc = FirstHomeDetailViewController1()
+//        vc.weatherData = weatherData
+//        self.tabBarController?.tabBar.isHidden = true
+//        self.navigationItem.backButtonTitle = ""
+//        transition(vc, transitionStyle: .push)
+//    }
+//
+//    @objc private func weatherItemButtonTapped() {
+//        let vc = FirstHomeDetailViewController2()
+//        vc.weatherData = weatherData
+//        self.tabBarController?.tabBar.isHidden = true
+//        self.navigationItem.backButtonTitle = ""
+//        transition(vc, transitionStyle: .push)
+//    }
+    
+//    private func fetchRealm() {
+//        clothItemTasks = repository.fetch(ClothItem.self)
+//        styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
+//    }
+//
+//    private func checkPercent(query: String) -> Double {
+//        let totalCount = repository.fetch(ClothItem.self).count
+//        let itemCount = repository.clothItemCategoryFilter(query: query).count
+//        let results = Double(itemCount) / Double(totalCount)
+//        return results
+//    }
+//
+//    private func checkCategoryCount(query: String) -> Double {
+//        let count = repository.clothItemCategoryFilter(query: query).count
+//        return Double(count)
+//    }
+    
+
+//extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 4
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        switch indexPath.section {
+//        case 0:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFirstTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFirstTableViewCell else { return UITableViewCell() }
+//            cell.tempLabel.text = "\(String(format: "%.0f", weatherData.temp))°"
+//            cell.weatherLabel.text = "최고:\(String(format: "%.0f", weatherData.temp_max))° / 최저:\(String(format: "%.0f", weatherData.temp_min))°"
+//            cell.weatherImageView.image = weatherData.getWeatherImage(id: weatherData.id)
+//            cell.selectionStyle = .none
+//
+//            return cell
+//        case 1:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewSecondTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewSecondTableViewCell else { return UITableViewCell() }
+//            cell.weatherStyleButton.addTarget(self, action: #selector(weatherStyleButtonTapped), for: .touchUpInside)
+//            cell.weatherItemButton.addTarget(self, action: #selector(weatherItemButtonTapped), for: .touchUpInside)
+//            cell.selectionStyle = .none
+//            return cell
+//        case 2:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewThirdTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdTableViewCell else { return UITableViewCell() }
+//            cell.emptyViewLabel.isHidden = styleTasks.count != 0 ? true : false
+//            cell.collectionView.delegate = self
+//            cell.collectionView.dataSource = self
+//            cell.collectionView.reloadData()
+//            cell.selectionStyle = .none
+//            return cell
+//        case 3:
+//            guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewFourthTableViewCell.reuseIdentifier, for: indexPath) as? HomeViewFourthTableViewCell else { return UITableViewCell() }
+//
+//            DispatchQueue.main.async {
+//                cell.outerPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "아우터"))
+//                cell.topPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "상의"))
+//                cell.bottomPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "하의"))
+//                cell.shoesPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "신발"))
+//                cell.accPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "악세"))
+//                cell.otherPercent.progressBarDrawing(color: .systemPink, value: self.checkPercent(query: "기타"))
+//            }
+//            cell.selectionStyle = .none
+//            return cell
+//        default:
+//            break
+//        }
+//        return UITableViewCell()
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        switch indexPath.section {
+//        case 0:
+//            return 150
+//        case 1:
+//            return 160
+//        case 2:
+//            return 190
+//        case 3:
+//            return 260
+//        default:
+//            break
+//        }
+//        return 0
+//    }
+//
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        guard let view = tableView.dequeueReusableHeaderFooterView(withIdentifier: ReusableHeaderView.identifier) as? ReusableHeaderView else { return UIView() }
+//
+//        switch section {
+//        case 0:
+//            view.headerLabel.text = "오늘의 날씨에요"
+//        case 1:
+//            view.headerLabel.text = "오늘 날씨에 이건 어때요?"
+//        case 2:
+//            view.headerLabel.text = "최근 일주일 모아보기"
+//        case 3:
+//            view.headerLabel.text = "내 옷장은 이렇답니다"
+//        default:
+//            break
+//        }
+//        return view
+//    }
+//}
+
+//extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return styleTasks.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeViewThirdCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeViewThirdCollectionViewCell else { return UICollectionViewCell() }
+//
+//        let task = styleTasks[indexPath.item]
+//        cell.imageView.image = FileManagerHelper.shared.loadImageFromDocument(fileName: "\(task.objectId).jpg")
+//        return cell
+//    }
+//
+//}

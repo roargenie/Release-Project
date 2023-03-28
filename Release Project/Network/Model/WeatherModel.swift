@@ -5,22 +5,21 @@ import RealmSwift
 import UIKit
 
 
-struct WeatherModel {
-    var name = String()
-    var id = Int()
-    var main = String()
-    var description = String()
-    var icon = String()
+struct WeatherModel: Equatable {
     
-    var temp = Double()
-    var temp_min = Double()
-    var temp_max = Double()
+    var name: String
+    var id: Int
+    var main: String
+    var description: String
+    var icon: String
     
-    fileprivate let repository = StyleRepository.shared
+    var temp: Double
+    var temp_min: Double
+    var temp_max: Double
     
-    func getWeatherImage(id: Int) -> UIImage {
+    static func getWeatherImage(id: Int) -> UIImage {
         switch id {
-            
+
         case 200:
             return UIImage(named: "200.png")!
         case 201:
@@ -41,7 +40,7 @@ struct WeatherModel {
             return UIImage(named: "200.png")!
         case 232:
             return UIImage(named: "202.png")!
-            
+
         case 300:
             return UIImage(named: "300.png")!
         case 301:
@@ -60,7 +59,7 @@ struct WeatherModel {
             return UIImage(named: "301.png")!
         case 321:
             return UIImage(named: "301.png")!
-            
+
         case 500:
             return UIImage(named: "301.png")!
         case 501:
@@ -81,7 +80,7 @@ struct WeatherModel {
             return UIImage(named: "301.png")!
         case 531:
             return UIImage(named: "301.png")!
-            
+
         case 600:
             return UIImage(named: "602.png")!
         case 601:
@@ -104,7 +103,7 @@ struct WeatherModel {
             return UIImage(named: "611.png")!
         case 622:
             return UIImage(named: "611.png")!
-            
+
         case 701:
             return UIImage(named: "721.png")!
         case 711:
@@ -125,10 +124,10 @@ struct WeatherModel {
             return UIImage(named: "771.png")!
         case 781:
             return UIImage(named: "781.png")!
-            
+
         case 800:
             return UIImage(named: "800.png")!
-            
+
         case 801:
             return UIImage(named: "801.png")!
         case 802:
@@ -137,47 +136,13 @@ struct WeatherModel {
             return UIImage(named: "803.png")!
         case 804:
             return UIImage(named: "804.png")!
-            
+
         default:
             return UIImage()
-            
-        }
-    }
-    
-    func weatherClothItem(temp: Double) -> Results<ClothItem> {
-        switch temp {
-            // 겨울
-        case ..<5:
-            return repository.winterItemFilter().sorted(byKeyPath: "regDate", ascending: false)
-            // 봄, 가을
-        case 5..<20:
-            return repository.spingAndAutumnItemFilter().sorted(byKeyPath: "regDate", ascending: false)
-            // 여름
-        case 20...:
-            return repository.summerItemFilter().sorted(byKeyPath: "regDate", ascending: false)
-        default:
-            return repository.fetch(ClothItem.self).sorted(byKeyPath: "regDate", ascending: false)
-        }
-    }
-    
-    func weatherStyle(temp: Double) -> Results<Style> {
-        switch temp {
-            // 겨울
-        case ..<5:
-            return repository.winterStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
-            // 봄, 가을
-        case 5..<20:
-            return repository.springAndAutumnStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
-            // 여름
-        case 20...:
-            return repository.summerStyleFilter().sorted(byKeyPath: "regDate", ascending: false)
-        default:
-            return repository.fetch(Style.self).sorted(byKeyPath: "regDate", ascending: false)
-        }
-    }
-    
-}
 
+        }
+    }
+}
 
 
 
