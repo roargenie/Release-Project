@@ -37,11 +37,11 @@ protocol StyleRepositoryType {
 
 final class StyleRepository: StyleRepositoryType {
     
-    static let shared = StyleRepository()
-    private init() { }
+//    static let shared = StyleRepository()
+//    private init() { }
     
-    var clothItemTasks: Results<ClothItem>!
-    var styleTasks: Results<Style>!
+//    var clothItemTasks: Results<ClothItem>!
+//    var styleTasks: Results<Style>!
     
     let localRealm = try! Realm()
     

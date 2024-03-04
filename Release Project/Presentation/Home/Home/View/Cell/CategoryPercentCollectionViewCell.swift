@@ -95,7 +95,6 @@ final class CategoryPercentCollectionViewCell: BaseCollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .purple
     }
     
     override func configureUI() {

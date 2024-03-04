@@ -39,7 +39,7 @@ final class APIManager {
                 let temp = weatherTempData["temp"].doubleValue - 273
                 let temp_min = weatherTempData["temp_min"].doubleValue - 273
                 let temp_max = weatherTempData["temp_max"].doubleValue - 273
-                var weather = WeatherModel(
+                let weather = WeatherModel(
                     name: name,
                     id: id,
                     main: main,

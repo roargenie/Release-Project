@@ -46,7 +46,6 @@
 		F68F00FA28D34E5400B7B349 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00F928D34E5400B7B349 /* Realm */; };
 		F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FB28D34E5400B7B349 /* RealmSwift */; };
 		F68F00FF28D34E6900B7B349 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F68F00FE28D34E6900B7B349 /* SnapKit */; };
-		F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010128D34E7800B7B349 /* YPImagePicker */; };
 		F68F010528D34E8800B7B349 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010428D34E8800B7B349 /* Alamofire */; };
 		F68F010828D34E9600B7B349 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = F68F010728D34E9600B7B349 /* FSCalendar */; };
 		F68F010F28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68F010E28D3550200B7B349 /* SecondAddItemDetailCollectionViewCell.swift */; };
@@ -249,7 +248,6 @@
 				F68F00FC28D34E5400B7B349 /* RealmSwift in Frameworks */,
 				F63EF23229B4E1A1003C01D2 /* RxSwift in Frameworks */,
 				F68F00FA28D34E5400B7B349 /* Realm in Frameworks */,
-				F68F010228D34E7800B7B349 /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -958,7 +956,6 @@
 				F68F00F928D34E5400B7B349 /* Realm */,
 				F68F00FB28D34E5400B7B349 /* RealmSwift */,
 				F68F00FE28D34E6900B7B349 /* SnapKit */,
-				F68F010128D34E7800B7B349 /* YPImagePicker */,
 				F68F010428D34E8800B7B349 /* Alamofire */,
 				F68F010728D34E9600B7B349 /* FSCalendar */,
 				F60AC97428DB0CFD00B74898 /* SwiftyJSON */,
@@ -1005,7 +1002,6 @@
 			packageReferences = (
 				F68F00F828D34E5400B7B349 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				F68F00FD28D34E6900B7B349 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				F68F010028D34E7800B7B349 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				F68F010328D34E8700B7B349 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F68F010628D34E9600B7B349 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				F60AC97328DB0CFD00B74898 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
@@ -1432,14 +1428,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		F68F010028D34E7800B7B349 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		F68F010328D34E8700B7B349 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1533,11 +1521,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F68F00FD28D34E6900B7B349 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		F68F010128D34E7800B7B349 /* YPImagePicker */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F68F010028D34E7800B7B349 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
-			productName = YPImagePicker;
 		};
 		F68F010428D34E8800B7B349 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

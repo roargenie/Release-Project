@@ -12,41 +12,45 @@ import RealmSwift
 
 final class HomeViewModel: ViewModelType {
     
-    var sections = [
+    lazy var sections = [
         HomeSectionModel(
             model: .weather,
             items: []),
         HomeSectionModel(
             model: .itemRecommend,
-            items: [.itemRecommend(
-                ItemRecommendItemModel(title: "스타일을 추천받을게요!")),
-                    .itemRecommend(
-                        ItemRecommendItemModel(title: "아이템을 추천받을게요!"))]),
+            items: [
+                .itemRecommend(
+                    ItemRecommendItemModel(title: "스타일을 추천받을게요!")),
+                .itemRecommend(
+                    ItemRecommendItemModel(title: "아이템을 추천받을게요!"))]),
         HomeSectionModel(
             model: .monthOfWeek,
             items: [
-//                .monthOfWeek(
-//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
-//                .monthOfWeek(
-//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
-//                .monthOfWeek(
-//                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
-//                .monthOfWeek(
-//                    MonthOfWeekItemModel(content: nil, styleItem: nil))
+                .monthOfWeek(
+                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+                .monthOfWeek(
+                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+                .monthOfWeek(
+                    MonthOfWeekItemModel(content: nil, styleItem: nil)),
+                .monthOfWeek(
+                    MonthOfWeekItemModel(content: nil, styleItem: nil))
             ]),
         HomeSectionModel(
             model: .categoryPercent,
             items: [.categoryPercent([
-                CategoryPercentItemModel(value: nil, title: "아우터"),
-                CategoryPercentItemModel(value: nil, title: "상의"),
-                CategoryPercentItemModel(value: nil, title: "하의"),
-                CategoryPercentItemModel(value: nil, title: "신발"),
-                CategoryPercentItemModel(value: nil, title: "악세"),
-                CategoryPercentItemModel(value: nil, title: "기타")])])
+                CategoryPercentItemModel(value: categoryPercent.value[0], title: "아우터"),
+                CategoryPercentItemModel(value: categoryPercent.value[1], title: "상의"),
+                CategoryPercentItemModel(value: categoryPercent.value[2], title: "하의"),
+                CategoryPercentItemModel(value: categoryPercent.value[3], title: "신발"),
+                CategoryPercentItemModel(value: categoryPercent.value[4], title: "악세"),
+                CategoryPercentItemModel(value: categoryPercent.value[5], title: "기타")])])
     ]
+    var clothItemTasks: Results<ClothItem>!
+    var styleTasks: Results<Style>!
     
-//    let coordinate = BehaviorRelay<[Double]>(value: [])
-    private let items = BehaviorRelay<[HomeSectionModel]>(value: [])
+    private let repository = StyleRepository()
+    var items = BehaviorRelay<[HomeSectionModel]>(value: [])
+    var categoryPercent = BehaviorRelay<[Double]>(value: [])
     
     struct Input {
         let viewDidLoadEvent: Observable<Void>
@@ -58,13 +62,20 @@ final class HomeViewModel: ViewModelType {
     }
     var disposeBag = DisposeBag()
     
-    
     func transform(input: Input) -> Output {
         
         input.viewDidLoadEvent
             .withUnretained(self)
             .bind { vm, _ in
                 vm.checkFirstRun()
+                vm.categoryPercent.accept([
+                    vm.checkPercent(query: "아우터"),
+                    vm.checkPercent(query: "상의"),
+                    vm.checkPercent(query: "하의"),
+                    vm.checkPercent(query: "신발"),
+                    vm.checkPercent(query: "악세"),
+                    vm.checkPercent(query: "기타")
+                ])
             }
             .disposed(by: disposeBag)
         
@@ -73,6 +84,24 @@ final class HomeViewModel: ViewModelType {
             .emit { vm, _ in
                 print("===========ViewWillAppear🟢")
                 vm.fetchRealm()
+                vm.categoryPercent.accept([
+                    vm.checkPercent(query: "아우터"),
+                    vm.checkPercent(query: "상의"),
+                    vm.checkPercent(query: "하의"),
+                    vm.checkPercent(query: "신발"),
+                    vm.checkPercent(query: "악세"),
+                    vm.checkPercent(query: "기타")
+                ])
+//                vm.fetchRealm()
+//                vm.items.accept(vm.sections)
+            }
+            .disposed(by: disposeBag)
+        
+        categoryPercent
+            .withUnretained(self)
+            .bind { vm, value in
+                vm.items.accept(vm.sections)
+                print("===========변경됨🟢", vm.sections[3])
             }
             .disposed(by: disposeBag)
         
@@ -84,7 +113,6 @@ final class HomeViewModel: ViewModelType {
 extension HomeViewModel {
     
     private func checkFirstRun() {
-        print("============Check FirstRun", #function)
         if UserDefaults.standard.bool(forKey: "FirstRun") == false {
             
             let outer = Category(title: "아우터")
@@ -98,29 +126,31 @@ extension HomeViewModel {
             let summer = Season(title: "여름")
             let autumn = Season(title: "가을")
             let winter = Season(title: "겨울")
-            StyleRepository.shared.addItem(item: [outer, top, bottom, shoes, acc, other, spring, summer, autumn, winter])
+            repository.addItem(item: [outer, top, bottom, shoes, acc, other, spring, summer, autumn, winter])
             
             print("realm 위치: ", Realm.Configuration.defaultConfiguration.fileURL!)
             UserDefaults.standard.set(true, forKey: "FirstRun")
         }
     }
     
-    private func fetchRealm() {
-        StyleRepository.shared.clothItemTasks = StyleRepository.shared.fetch(ClothItem.self)
-        StyleRepository.shared.styleTasks = StyleRepository.shared.fetchDateBeforeWeekFilter(Style.self)
+    func fetchRealm() {
+        print("=======fetchRealm🟢")
+        clothItemTasks = repository.fetch(ClothItem.self)
+        styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
+//        items.accept(sections)
     }
     
     private func checkPercent(query: String) -> Double {
-        let totalCount = StyleRepository.shared.fetch(ClothItem.self).count
-        let itemCount = StyleRepository.shared.clothItemCategoryFilter(query: query).count
+        let totalCount = repository.fetch(ClothItem.self).count
+        let itemCount = repository.clothItemCategoryFilter(query: query).count
         let results = Double(itemCount) / Double(totalCount)
         return results
     }
     
-    private func checkCategoryCount(query: String) -> Double {
-        let count = StyleRepository.shared.clothItemCategoryFilter(query: query).count
-        return Double(count)
-    }
+//    private func checkCategoryCount(query: String) -> Double {
+//        let count = repository.clothItemCategoryFilter(query: query).count
+//        return Double(count)
+//    }
     
     func requestWeatherData(_ latitude: Double, _ longitude: Double) {
         APIManager.shared.getWeather(lat: latitude, lon: longitude) { [weak self] weather in
@@ -128,7 +158,6 @@ extension HomeViewModel {
             let section = [HomeItem.weather(WeatherItemModel(items: weather))]
             self.sections[0].items = section
             self.items.accept(self.sections)
-            print("========🟢========== 날씨 정보 아이템 모델에 들어감.", self.sections[0].items)
         }
     }
     

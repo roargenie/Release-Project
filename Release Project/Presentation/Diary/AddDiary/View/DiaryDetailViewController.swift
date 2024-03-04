@@ -2,14 +2,13 @@
 
 import UIKit
 import RealmSwift
-import YPImagePicker
 
 
 final class DiaryDetailViewController: BaseViewController {
     
     private let mainView = FirstDiaryDetailView()
     
-    private let repository = StyleRepository.shared
+    private let repository = StyleRepository()
     
     var selectedDay = Date()
     
@@ -94,21 +93,21 @@ final class DiaryDetailViewController: BaseViewController {
     }
     
     @objc private func cameraButtonTapped() {
-        let picker = YPImagePicker()
-        picker.didFinishPicking { [unowned picker] items, _ in
-            if let photo = items.singlePhoto {
-                self.mainView.imageView.image = photo.image
-            }
-            picker.dismiss(animated: true, completion: nil)
-        }
-        present(picker, animated: true, completion: nil)
+//        let picker = YPImagePicker()
+//        picker.didFinishPicking { [unowned picker] items, _ in
+//            if let photo = items.singlePhoto {
+//                self.mainView.imageView.image = photo.image
+//            }
+//            picker.dismiss(animated: true, completion: nil)
+//        }
+//        present(picker, animated: true, completion: nil)
     }
     
     @objc private func saveButtonTapped() {
         guard let text = mainView.textView.text else { return }
         
         let clothItemData = repository.addClothItemToStyle(item: repository.isSelectedTrueArr(ClothItem.self))
-        let seasonTagData = repository.addSeasonToClothItem(item: repository.isSelectedTrueArr(Season.self))
+        let seasonTagData = repository.addSeasonToStyle(item: repository.isSelectedTrueArr(Season.self))
         
         if mainView.imageView.image != nil {
             if !clothItemData.isEmpty && !seasonTagData.isEmpty {

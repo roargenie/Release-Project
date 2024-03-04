@@ -2,7 +2,7 @@
 
 import UIKit
 import RealmSwift
-import YPImagePicker
+//import YPImagePicker
 
 
 final class AddItemDetailViewController: BaseViewController {
@@ -14,7 +14,7 @@ final class AddItemDetailViewController: BaseViewController {
     
     private let mainView = AddItemDetailView()
     
-    private let repository = StyleRepository.shared
+    private let repository = StyleRepository()
     
     var categoryTasks: Results<Category>! {
         didSet {
@@ -86,14 +86,14 @@ final class AddItemDetailViewController: BaseViewController {
     }
     
     @objc private func cameraButtonTapped() {
-        let picker = YPImagePicker()
-        picker.didFinishPicking { [unowned picker] items, _ in
-            if let photo = items.singlePhoto {
-                self.mainView.imageView.image = photo.image
-            }
-            picker.dismiss(animated: true, completion: nil)
-        }
-        present(picker, animated: true, completion: nil)
+//        let picker = YPImagePicker()
+//        picker.didFinishPicking { [unowned picker] items, _ in
+//            if let photo = items.singlePhoto {
+//                self.mainView.imageView.image = photo.image
+//            }
+//            picker.dismiss(animated: true, completion: nil)
+//        }
+//        present(picker, animated: true, completion: nil)
     }
     
     private func fetchRealm() {

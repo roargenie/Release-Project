@@ -8,7 +8,7 @@ final class SecondHomeDetailViewController: BaseViewController {
     
     private let mainView = SecondHomeDetailView()
     
-    private let repository = StyleRepository.shared
+    private let repository = StyleRepository()
     
     var clothItemTasks: Results<ClothItem>! {
         didSet {

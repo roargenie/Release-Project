@@ -2,7 +2,6 @@
 
 import UIKit
 import SnapKit
-import YPImagePicker
 
 final class FirstDiaryDetailView: BaseView {
     

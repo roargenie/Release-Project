@@ -9,6 +9,14 @@ final class HomeViewThirdTableViewCell: BaseTableViewCell {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
         view.register(HomeViewThirdCollectionViewCell.self, forCellWithReuseIdentifier: HomeViewThirdCollectionViewCell.reuseIdentifier)
         view.showsHorizontalScrollIndicator = false
+        view.backgroundColor = .brown
+        return view
+    }()
+    
+    let button: UIButton = {
+        let view = UIButton()
+        view.setTitle("테스트", for: .normal)
+        view.backgroundColor = .red
         return view
     }()
     
@@ -26,13 +34,21 @@ final class HomeViewThirdTableViewCell: BaseTableViewCell {
     }
     
     override func configureUI() {
-        [collectionView, emptyViewLabel].forEach { self.contentView.addSubview($0) }
+        [collectionView, emptyViewLabel, button].forEach { self.contentView.addSubview($0) }
     }
     
     override func setConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalTo(self.safeAreaLayoutGuide)
+        button.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(4)
+            make.leading.equalTo(self.safeAreaLayoutGuide).offset(4)
+            make.width.height.equalTo(30)
         }
+//        collectionView.snp.makeConstraints { make in
+//            make.top.equalTo(button.snp.bottom).offset(4)
+//            make.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+//            make.bottom.equalTo(self.safeAreaLayoutGuide)
+////            make.edges.equalTo(self.safeAreaLayoutGuide)
+//        }
         emptyViewLabel.snp.makeConstraints { make in
             make.center.equalTo(self.snp.center)
             make.height.equalTo(self.snp.height).multipliedBy(0.5)

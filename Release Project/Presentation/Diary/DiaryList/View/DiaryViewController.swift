@@ -2,7 +2,6 @@
 
 import UIKit
 import RealmSwift
-import YPImagePicker
 import FSCalendar
 
 final class DiaryViewController: BaseViewController {
@@ -13,7 +12,7 @@ final class DiaryViewController: BaseViewController {
     
     private var pickedImage: UIImage?
     
-    private let repository = StyleRepository.shared
+    private let repository = StyleRepository()
     
     var styleTasks: Results<Style>! {
         didSet {

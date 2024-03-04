@@ -16,6 +16,21 @@ final class HomeViewController: BaseViewController {
     
     private let locationManager = CLLocationManager()
     
+//    var clothItemTasks: Results<ClothItem>! {
+//        didSet {
+//            viewModel.items.accept(viewModel.sections)
+////            mainView.collectionView.reloadData()
+//        }
+//    }
+//    var styleTasks: Results<Style>! {
+//        didSet {
+//            viewModel.items.accept(viewModel.sections)
+////            mainView.collectionView.reloadData()
+//        }
+//    }
+//
+//    let repository = StyleRepository()
+    
 //    var weatherData = WeatherModel()
     
     private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<HomeSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
@@ -63,7 +78,8 @@ final class HomeViewController: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
+//        fetchRealm()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -82,14 +98,17 @@ final class HomeViewController: BaseViewController {
             viewWillAppearEvent: self.rx.viewWillAppear.asSignal())
         let output = viewModel.transform(input: input)
         
-//        Observable.just(viewModel.sections)
-//            .bind(to: mainView.collectionView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
         output.items
             .drive(mainView.collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
     }
+    
+//    func fetchRealm() {
+//        clothItemTasks = repository.fetch(ClothItem.self)
+//        styleTasks = repository.fetchDateBeforeWeekFilter(Style.self)
+////        items.accept(sections)
+//    }
 }
 
 extension HomeViewController {
@@ -149,11 +168,11 @@ extension HomeViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let center = locations.last?.coordinate as? CLLocationCoordinate2D {
+            viewModel.requestWeatherData(center.latitude, center.longitude)
             // bind가 먼저 돼서 호출시점이 안맞음. RxCoreLocation 써야하나?
 //            self.viewModel.coordinate.accept([
 //                center.latitude,
 //                center.longitude])
-            viewModel.requestWeatherData(center.latitude, center.longitude)
         }
     }
     
@@ -162,7 +181,6 @@ extension HomeViewController: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//        print(#function)
         checkUserDeviceLocationServiceAuthorization()
     }
 }

@@ -7,7 +7,7 @@ final class FirstHomeDetailViewController1: BaseViewController {
     
     private var mainView = FirstHomeDetailView1()
     
-    private let repository = StyleRepository.shared
+    private let repository = StyleRepository()
     
     var styleTasks: Results<Style>! {
         didSet {
